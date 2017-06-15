@@ -1,4 +1,180 @@
+@font-face {
+    font-family: MyriadPro-LightSemiExt;
+    src: url(fonts/MyriadPro-LightSemiExt.otf);
+}
+
+@font-face {
+    font-family: MyriadPro-Bold;
+    src: url(fonts/MyriadPro-Bold.otf);
+}
+
+@font-face {
+    font-family: MyriadPro-Regular;
+    src: url(fonts/MyriadPro-Regular.otf);
+}
+
 body{
   padding: 0;
   margin: 0;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+section{
+  margin-top: 160px;
+  width: 2480px;
+  display: table;
+  outline: 0px solid #AAA;
+}
+
+section p, section span{
+  font-family: MyriadPro-Regular;
+  font-size: 31px;
+  line-height: auto;
+}
+
+section p b, section span b{
+  font-weight: bold;
+}
+
+.left{
+  display: table-cell;
+  width: 43%;
+}
+
+.right{
+  display: table-cell;
+  width: 57%;
+}
+
+.row{
+  display: table-row;
+}
+
+.container{
+  margin: 0 0;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+.header{
+  margin-left: 30px;
+}
+
+.header-top{
+  height: 460px;
+  width: 460px;
+  border: 1px solid #006cb4;
+  margin: auto;
+  border-radius: 50%;
+  background-color: #006cb4;
+  box-shadow: inset 0 0 0 30px white;
+}
+
+.header-bottom p ~ div{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.header-bottom .name-here{
+  margin-top: 90px;
+  font-family: MyriadPro-LightSemiExt;
+  font-size: 105px;
+  line-height: 50px;
+}
+
+.header-bottom .surname{
+  font-family: MyriadPro-Bold;
+  font-size: 124px;
+}
+
+.header-bottom .graphicdesigner{
+  font-family: MyriadPro-Bold;
+  font-size: 50px;
+  letter-spacing: -1px;
+}
+
+article{
+  padding-top: 110px;
+}
+
+article .art-header{
+  display: table;
+  width: 100%;
+}
+
+.art-logo{
+  width: 152px;
+  height: 152px;
+  padding-right: 152px;
+  border: 1px solid #006cb4;
+  border-radius: 50%;
+  background-color: #006cb4;
+  box-shadow: inset 0 0 0 8px white;
+  position: relative;
+  display: table-cell;
+}
+
+.art-logo.profile::after{
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: calc(50% - 30px);
+  left: calc(50% - 17px);
+  background-color: white;
+  border-radius: 50%;
+}
+
+.art-logo.profile::before{
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: calc(50%);
+  left: calc(50% - 33px);
+  border-radius: 50%;
+  border: 33px solid white;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(45deg);
+}
+
+.art-title{
+  padding-left: 15px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.art-buffer-line{
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 15px;
+}
+
+.art-line{
+  height: 10px;
+  width: 100%;
+  background-color: #006cb4;
+}
+
+.art-title span{
+  text-transform: uppercase;
+  font-family: MyriadPro-Bold;
+  font-size: 82px;
+  color: #006cb4;
+}
+
+article .art-content{
+  padding-top: 20px;
+  line-height: 33px;
+}
+
+.art-content span b{
+  font-family: MyriadPro-Bold;
 }
