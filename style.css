@@ -33,7 +33,7 @@ section{
 
 section p, section span{
   font-family: MyriadPro-Regular;
-  font-size: 31px;
+  font-size: 29px;
   line-height: auto;
 }
 
@@ -63,6 +63,7 @@ section p b, section span b{
 
 .header{
   margin-left: 30px;
+  margin-bottom: 65px;
 }
 
 .header-top{
@@ -99,7 +100,7 @@ section p b, section span b{
 }
 
 article{
-  padding-top: 110px;
+  padding-top: 85px;
 }
 
 article .art-header{
@@ -108,9 +109,9 @@ article .art-header{
 }
 
 .art-logo{
-  width: 152px;
-  height: 152px;
-  padding-right: 152px;
+  width: 148px;
+  height: 143px;
+  padding-right: 148px;
   border: 1px solid #006cb4;
   border-radius: 50%;
   background-color: #006cb4;
@@ -145,7 +146,7 @@ article .art-header{
 }
 
 .art-title{
-  padding-left: 15px;
+  padding-left: 20px;
   display: table-cell;
   vertical-align: middle;
 }
