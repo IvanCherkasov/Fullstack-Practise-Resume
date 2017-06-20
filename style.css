@@ -13,6 +13,10 @@
     src: url(fonts/MyriadPro-Regular.otf);
 }
 
+html{
+  font-size: 12px;
+}
+
 body{
   padding: 0;
   margin: 0;
@@ -24,158 +28,64 @@ body{
     clear: both;
 }
 
-section{
-  margin-top: 160px;
-  width: 2480px;
-  display: table;
-  outline: 0px solid #AAA;
-}
-
-section p, section span{
-  font-family: MyriadPro-Regular;
-  font-size: 29px;
-  line-height: auto;
-}
-
-section p b, section span b{
-  font-weight: bold;
+.main{
+  max-width: 2480px;
+  min-width: 620px;
+  width: 1240px;
+  display: flex;
+  margin-top: 7.33rem; /*88px от 12px*/
+  background-color: green;
 }
 
 .left{
-  display: table-cell;
-  width: 43%;
+  width: 36.5%;
+  flex-direction: column;
+  padding-left: 5.08rem; /*61px от 12px*/
 }
 
 .right{
-  display: table-cell;
-  width: 57%;
-}
-
-.row{
-  display: table-row;
-}
-
-.container{
-  margin: 0 0;
-  margin-left: 120px;
-  margin-right: 120px;
+  width: 63.5%;
 }
 
 .header{
-  margin-left: 30px;
-  margin-bottom: 65px;
+  background-color: red;
+}
+
+.header-text{
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .header-top{
-  height: 460px;
-  width: 460px;
-  border: 1px solid #006cb4;
-  margin: auto;
+  margin: 0 auto;
+  width: 19.16rem; /*230px от 12px*/
+  height: 19.16rem;
   border-radius: 50%;
   background-color: #006cb4;
-  box-shadow: inset 0 0 0 30px white;
+  border: 1px solid #006cb4;
+  box-shadow: inset 0 0 0 1.17rem white; /*14px от 12px*/
 }
 
-.header-bottom p ~ div{
-  text-align: center;
-  text-transform: uppercase;
+.header-bottom{
+  padding-top: 2rem; /*24px от 12px*/
 }
 
-.header-bottom .name-here{
-  margin-top: 90px;
+.header-bottom .name{
+  font-size: 4.42rem; /*53px от 12px*/
   font-family: MyriadPro-LightSemiExt;
-  font-size: 105px;
-  line-height: 50px;
+  letter-spacing: 0;
+  word-wrap: normal;
 }
 
 .header-bottom .surname{
   font-family: MyriadPro-Bold;
-  font-size: 124px;
+  font-size: 5.16rem; /*62px от 12px*/
+  line-height: 3.33rem; /*40px от 12px*/
 }
 
-.header-bottom .graphicdesigner{
+.header-bottom .profession{
   font-family: MyriadPro-Bold;
-  font-size: 50px;
-  letter-spacing: -1px;
-}
-
-article{
-  padding-top: 85px;
-}
-
-article .art-header{
-  display: table;
-  width: 100%;
-}
-
-.art-logo{
-  width: 148px;
-  height: 143px;
-  padding-right: 148px;
-  border: 1px solid #006cb4;
-  border-radius: 50%;
-  background-color: #006cb4;
-  box-shadow: inset 0 0 0 8px white;
-  position: relative;
-  display: table-cell;
-}
-
-.art-logo.profile::after{
-  content: "";
-  position: absolute;
-  width: 34px;
-  height: 34px;
-  top: calc(50% - 30px);
-  left: calc(50% - 17px);
-  background-color: white;
-  border-radius: 50%;
-}
-
-.art-logo.profile::before{
-  content: "";
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  top: calc(50%);
-  left: calc(50% - 33px);
-  border-radius: 50%;
-  border: 33px solid white;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-  transform: rotate(45deg);
-}
-
-.art-title{
-  padding-left: 20px;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.art-buffer-line{
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 15px;
-}
-
-.art-line{
-  height: 10px;
-  width: 100%;
-  background-color: #006cb4;
-}
-
-.art-title span{
-  text-transform: uppercase;
-  font-family: MyriadPro-Bold;
-  font-size: 82px;
-  color: #006cb4;
-}
-
-article .art-content{
-  padding-top: 20px;
-  line-height: 33px;
-}
-
-.art-content span b{
-  font-family: MyriadPro-Bold;
+  font-size: 2.08rem; /*25px от 12px*/
+  letter-spacing: -0.04rem; /*0.5px от 12px*/
+  padding-top: 1.33rem; /*16px от 12px*/
 }
