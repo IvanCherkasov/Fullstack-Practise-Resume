@@ -33,22 +33,25 @@ body{
   min-width: 620px;
   width: 1240px;
   display: flex;
-  margin-top: 7.33rem; /*88px от 12px*/
-  background-color: green;
+  margin-top: 6.33rem; /*76px от 12px*/
 }
 
 .left{
-  width: 36.5%;
+  width: 38%;
   flex-direction: column;
-  padding-left: 5.08rem; /*61px от 12px*/
+  padding-left: 3.25rem;
+  padding-right: 3.25rem;
+  padding-top: 1rem;
 }
 
 .right{
-  width: 63.5%;
+  width: 62%;
+  padding-left: 3.25rem;
+  padding-right: 3.25rem;
 }
 
 .header{
-  background-color: red;
+  padding-bottom: 78px;
 }
 
 .header-text{
@@ -88,4 +91,186 @@ body{
   font-size: 2.08rem; /*25px от 12px*/
   letter-spacing: -0.04rem; /*0.5px от 12px*/
   padding-top: 1.33rem; /*16px от 12px*/
+}
+
+.left section:nth-child(1), .right section:nth-child(1){
+  margin-top: 0;
+}
+
+section:not(.header){
+  margin-bottom: 48px;
+}
+
+.sec-header{
+  display: table;
+  height: 6rem; /*72px от 12px*/
+  width: 100%;
+}
+
+.sec-header .icon{
+  display: table-cell;
+  width: 5.84rem; /*70px от 12px*/
+  padding-right: 5.84rem;
+  background-color: #006cb4;
+  border-radius: 50%;
+  border: 1px solid #006cb4;
+  vertical-align: middle;
+  box-shadow: inset 0 0 0 0.25rem white; /*3px от 12px*/
+  position: relative;
+}
+
+.sec-header .title{
+  display: table-cell;
+  vertical-align: middle;
+  font-family: MyriadPro-Bold;
+  font-size: 3.43rem; /*41.15px от 12px*/
+  text-transform: uppercase;
+  color: #006cb4;
+  padding-left: 1.1rem; /*13 - 14 от 12px*/
+}
+
+.sec-header .buffer-line{
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 0.5rem; /*6px от 12px*/
+  /*padding-right: 1.42rem;  17px от 12px*/
+}
+
+.buffer-line .line{
+  height: 0.42rem; /*5px от 12px*/
+  width: 100%;
+  background-color: #006cb4;
+}
+
+.icon.i-profile::after{
+  content: "";
+  position: absolute;
+  width: 1.42rem; /*17px от 12px*/
+  height: 1.42rem; /*17px от 12px*/
+  background-color: white;
+  border-radius: 50%;
+  top: calc(50% - 1.17rem); /*14px от 12px*/
+  left: calc(50% - 0.71rem);  /*8.5px от 12px*/
+}
+
+.icon.i-profile::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1.42rem solid white; /*17px от 12px*/
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(45deg);
+  left: calc(50% - 1.42rem); /*17px от 12px*/
+}
+
+.sec-content{
+  padding-top: 1rem;
+  /*padding-right: 1.42rem;  17px от 12px*/
+  line-height: 1.3rem;
+}
+
+.sec-content span{
+   font-size: 1.29rem; /*15.43 от 12px*/
+   font-family: MyriadPro-Regular;
+}
+
+.sec-content span b{
+    font-family: MyriadPro-Bold;
+}
+
+.sec-content table{
+  border-collapse: collapse;
+}
+
+.sec-content td{
+  font-size: 1.67rem;
+  font-family: MyriadPro-Regular;
+  padding-left: 3.58rem;
+  padding-top: 2rem;
+  padding-bottom: 1.3rem;
+}
+
+td.td-blue{
+  text-transform: uppercase;
+  color: #006cb4;
+  font-size: 1.67rem; /*20px от 12px*/
+  font-family: MyriadPro-Bold;
+  font-weight: bold;
+  padding-left: 0;
+}
+
+.skill{
+  width: 100%;
+  margin-top: 0.83rem; /*10px от 12px*/
+  padding-bottom: 1.7rem;
+}
+
+.sec-content .skill:nth-child(1){
+  margin-top: 1.67rem; /*20px от 12px*/
+}
+
+.skill-title{
+  text-align: center;
+  font-family: MyriadPro-Regular;
+  text-transform: uppercase;
+  font-size: 25.5px;
+  padding: 0;
+}
+
+.skill-progress{
+  width: 100%;
+}
+
+.skill-progress ul{
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-top: 15px;
+  height: 1.41rem;
+}
+
+.skill-progress ul li{
+  list-style: none;
+  display: inline-block;
+  width: 1.41rem;  /*17px от 12px*/
+  height: 1.41rem;  /*17px от 12px*/
+  background-color: #006cb4;
+  border-radius: 50%;
+  margin-left: 0.33rem; /*4px от 12px*/
+  margin-right: 0.33rem; /*4px от 12px*/
+}
+
+.skill-progress ul li:nth-last-child{
+  margin-right: 0;
+}
+
+.skill-progress ul li:nth-child(1){
+  margin-left: 0;
+}
+
+.skill-progress ul li.active{
+  background-color: #006cb4;
+}
+
+.skill-progress ul li.active ~ li{
+  background-color: #e7e7e7;
+}
+
+.icon.i-skills{
+  background-image: url("svg/skills.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 47%;
+}
+
+.icon.i-contact{
+  background-image: url("svg/contact.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 57%;
 }
