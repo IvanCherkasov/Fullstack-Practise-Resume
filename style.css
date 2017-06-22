@@ -183,11 +183,11 @@ section:not(.header){
     font-family: MyriadPro-Bold;
 }
 
-.sec-content table{
+table.table-contact{
   border-collapse: collapse;
 }
 
-.sec-content td{
+.table-contact td{
   font-size: 1.67rem;
   font-family: MyriadPro-Regular;
   padding-left: 3.58rem;
@@ -273,4 +273,70 @@ td.td-blue{
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-size: 57%;
+}
+
+.places-list{
+
+}
+
+.places-list-item-header{
+  font-size: 25.72px;
+  font-family: MyriadPro-Regular;
+  padding-top: 18px;
+  position: relative;
+}
+
+.places-list-item .places-type{
+  font-family: MyriadPro-Bold;
+  text-transform: uppercase;
+  color: #006cb4;
+}
+
+.places-list-item .places-university{
+  text-transform: uppercase;
+}
+
+.places-list .places-list-item{
+  display: block;
+  padding-left: 48px;
+}
+
+.places-list-item-header td{
+  padding-right: 5px;
+  padding-bottom: 16px;
+}
+
+td.no-bottom-padding{
+  padding-bottom: 0;
+}
+
+.places-list-item-header::before{
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: -37px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.places-list-item-content{
+  font-size: 15.43px;
+  font-family: MyriadPro-Regular;
+  padding-left: 5px;
+  padding-top: 12px;
+  line-height: 18px;;
+}
+
+.black{
+  color: black !important;
+}
+
+.icon.i-star{
+
+}
+
+.icon.i-case{
+
 }
