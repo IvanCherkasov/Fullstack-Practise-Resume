@@ -143,7 +143,7 @@ section:not(.header){
   background-color: #006cb4;
 }
 
-.icon.i-profile::after{
+.icon .i-profile::after{
   content: "";
   position: absolute;
   width: 1.42rem; /*17px от 12px*/
@@ -154,7 +154,7 @@ section:not(.header){
   left: calc(50% - 0.71rem);  /*8.5px от 12px*/
 }
 
-.icon.i-profile::before{
+.icon .i-profile::before{
   content: "";
   position: absolute;
   width: 0;
@@ -261,14 +261,24 @@ td.td-blue{
   background-color: #e7e7e7;
 }
 
-.icon.i-skills{
+.icon .i-skills::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
   background-image: url("svg/skills.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 47%;
 }
 
-.icon.i-contact{
+.icon .i-contact::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
   background-image: url("svg/contact.svg");
   background-repeat: no-repeat;
   background-position: 50% 100%;
@@ -326,17 +336,78 @@ td.no-bottom-padding{
   font-family: MyriadPro-Regular;
   padding-left: 5px;
   padding-top: 12px;
-  line-height: 18px;;
+  line-height: 18px;
 }
 
 .black{
   color: black !important;
 }
 
-.icon.i-star{
+.i-star{
+  position: absolute;
+  top: 0;
+  margin-left: 2.35rem;
+  margin-top: -1rem;
+  border: 1.5rem solid transparent;
+  border-left-width: 0.5rem;
+  border-right-width: 0.5rem;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
 
+.icon.i-star::after{
+  content: "";
+  position: absolute;
+  margin-top: 6px;
+  margin-left: 22px;
+  top: 0;
+  border: 1.5rem solid red;
+  border-left-width: 2.25rem;
+  border-right-width: 0.75rem;
+  border-bottom-width: 0.75rem;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  transform: rotate(109deg);
+}
+
+.icon.i-star::before{
+  content: "";
+  position: absolute;
+  margin-top: 6px;
+  margin-left: 7.5px;
+  top: 0;
+  border: 1.5rem solid red;
+  border-left-width: 2.25rem;
+  border-right-width: 0.75rem;
+  border-bottom-width: 0.75rem;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  transform: rotate(71deg) scaleY(-1);
 }
 
 .icon.i-case{
 
+}
+
+.software{
+  font-size: 25.72px;
+  text-transform: uppercase;
+  font-family: font-family: MyriadPro-Regular;
+}
+
+.software table{
+  width: 100%;
+}
+
+.software tr td:nth-child(2){
+  padding-left: 65px;
+}
+
+.software .progress{
+  height: 20px;
+  width: 100%;
+  background-color: blue;
 }
