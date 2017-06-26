@@ -39,19 +39,24 @@ body{
 .left{
   width: 38%;
   flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding-left: 3.25rem;
   padding-right: 3.25rem;
-  padding-top: 1rem;
 }
 
 .right{
   width: 62%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding-left: 3.25rem;
   padding-right: 3.25rem;
 }
 
 .header{
-  padding-bottom: 78px;
+  padding-bottom: 73px;
 }
 
 .header-text{
@@ -70,7 +75,7 @@ body{
 }
 
 .header-bottom{
-  padding-top: 2rem; /*24px от 12px*/
+  padding-top: 2.4rem; /*24px от 12px*/
 }
 
 .header-bottom .name{
@@ -98,7 +103,7 @@ body{
 }
 
 section:not(.header){
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 
 .sec-header{
@@ -169,9 +174,9 @@ section:not(.header){
 }
 
 .sec-content{
-  padding-top: 1rem;
+  padding-top: 1.2rem;
   /*padding-right: 1.42rem;  17px от 12px*/
-  line-height: 1.3rem;
+  line-height: 1.45rem;
 }
 
 .sec-content span{
@@ -212,6 +217,10 @@ td.td-blue{
 
 .sec-content .skill:nth-child(1){
   margin-top: 1.67rem; /*20px от 12px*/
+}
+
+.sec-content div:last-child.skill{
+  padding-bottom: 0;
 }
 
 .skill-title{
@@ -285,58 +294,61 @@ td.td-blue{
   background-size: 57%;
 }
 
-.places-list{
-
-}
-
-.places-list-item-header{
-  font-size: 25.72px;
+.places{
   font-family: MyriadPro-Regular;
-  padding-top: 18px;
-  position: relative;
-}
-
-.places-list-item .places-type{
-  font-family: MyriadPro-Bold;
-  text-transform: uppercase;
-  color: #006cb4;
-}
-
-.places-list-item .places-university{
-  text-transform: uppercase;
-}
-
-.places-list .places-list-item{
-  display: block;
-  padding-left: 48px;
-}
-
-.places-list-item-header td{
-  padding-right: 5px;
-  padding-bottom: 16px;
-}
-
-td.no-bottom-padding{
-  padding-bottom: 0;
-}
-
-.places-list-item-header::before{
-  content: "";
-  position: absolute;
-  top: 19px;
-  left: -37px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: black;
-}
-
-.places-list-item-content{
   font-size: 15.43px;
-  font-family: MyriadPro-Regular;
-  padding-left: 5px;
-  padding-top: 12px;
+  padding-left: 11px;
+  line-height: 25px;
+}
+
+.places ul{
+  margin: 0;
+  margin-top: 16px;
+}
+
+.places ul{
+  list-style: none;
+}
+
+.places-header{
+  font-size: 25.72px;
+  text-transform: uppercase;
+}
+
+.places-title{
+  display: table;
+}
+
+.places-header .title-1{
+  font-family: MyriadPro-Bold;
+  color: #006cb4;
+  padding-right: 15px;
+}
+
+.places-header .period{
+  text-transform: none;
+  min-width: 240px;
+}
+
+.places-header .title-1, .places-header .period{
+  display: table-cell;
+}
+
+.places-header .title-2{
+  padding-top: 9px;
+}
+
+.places-content{
+  padding-top: 7px;
   line-height: 18px;
+}
+
+.places li{
+  padding-bottom: 19px;
+}
+
+.places li:not(:nth-child(1)){
+  margin-top: 0px;
 }
 
 .black{
@@ -395,19 +407,55 @@ td.no-bottom-padding{
 .software{
   font-size: 25.72px;
   text-transform: uppercase;
-  font-family: font-family: MyriadPro-Regular;
+  font-family: MyriadPro-Regular;
 }
 
 .software table{
   width: 100%;
+  table-layout: fixed;
+  padding-top: 18px;
+  padding-left: 2px;
 }
 
-.software tr td:nth-child(2){
-  padding-left: 65px;
+.software tr td{
+  width: 50%;
+}
+
+.software table tr:not(:nth-child(1)) td{
+  padding-top: 40px;
+}
+
+.software tr td.table-wrapper{
+  width: 11%;
 }
 
 .software .progress{
+  padding-top: 6px;
   height: 20px;
   width: 100%;
-  background-color: blue;
+}
+
+.progress ul{
+  border-collapse: collapse;
+  display: table;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+.progress li{
+  display: table-cell;
+  height: 100%;
+  background-color: #006cb4;
+}
+
+.progress li.active{
+  background-color: #006cb4;
+}
+
+.progress li.active ~ li{
+  background-color: #e7e7e7;
 }
