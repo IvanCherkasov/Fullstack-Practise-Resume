@@ -13,6 +13,29 @@
     src: url(fonts/MyriadPro-Regular.otf);
 }
 
+@media (max-width: 790px) {
+  .left{
+    display: block !important;
+    width: auto !important;
+  }
+
+  .right{
+    display: block !important;
+    width: auto !important;
+  }
+
+  .main{
+    display: block !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .left{
+    justify-content: flex-start !important;
+  }
+}
+
 html{
   font-size: 12px;
 }
@@ -30,9 +53,11 @@ body{
 
 .main{
   max-width: 2480px;
-  min-width: 620px;
-  width: 1240px;
+  min-width: 310px;
+  /*width: 1240px;*/
+  width: 80%;
   display: flex;
+  margin: 0 auto;
   margin-top: 6.33rem; /*76px от 12px*/
 }
 
@@ -336,7 +361,7 @@ td.td-blue{
 
 .places-header .period{
   text-transform: none;
-  min-width: 240px;
+
 }
 
 .places-header .title-1, .places-header .period{
