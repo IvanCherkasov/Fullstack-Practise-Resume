@@ -2,11 +2,12 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
   <title>Макет резюме</title>
-  <link rel="stylesheet" href="style.css?ver=1.15">
+  <link rel="stylesheet" href="style.css?ver=1.2">
 </head>
 <body>
-  <div class="main clearfix">
+  <div class="main">
     <div class="left">
       <section class="header">
         <div class="header-top">
@@ -19,31 +20,31 @@
         </div>
       </section>
       <section class="profile">
-          <div class="sec-header">
-            <div class="icon">
-              <div class="i-profile"></div>
-            </div>
-            <div class="title">Profile</div>
-            <div class="buffer-line"><div class="line"></div></div>
+        <div class="sec-header">
+          <div class="icon">
+            <div class="i-profile"></div>
           </div>
-          <div class="sec-content">
-            <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                natoque penatibus et magnis dis parturient montes, nascetur
-                ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                eu, pretium quis, sem. Nulla consequat massa quis enim.
-                Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
-                arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
-                 justo. Nullam dictum felis eu <b>pede mollis pretium. Integer
-                  tincidunt. Cras dapibus. Vivamus elementum semper nisi.
-                   Aenean vulputate eleifend tellus. Aenean leo ligula,
-                   porttitor eu, consequat vitae, eleifend ac, enim. Aliquam
-                   lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-                   Phasellus viverra nulla ut metus varius laoreet. Quisque
-                    rutrum. </b></span>
-          </div>
+          <div class="title">Profile</div>
+          <div class="buffer-line"><div class="line"></div></div>
+        </div>
+        <div class="sec-content">
+          <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+              Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+              natoque penatibus et magnis dis parturient montes, nascetur
+              ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+              eu, pretium quis, sem. Nulla consequat massa quis enim.
+              Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+              arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
+               justo. Nullam dictum felis eu <b>pede mollis pretium. Integer
+                tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+                 Aenean vulputate eleifend tellus. Aenean leo ligula,
+                 porttitor eu, consequat vitae, eleifend ac, enim. Aliquam
+                 lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+                 Phasellus viverra nulla ut metus varius laoreet. Quisque
+                  rutrum. </b></span>
+        </div>
       </section>
-      <section class="contact">
+      <section>
         <div class="sec-header">
           <div class="icon">
             <div class="i-contact"></div>
@@ -77,13 +78,13 @@
           <div class="icon">
             <div class="i-skills"></div>
           </div>
-          <div class="title">Skills</div>
+          <div class="title">skills</div>
           <div class="buffer-line"><div class="line"></div></div>
         </div>
         <div class="sec-content">
           <div class="skill">
-            <div class="skill-title">Creative</div>
-            <div id="creative-skill" class="skill-progress">
+            <div class="skills-title">Creative</div>
+            <div id="creative-skills" class="skills-progress">
               <ul>
                 <li></li>
                 <li></li>
@@ -101,8 +102,8 @@
             </div>
           </div>
           <div class="skill">
-            <div class="skill-title">Teamwork</div>
-            <div id="teamwork-skill" class="skill-progress">
+            <div class="skills-title">Teamwork</div>
+            <div id="teamwork-skills" class="skills-progress">
               <ul>
                 <li></li>
                 <li></li>
@@ -120,8 +121,8 @@
             </div>
           </div>
           <div class="skill">
-            <div class="skill-title">Innovate</div>
-            <div id="innovate-skill" class="skill-progress">
+            <div class="skills-title">Innovate</div>
+            <div id="innovate-skills" class="skills-progress">
               <ul>
                 <li></li>
                 <li></li>
@@ -139,8 +140,8 @@
             </div>
           </div>
           <div class="skill">
-            <div class="skill-title">Communication</div>
-            <div id="communication-skill" class="skill-progress">
+            <div class="skills-title">Communication</div>
+            <div id="communication-skills" class="skills-progress">
               <ul>
                 <li></li>
                 <li></li>
@@ -161,76 +162,83 @@
       </section>
     </div>
     <div class="right">
-      <section class="education">
-        <div class="sec-header">
-          <div class="icon">
-            <div class="i-star"></div>
+      <section>
+        <section class="education">
+          <div class="sec-header">
+            <div class="icon">
+              <div class="i-star"></div>
+            </div>
+            <div class="title">education</div>
+            <div class="buffer-line"><div class="line"></div></div>
           </div>
-          <div class="title">education</div>
-          <div class="buffer-line"><div class="line"></div></div>
-        </div>
-        <div class="sec-content">
-          <div class="places">
-            <ul>
-              <li>
-                <div class="places-header">
-                  <div class="places-title">
-                    <div class="title-1">Master degree</div>
-                    <div class="period">// Feb 2011 - Jun 2014</div>
+          <div class="sec-content">
+            <div class="places">
+              <ul>
+                <li>
+                  <div class="places-header">
+                    <div class="places-title">
+                      <div class="title-1">Master degree</div>
+                      <div class="period">// Feb 2011 - Jun 2014</div>
+                    </div>
+                    <div class="title-2">University name</div>
                   </div>
-                  <div class="title-2">University name</div>
-                </div>
-                <div class="places-content">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                  natoque penatibus et magnis dis parturient montes, nascetur
-                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
-                </div>
-              </li>
-              <li>
-                <div class="places-header">
-                  <div class="title-1">Master degree</div>
-                  <div class="period">// Feb 2011 - Jun 2014</div>
-                  <div class="title-2">University name</div>
-                </div>
-                <div class="places-content">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                  natoque penatibus et magnis dis parturient montes, nascetur
-                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
-                </div>
-              </li>
-              <li>
-                <div class="places-header">
-                  <div class="title-1">Master degree</div>
-                  <div class="period">// Feb 2011 - Jun 2014</div>
-                  <div class="title-2">University name</div>
-                </div>
-                <div class="places-content">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                  natoque penatibus et magnis dis parturient montes, nascetur
-                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
-                </div>
-              </li>
-              <li>
-                <div class="places-header">
-                  <div class="title-1">Master degree</div>
-                  <div class="period">// Feb 2011 - Jun 2014</div>
-                  <div class="title-2">University name</div>
-                </div>
-                <div class="places-content">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                  natoque penatibus et magnis dis parturient montes, nascetur
-                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
-                </div>
-              </li>
-            </ul>
+                  <div class="places-content">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                    natoque penatibus et magnis dis parturient montes, nascetur
+                    ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
+                  </div>
+                </li>
+                <li>
+                  <div class="places-header">
+                    <div class="places-title">
+                      <div class="title-1">Master degree</div>
+                      <div class="period">// Feb 2011 - Jun 2014</div>
+                    </div>
+                    <div class="title-2">University name</div>
+                  </div>
+                  <div class="places-content">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                    natoque penatibus et magnis dis parturient montes, nascetur
+                    ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
+                  </div>
+                </li>
+                <li>
+                  <div class="places-header">
+                    <div class="places-title">
+                      <div class="title-1">Master degree</div>
+                      <div class="period">// Feb 2011 - Jun 2014</div>
+                    </div>
+                    <div class="title-2">University name</div>
+                  </div>
+                  <div class="places-content">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                    natoque penatibus et magnis dis parturient montes, nascetur
+                    ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
+                  </div>
+                </li>
+                <li>
+                  <div class="places-header">
+                    <div class="places-title">
+                      <div class="title-1">Master degree</div>
+                      <div class="period">// Feb 2011 - Jun 2014</div>
+                    </div>
+                    <div class="title-2">University name</div>
+                  </div>
+                  <div class="places-content">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                    natoque penatibus et magnis dis parturient montes, nascetur
+                    ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
       </section>
-      <section class="experience">
+      <section class="experiance">
         <div class="sec-header">
           <div class="icon">
             <div class="i-case"></div>
@@ -243,9 +251,11 @@
             <ul>
               <li>
                 <div class="places-header">
-                  <div class="title-1 black">Company name</div>
-                  <div class="period">// Feb 2011 - Jun 2014</div>
-                  <div class="title-2">YOUR JOB HERE</div>
+                  <div class="places-title">
+                    <div class="title-1 black">Company name</div>
+                    <div class="period">// Feb 2011 - Jun 2014</div>
+                  </div>
+                  <div class="title-2">Your job here</div>
                 </div>
                 <div class="places-content">
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -256,9 +266,11 @@
               </li>
               <li>
                 <div class="places-header">
-                  <div class="title-1 black">Company name</div>
-                  <div class="period">// Feb 2011 - Jun 2014</div>
-                  <div class="title-2">YOUR JOB HERE</div>
+                  <div class="places-title">
+                    <div class="title-1 black">Company name</div>
+                    <div class="period">// Feb 2011 - Jun 2014</div>
+                  </div>
+                  <div class="title-2">Your job here</div>
                 </div>
                 <div class="places-content">
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -269,9 +281,11 @@
               </li>
               <li>
                 <div class="places-header">
-                  <div class="title-1 black">Company name</div>
-                  <div class="period">// Feb 2011 - Jun 2014</div>
-                  <div class="title-2">YOUR JOB HERE</div>
+                  <div class="places-title">
+                    <div class="title-1 black">Company name</div>
+                    <div class="period">// Feb 2011 - Jun 2014</div>
+                  </div>
+                  <div class="title-2">Your job here</div>
                 </div>
                 <div class="places-content">
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -282,9 +296,11 @@
               </li>
               <li>
                 <div class="places-header">
-                  <div class="title-1 black">Company name</div>
-                  <div class="period">// Feb 2011 - Jun 2014</div>
-                  <div class="title-2">YOUR JOB HERE</div>
+                  <div class="places-title">
+                    <div class="title-1 black">Company name</div>
+                    <div class="period">// Feb 2011 - Jun 2014</div>
+                  </div>
+                  <div class="title-2">Your job here</div>
                 </div>
                 <div class="places-content">
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -306,67 +322,59 @@
           <div class="buffer-line"><div class="line"></div></div>
         </div>
         <div class="sec-content">
-          <table>
-            <tr>
-              <td class="software-item">
-                <div class="">Photoshop</div>
-                <div class="progress">
-                  <ul>
-                    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li class="active"></li><li></li>
-                  </ul>
-                </div>
-              </td>
-              <td class="table-wrapper"></td>
-              <td class="software-item">
-                <div class="">Dreamweaver</div>
-                <div class="progress">
-                  <ul>
-                    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li class="active"></li><li></li><li></li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="software-item">
-                <div class="">Illustrator</div>
-                <div class="progress">
-                  <ul>
-                    <li></li><li></li><li></li><li></li><li></li><li></li><li class="active"></li><li></li><li></li><li></li>
-                  </ul>
-                </div>
-              </td>
-              <td class="table-wrapper"></td>
-              <td class="software-item">
-                <div class="">After effects</div>
-                <div class="progress">
-                  <ul>
-                    <li></li><li></li><li></li><li></li><li></li><li class="active"></li><li></li><li></li><li></li><li></li>
-                  </ul>
-                </div>
-              </td>
-            </tr><tr>
-              <td class="software-item">
-                <div class="">Indesign</div>
-                <div class="progress">
-                  <ul>
-                    <li></li><li></li><li></li><li></li><li></li><li class="active"></li><li></li><li></li><li></li><li></li>
-                  </ul>
-                </div>
-              </td>
-              <td class="table-wrapper"></td>
-              <td class="software-item">
-                <div class="">Html&CSS3</div>
-                <div class="progress">
-                  <ul>
-                    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li class="active"></li><li></li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-          </table>
+          <div class="software-content">
+            <div class="software-column">
+              <div id="p-photoshop" class="progress-item">
+                  <div class="progress-title">Photoshop</div>
+                  <div class="progress">
+                    <div class="progress-bar" value="90"></div>
+                  </div>
+              </div>
+              <div id="p-illustrator" class="progress-item">
+                  <div class="progress-title">Illustrator</div>
+                  <div class="progress">
+                    <div class="progress-bar" value="65"></div>
+                  </div>
+              </div>
+              <div id="p-indesign" class="progress-item">
+                  <div class="progress-title">Indesign</div>
+                  <div class="progress bot-separator">
+                    <div class="progress-bar" value="50"></div>
+                  </div>
+              </div>
+            </div>
+            <div class="software-column s-separator"></div>
+            <div class="software-column">
+              <div id="p-dreamweaver" class="progress-item">
+                  <div class="progress-title">Dreamweaver</div>
+                  <div class="progress">
+                    <div class="progress-bar" value="80"></div>
+                  </div>
+              </div>
+              <div id="p-aftereffects" class="progress-item">
+                  <div class="progress-title">After Effects</div>
+                  <div class="progress">
+                    <div class="progress-bar" value="55"></div>
+                  </div>
+              </div>
+              <div id="p-htmlcss" class="progress-item">
+                  <div class="progress-title">HTML&CSS</div>
+                  <div class="progress">
+                    <div class="progress-bar" value="90"></div>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
   </div>
+  <script>
+    var elements = document.getElementsByClassName("progress-bar");
+    Array.from(elements).forEach(function (child) {
+      var progress = child.getAttribute("value");
+      child.style.width = progress + "%";
+});
+  </script>
 </body>
 </html>
