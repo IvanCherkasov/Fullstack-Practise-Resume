@@ -131,8 +131,7 @@ section{
 
 .header-bottom .profession{
   font-family: MyriadPro-Bold;
-  font-size: 2.08rem;
-  letter-spacing: 0.04rem;
+  font-size: 2rem;
   padding-top: 1.33rem;
 }
 
@@ -266,6 +265,10 @@ td.td-blue{
 
 .skills{
   width: 100%;
+}
+
+.sec-content .skill:first-child{
+  padding-top: 0.5rem;
 }
 
 .skill{
@@ -447,8 +450,8 @@ td.td-blue{
 .icon .i-case::before{
   content: "";
   position: absolute;
-  top: 1.33rem;
-  left: 1.9rem;
+  top: calc(50% - 1.53rem);
+  left: calc(50% - 1.1rem);
   border-radius: 50%;
   background-color: #006cb4;
   box-shadow: inset 0 0 0 0.25rem white;
@@ -459,8 +462,8 @@ td.td-blue{
 .icon .i-case::after{
   content: "";
   position: absolute;
-  top: 2.25rem;
-  left: 1.33rem;
+  top: calc(50% - 0.7rem);
+  left: calc(50% - 1.6rem);
   background-color: white;
   width: 3.08rem;
   height: 2rem;
