@@ -84,7 +84,7 @@
         <div class="sec-content">
           <div class="skill">
             <div class="skills-title">Creative</div>
-            <div id="creative-skills" class="skills-progress">
+            <div id="creative-skills" class="skills-progress" value="9">
               <ul>
                 <li></li>
                 <li></li>
@@ -94,7 +94,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li class="active"></li>
+                <li></li>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -103,7 +103,7 @@
           </div>
           <div class="skill">
             <div class="skills-title">Teamwork</div>
-            <div id="teamwork-skills" class="skills-progress">
+            <div id="teamwork-skills" class="skills-progress" value="11">
               <ul>
                 <li></li>
                 <li></li>
@@ -115,21 +115,21 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li class="active"></li>
+                <li></li>
                 <li></li>
               </ul>
             </div>
           </div>
           <div class="skill">
             <div class="skills-title">Innovate</div>
-            <div id="innovate-skills" class="skills-progress">
+            <div id="innovate-skills" class="skills-progress" value="6">
               <ul>
                 <li></li>
                 <li></li>
                 <li></li>
                 <li></li>
                 <li></li>
-                <li class="active"></li>
+                <li></li>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -141,7 +141,7 @@
           </div>
           <div class="skill">
             <div class="skills-title">Communication</div>
-            <div id="communication-skills" class="skills-progress">
+            <div id="communication-skills" class="skills-progress" value="11">
               <ul>
                 <li></li>
                 <li></li>
@@ -153,7 +153,7 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li class="active"></li>
+                <li></li>
                 <li></li>
               </ul>
             </div>
@@ -294,21 +294,6 @@
                   ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
                 </div>
               </li>
-              <li>
-                <div class="places-header">
-                  <div class="places-title">
-                    <div class="title-1 black">Company name</div>
-                    <div class="period">// Feb 2011 - Jun 2014</div>
-                  </div>
-                  <div class="title-2">Your job here</div>
-                </div>
-                <div class="places-content">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-                  natoque penatibus et magnis dis parturient montes, nascetur
-                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
-                </div>
-              </li>
             </ul>
           </div>
         </div>
@@ -374,6 +359,18 @@
     Array.from(elements).forEach(function (child) {
       var progress = child.getAttribute("value");
       child.style.width = progress + "%";
+});
+
+    var skills = document.getElementsByClassName("skills-progress");
+    Array.from(skills).forEach(function (child) {
+      var value = child.getAttribute("value");
+      var lis = child.children[0].children;
+      for (var i = 0; i < lis.length; i++){
+        if (i == value){
+          lis[i - 1].className = "active";
+          break;
+        }
+      }
 });
   </script>
 </body>
