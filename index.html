@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Макет резюме</title>
-  <link rel="stylesheet" href="style.css?ver=1.4">
+  <link rel="stylesheet" href="style.css?ver=1.5">
 </head>
-<body>
+<body onresize="onResize();">
+  <div id="wsize"></div>
   <div class="main">
     <div class="left">
       <section class="header">
@@ -243,7 +244,7 @@
           <div class="icon">
             <div class="i-case"></div>
           </div>
-          <div class="title">experiance</div>
+          <div class="title">experience</div>
           <div class="buffer-line"><div class="line"></div></div>
         </div>
         <div class="sec-content">
@@ -318,13 +319,13 @@
               <div id="p-illustrator" class="progress-item">
                   <div class="progress-title">Illustrator</div>
                   <div class="progress">
-                    <div class="progress-bar" value="65"></div>
+                    <div class="progress-bar" value="70"></div>
                   </div>
               </div>
               <div id="p-indesign" class="progress-item">
                   <div class="progress-title">Indesign</div>
                   <div class="progress bot-separator">
-                    <div class="progress-bar" value="50"></div>
+                    <div class="progress-bar" value="55"></div>
                   </div>
               </div>
             </div>
@@ -339,13 +340,13 @@
               <div id="p-aftereffects" class="progress-item">
                   <div class="progress-title">After Effects</div>
                   <div class="progress">
-                    <div class="progress-bar" value="55"></div>
+                    <div class="progress-bar" value="60"></div>
                   </div>
               </div>
               <div id="p-htmlcss" class="progress-item">
                   <div class="progress-title">HTML&CSS</div>
                   <div class="progress">
-                    <div class="progress-bar" value="90"></div>
+                    <div class="progress-bar" value="85"></div>
                   </div>
               </div>
             </div>
@@ -355,6 +356,14 @@
     </div>
   </div>
   <script>
+
+function onResize(){
+  var wsize = document.getElementById("wsize");
+  wsize.innerHTML = "width: " + window.innerWidth + "px";
+}
+
+    onResize();
+
     var elements = document.getElementsByClassName("progress-bar");
     Array.from(elements).forEach(function (child) {
       var progress = child.getAttribute("value");
