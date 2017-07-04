@@ -334,7 +334,7 @@
               <div id="p-dreamweaver" class="progress-item">
                   <div class="progress-title">Dreamweaver</div>
                   <div class="progress">
-                    <div class="progress-bar" value="80"></div>
+                    <div class="progress-bar" value="82.5"></div>
                   </div>
               </div>
               <div id="p-aftereffects" class="progress-item">
@@ -346,7 +346,7 @@
               <div id="p-htmlcss" class="progress-item">
                   <div class="progress-title">HTML&CSS</div>
                   <div class="progress">
-                    <div class="progress-bar" value="85"></div>
+                    <div class="progress-bar" value="90"></div>
                   </div>
               </div>
             </div>
@@ -356,31 +356,33 @@
     </div>
   </div>
   <script>
-
-function onResize(){
-  var wsize = document.getElementById("wsize");
-  wsize.innerHTML = "width: " + window.innerWidth + "px";
-}
+    var main = document.getElementsByClassName("main")[0];
+    function onResize(){
+      var wsize = document.getElementById("wsize");
+      wsize.innerHTML = '<div><span class="class">.main</span> { width: <span class="number">' + main.offsetWidth + "px</span>; }</div>";
+      wsize.innerHTML += '<div>window width: <span class="number">' + window.innerWidth + 'px</span>;</div>';
+    }
 
     onResize();
-
     var elements = document.getElementsByClassName("progress-bar");
-    Array.from(elements).forEach(function (child) {
-      var progress = child.getAttribute("value");
-      child.style.width = progress + "%";
-});
+    Array.from(elements).forEach(
+      function (child) {
+        var progress = child.getAttribute("value");
+        child.style.width = progress + "%";
+      });
 
     var skills = document.getElementsByClassName("skills-progress");
-    Array.from(skills).forEach(function (child) {
-      var value = child.getAttribute("value");
-      var lis = child.children[0].children;
-      for (var i = 0; i < lis.length; i++){
-        if (i == value){
-          lis[i - 1].className = "active";
-          break;
+    Array.from(skills).forEach(
+      function (child) {
+        var value = child.getAttribute("value");
+        var lis = child.children[0].children;
+        for (var i = 0; i < lis.length; i++){
+          if (i == value){
+            lis[i - 1].className = "active";
+            break;
+          }
         }
-      }
-});
+      });
   </script>
 </body>
 </html>

@@ -66,36 +66,44 @@ body{
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 140, 0, 0.5);
+  background-color: rgba(20,24,32,0.9);
   font-size: 18px;
-  color: white;
+  color: #C1C1C1;
   border-radius: 0.42rem;
   padding: 0.5rem;
   z-index: 1;
 }
 
+#wsize div{
+  margin: 3px;
+}
+
+#wsize .class, #wsize .number{
+  color: #D89356;
+}
+
 .main{
   display: flex;
-  width: 100%;
+
   margin: 0 auto;
   min-width: 320px;
   margin-top:  7.33rem;
+  padding-left: 38px;
+  padding-right: 38px;
 }
 
 .left{
-  width: 38.8%;
+  width: 37%;
   display: flex;
 	flex-flow: column;
-  padding-right: 3.25rem;
-  padding-left: 3.25rem;
+  padding-right: 38px;
 }
 
 .right{
-  width: 61.2%;
+  width: 57%;
   display: flex;
 	flex-flow: column;
-  padding-left: 3.25rem;
-  padding-right: 3.25rem;
+  padding-left: 38px;
 }
 
 section{
