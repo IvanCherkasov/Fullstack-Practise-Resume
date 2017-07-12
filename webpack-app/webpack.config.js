@@ -12,7 +12,6 @@ module.exports = {
     entry: './index',
     output:{
         path: PATHS.build,
-        publicPath: '/',
         filename: '[name].js'
     },
 
@@ -26,6 +25,15 @@ module.exports = {
             options: {
                 pretty: true
             }
+        },{
+            test: /\.styl$/,
+            loader: 'style-loader!css-loader!stylus-loader'
+        },{
+            test: /\.(png|jpg|svg)$/,
+            loader: 'url-loader?name=pic/[name].[ext]&limit=4096'
+        },{
+            test: /\.(ttf|eot|woff|woff2)$/,
+            loader: 'file-loader?name=[path][name].[ext]'
         }]
     },
 

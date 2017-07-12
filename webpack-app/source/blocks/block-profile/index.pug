@@ -1,0 +1,12 @@
+include ../mixins
+- var content = "<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ";
+- content += "Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ";
+- content += "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec ";
+- content += "pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, ";
+- content += "justo. Nullam dictum felis eu <b>pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. ";
+- content += "Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ";
+- content += "ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. </b></span>";
+mixin resume-block-profile()
+  section.profile
+    +section-header('i-profile', 'Profile')
+    div.sec-content !{content}

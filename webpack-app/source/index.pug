@@ -1,6 +1,18 @@
+include blocks/block-header/index
+include blocks/block-profile/index
+include blocks/block-contacts/index
+include blocks/block-skills/index
 doctype html
 html(lang='ru')
     head
+        meta(charset="utf-8")
+        meta(viewport="width=device-width")
         title Макет резюме
     body
-        div lool
+        div.main
+            div.left
+                +resume-block-header()
+                +resume-block-profile()
+                +resume-block-contacts()
+                +resume-block-skills()
+            div.right

@@ -1,0 +1,25 @@
+.main
+  section
+    .icon
+      .i-profile::after
+        content ""
+        position absolute
+        width 1.42rem
+        height 1.42rem
+        background-color white
+        border-radius 50%
+        top calc(50% - 1.17rem)
+        left calc(50% - 0.71rem)
+
+      .i-profile::before
+        content ""
+        position absolute
+        width 0
+        height 0
+        background-color transparent
+        border-radius 50%
+        border 1.42rem solid white
+        border-right-color transparent
+        border-bottom-color transparent
+        transform rotate(45deg)
+        left calc(50% - 1.42rem)

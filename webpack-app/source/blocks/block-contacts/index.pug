@@ -1,0 +1,15 @@
+include ../mixins
+mixin contact-table-tr(title, content)
+    tr
+        td.td-title !{title}
+        td !{content}
+
+mixin resume-block-contacts()
+    section
+        +section-header('i-contacts', 'Contacts')
+        div.sec-content
+            table.contacts
+                +contact-table-tr('Address', 'Main Street, City.')
+                +contact-table-tr('E-mail', 'contact@domain.com')
+                +contact-table-tr('Phone', '555-555-555')
+                +contact-table-tr('Website', 'www.yourweb.com')
