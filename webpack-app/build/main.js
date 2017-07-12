@@ -189,7 +189,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(17);
+var	fixUrls = __webpack_require__(20);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -509,14 +509,10 @@ function updateLink (link, options, obj) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_styl__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__main_styl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_header_block_styl__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_header_block_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__blocks_block_header_block_styl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__blocks_block_profile_block_styl__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__blocks_block_profile_block_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__blocks_block_profile_block_styl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blocks_block_contacts_block_styl__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blocks_block_contacts_block_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__blocks_block_contacts_block_styl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__blocks_block_skills_block_styl__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__blocks_block_skills_block_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__blocks_block_skills_block_styl__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_header_index_js__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__blocks_block_profile_index_js__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blocks_block_contacts_index_js__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__blocks_block_skills_index_js__ = __webpack_require__(31);
 
 
 
@@ -564,7 +560,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(5) + ") format('truetype'), url(" + __webpack_require__(6) + ") format('woff'), url(" + __webpack_require__(7) + ") format('eot');\n  font-weight: normal;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(8) + ") format('truetype'), url(" + __webpack_require__(9) + ") format('woff'), url(" + __webpack_require__(10) + ") format('eot');\n  font-weight: normal;\n  font-style: italic;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(11) + ") format('truetype'), url(" + __webpack_require__(12) + ") format('woff'), url(" + __webpack_require__(13) + ") format('eot');\n  font-weight: bold;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(14) + ") format('truetype'), url(" + __webpack_require__(15) + ") format('woff'), url(" + __webpack_require__(16) + ") format('eot');\n  font-weight: bold;\n  font-style: italic;\n}\nhtml {\n  font-size: 12px;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n.main {\n  font-family: MyriadPro;\n  display: flex;\n  margin: 0 auto;\n  min-width: 320px;\n  margin-top: 7.33rem;\n  padding-left: 38px;\n  padding-right: 38px;\n}\n.main .text-black {\n  color: #000 !important;\n}\n.main .text-blue {\n  color: #006cb4 !important;\n}\n.main .left {\n  width: 37%;\n  display: flex;\n  flex-flow: column;\n  padding-right: 38px;\n}\n.main .right {\n  width: 57%;\n  display: flex;\n  flex-flow: column;\n  padding-left: 38px;\n}\n.main section {\n  width: 100%;\n  display: block;\n  margin: 0 auto;\n  margin-bottom: 3.16rem;\n}\n.main section .sec-header {\n  display: table;\n  height: 6rem;\n  width: 100%;\n}\n.main section .sec-header .icon {\n  display: table-cell;\n  width: 5.84rem;\n  padding-right: 5.84rem;\n  background-color: #006cb4;\n  border-radius: 50%;\n  border: 0.08rem solid #006cb4;\n  vertical-align: middle;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n  position: relative;\n}\n.main section .sec-header .title {\n  display: table-cell;\n  vertical-align: middle;\n  font-size: 3.43rem;\n  text-transform: uppercase;\n  color: #006cb4;\n  padding-left: 1.1rem;\n}\n.main section .sec-header .buffer-line {\n  width: 100%;\n  display: table-cell;\n  vertical-align: middle;\n  padding-left: 0.5rem;\n}\n.main section .sec-header .buffer-line .line {\n  height: 0.42rem;\n  width: 100%;\n  background-color: #006cb4;\n}\n.main section .sec-content {\n  padding-top: 1.2rem;\n  line-height: 1.45rem;\n}\n.main section .sec-content span {\n  font-size: 1.29rem;\n}\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(5) + ") format('truetype'), url(" + __webpack_require__(6) + ") format('woff'), url(" + __webpack_require__(7) + ") format('eot');\n  font-weight: normal;\n  font-style: italic;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(8) + ") format('truetype'), url(" + __webpack_require__(9) + ") format('woff'), url(" + __webpack_require__(10) + ") format('eot');\n  font-weight: bold;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(11) + ") format('truetype'), url(" + __webpack_require__(12) + ") format('woff'), url(" + __webpack_require__(13) + ") format('eot');\n  font-weight: bold;\n  font-style: italic;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(14) + ") format('truetype'), url(" + __webpack_require__(15) + ") format('woff'), url(" + __webpack_require__(16) + ") format('eot');\n  font-weight: 100;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(17) + ") format('truetype'), url(" + __webpack_require__(18) + ") format('woff'), url(" + __webpack_require__(19) + ") format('eot');\n  font-weight: normal;\n  font-style: normal;\n}\nhtml {\n  font-size: 12px;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n.main {\n  font-family: MyriadPro;\n  font-weight: normal;\n  display: flex;\n  margin: 0 auto;\n  min-width: 320px;\n  margin-top: 7.33rem;\n  padding-left: 38px;\n  padding-right: 38px;\n}\n.main .text-black {\n  color: #000 !important;\n}\n.main .text-blue {\n  color: #006cb4 !important;\n}\n.main .left {\n  width: 37%;\n  display: flex;\n  flex-flow: column;\n  padding-right: 38px;\n}\n.main .right {\n  width: 57%;\n  display: flex;\n  flex-flow: column;\n  padding-left: 38px;\n}\n.main section {\n  width: 100%;\n  display: block;\n  margin: 0 auto;\n  margin-bottom: 3.16rem;\n}\n.main section .sec-header {\n  display: table;\n  height: 6rem;\n  width: 100%;\n  font-weight: bold;\n}\n.main section .sec-header .icon {\n  display: table-cell;\n  width: 5.84rem;\n  padding-right: 5.84rem;\n  background-color: #006cb4;\n  border-radius: 50%;\n  border: 0.08rem solid #006cb4;\n  vertical-align: middle;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n  position: relative;\n}\n.main section .sec-header .title {\n  display: table-cell;\n  vertical-align: middle;\n  font-size: 3.43rem;\n  text-transform: uppercase;\n  color: #006cb4;\n  padding-left: 1.1rem;\n}\n.main section .sec-header .buffer-line {\n  width: 100%;\n  display: table-cell;\n  vertical-align: middle;\n  padding-left: 0.5rem;\n}\n.main section .sec-header .buffer-line .line {\n  height: 0.42rem;\n  width: 100%;\n  background-color: #006cb4;\n}\n.main section .sec-content {\n  padding-top: 1.2rem;\n  line-height: 1.45rem;\n}\n.main section .sec-content span {\n  font-size: 1.29rem;\n  font-weight: normal;\n}\n", ""]);
 
 // exports
 
@@ -573,76 +569,94 @@ exports.push([module.i, "@font-face {\n  font-family: MyriadPro;\n  src: url(" +
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Regular.ttf";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-It.ttf";
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Regular.woff";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-It.woff";
 
 /***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Regular.eot";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-It.eot";
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-It.ttf";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Bold.ttf";
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-It.woff";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Bold.woff";
 
 /***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-It.eot";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Bold.eot";
 
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Bold.ttf";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-BoldIt.ttf";
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Bold.woff";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-BoldIt.woff";
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Bold.eot";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-BoldIt.eot";
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-BoldIt.ttf";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Light.ttf";
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-BoldIt.woff";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Light.woff";
 
 /***/ }),
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-BoldIt.eot";
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Light.eot";
 
 /***/ }),
 /* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Regular.ttf";
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Regular.woff";
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Regular.eot";
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports) {
 
 
@@ -735,93 +749,12 @@ module.exports = function (css) {
 };
 
 /***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(19);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(1)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./block.styl", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./block.styl");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ".main section.header {\n  padding-bottom: 6.08rem;\n  margin-bottom: 0.1rem;\n}\n.main section.header .header-top {\n  margin: 0 auto;\n  width: 19.16rem;\n  height: 19.16rem;\n  border-radius: 50%;\n  background-color: #006cb4;\n  border: 1px solid #006cb4;\n  box-shadow: inset 0 0 0 1.17rem #fff;\n}\n.main section.header .header-bottom {\n  padding-top: 2.3rem;\n}\n.main section.header .header-bottom .name {\n  font-size: 4.42rem;\n  letter-spacing: 0;\n  word-wrap: normal;\n}\n.main section.header .header-bottom .surname {\n  font-size: 5.08rem;\n  line-height: 3.33rem;\n}\n.main section.header .header-bottom .profession {\n  font-size: 2rem;\n  padding-top: 1.33rem;\n}\n.main section.header .header-text {\n  text-transform: uppercase;\n  text-align: center;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(21);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(1)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./block.styl", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./block.styl");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
 /* 21 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(0)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ".main section .icon .i-profile::after {\n  content: \"\";\n  position: absolute;\n  width: 1.42rem;\n  height: 1.42rem;\n  background-color: #fff;\n  border-radius: 50%;\n  top: calc(50% - 1.17rem);\n  left: calc(50% - 0.71rem);\n}\n.main section .icon .i-profile::before {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  background-color: transparent;\n  border-radius: 50%;\n  border: 1.42rem solid #fff;\n  border-right-color: transparent;\n  border-bottom-color: transparent;\n  transform: rotate(45deg);\n  left: calc(50% - 1.42rem);\n}\n", ""]);
-
-// exports
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
 
 
 /***/ }),
@@ -845,8 +778,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./block.styl", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./block.styl");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -864,16 +797,19 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".main section table.contacts {\n  border-collapse: collapse;\n  margin-top: 2rem;\n}\n.main section table.contacts td {\n  font-size: 1.67rem;\n  padding-left: 3.58rem;\n  padding-top: 1.83rem;\n  padding-bottom: 1.3rem;\n}\n.main section table.contacts tr:nth-child(1) td {\n  padding-top: 0;\n}\n.main section table.contacts tr:nth:last-child td {\n  padding-bottom: 0;\n}\n.main section table.contacts tr td.td-title {\n  text-transform: uppercase;\n  color: #006cb4;\n  font-size: 1.67rem;\n  font-weight: bold;\n  padding-left: 0;\n}\n.main section .icon .i-contacts {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  top: 0;\n  position: absolute;\n  background-image: url(" + __webpack_require__(24) + ");\n  background-repeat: no-repeat;\n  background-position: 50% 100%;\n  background-size: 57%;\n}\n", ""]);
+exports.push([module.i, ".main section.header {\n  padding-bottom: 6.08rem;\n  margin-bottom: 0.1rem;\n}\n.main section.header .header-top {\n  margin: 0 auto;\n  width: 19.16rem;\n  height: 19.16rem;\n  border-radius: 50%;\n  background-color: #006cb4;\n  border: 1px solid #006cb4;\n  box-shadow: inset 0 0 0 1.17rem #fff;\n}\n.main section.header .header-bottom {\n  padding-top: 2.3rem;\n}\n.main section.header .header-bottom .name {\n  font-size: 4.42rem;\n  letter-spacing: 0;\n  word-wrap: normal;\n  font-weight: lighter;\n}\n.main section.header .header-bottom .surname {\n  font-size: 5.08rem;\n  line-height: 3.33rem;\n  font-weight: bold;\n}\n.main section.header .header-bottom .profession {\n  font-size: 2rem;\n  padding-top: 1.33rem;\n  font-weight: bold;\n}\n.main section.header .header-text {\n  text-transform: uppercase;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 24 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgd2lkdGg9IjIxMG1tIgogICBoZWlnaHQ9IjI5N21tIgogICB2aWV3Qm94PSIwIDAgMjEwIDI5NyIKICAgdmVyc2lvbj0iMS4xIgogICBpZD0ic3ZnNDUyNiI+CiAgPGRlZnMKICAgICBpZD0iZGVmczQ1MjAiIC8+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhNDUyMyI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGcKICAgICBpZD0ibGF5ZXIxIj4KICAgIDxwYXRoCiAgICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDoxLjM0OTA0NTYzcHg7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46bWl0ZXI7c3Ryb2tlLW9wYWNpdHk6MSIKICAgICAgIGQ9Im0gNDAuODQwMzEsNC4zODU2NTU2IGMgLTAuODgzOTYsMC4wMTAwNyAtMS43MzM1OTUsMC4yNTU1MzkgLTIuNTQyNDgyLDAuNzY3OTEyIEMgMjcuMDMxNjI0LDEyLjI4OTkwOCAxNC40MDA2MTEsMjUuMzM5MDI4IDYuNTEyMTcyOCwzNy40NTA4MjIgbCAtMC4wNTExNiwtMC4wNTE2OCBjIC0wLjAyNDE2LDAuMDc4ODYgLTAuMDQ2NDcsMC4xNTgyMzkgLTAuMDcwMjgsMC4yMzcxOTQgLTAuMDE0ODQsMC4wMjI5MSAtMC4wMzA2NywwLjA0NTgzIC0wLjA0NTQ4LDAuMDY4NzMgbCAwLjAxOTEyLDAuMDE5MTIgQyAtMTYuMjUxMDgxLDExMy4xNzcwNyAxMjEuMzM4OTcsMjI5LjI3MTQxIDE3My4zNDkwMSwyMDYuMjEyNjEgbCAwLjAyNDgsMC4wMjQ4IGMgMTYuMzQ0MjMsLTYuOTA3NDkgMjguOTEzMjYsLTIzLjUxODc3IDMxLjIzODQsLTMxLjQ0ODIxIDEuNTUwMzcsLTUuNDg1MDkgMS43Nzc2LC0xMC4xMzYwNCAtMS4zNzE0OSwtMTQuOTY0NDYgLTcuNTEyMTYsLTEwLjYxMjQgLTM1LjQ3Mzc1LC0yNC41MDM2NSAtMzcuOTE4MSwtMjUuODc0OSAtMi41MDQwNCwtMC44MzQ2NyAtMTQuMDcwMzYsLTIuODYxOSAtMTcuNjQ3NSwtMS41NTAzIC0zLjA0MDcsMC40MTczMyAtOC41MjU4Miw2LjE0MDk1IC0xNy4yMDQ2NCwxNi43NDQ3MiAtNy45MDg2MiwtMC45OTkxNiAtMjAuMjQ3OTQsLTguOTExMjMgLTMyLjMyOTgwNiwtMTkuMzE4NzIgTCA3Ni44NjEzNjcsMTA4LjM3MzEgQyA2OC4wNjg5OSw5Ny44OTkzMDMgNjEuNzkyMTUzLDg3LjYzNzAwNiA2MS4zMTE0MSw4MC42NjYyNyA3OC4wMDQ4ODgsNjMuMjkxNDQgNzcuMTUzNDA5LDU2LjM5NTU3MyA3NS4zNjQ4MTcsNTAuOTYxNjI0IDY2LjQ2MDkxNCwzNi45Mzg0NTMgNTEuMjcxMDM5LDQuMjY2ODE5NiA0MC44NDAzMSw0LjM4NTY1NTYgWiIKICAgICAgIGlkPSJwYXRoNTA4NiIgLz4KICA8L2c+Cjwvc3ZnPgo="
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
+
 
 /***/ }),
 /* 25 */
@@ -896,8 +832,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./block.styl", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./block.styl");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -915,13 +851,142 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".main section.skills {\n  width: 100%;\n  main-width: 300px;\n}\n.main section.skills .skill {\n  width: 78%;\n  margin: 0 auto;\n  margin-top: 0.83rem;\n  padding-bottom: 1.5rem;\n}\n.main section.skills .skill .skill-title {\n  text-align: center;\n  text-transform: uppercase;\n  font-size: 25.5px;\n  padding: 0;\n}\n.main section.skills .skill .skill-progress {\n  width: 100%;\n  min-width: 260px;\n  max-width: 400px;\n  margin: 0 auto;\n}\n.main section.skills .skill .skill-progress ul {\n  display: flex;\n  flex-flow: row;\n  justify-content: space-between;\n  flex-wrap: nowrap;\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  margin-top: 15px;\n  height: 1.41rem;\n}\n.main section.skills .skill .skill-progress ul li {\n  list-style: none;\n  width: 1.41rem;\n  height: 1.41rem;\n  background-color: #006cb4;\n  border-radius: 50%;\n  margin-left: 0.33rem;\n  margin-right: 0.33rem;\n}\n.main section.skills .skill .skill-progress ul li:nth-last-child {\n  margin-right: 0;\n}\n.main section.skills .skill .skill-progress ul li:nth-child(1) {\n  margin-left: 0;\n}\n.main section.skills .skill .skill-progress ul li.active {\n  background-color: #006cb4;\n}\n.main section.skills .skill .skill-progress ul li.active ~ li {\n  background-color: #e7e7e7;\n}\n.main section.skills .icon .i-skills {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  top: 0;\n  position: absolute;\n  background-image: url(" + __webpack_require__(27) + ");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: 47%;\n}\n", ""]);
+exports.push([module.i, ".main section .icon .i-profile::after {\n  content: \"\";\n  position: absolute;\n  width: 1.42rem;\n  height: 1.42rem;\n  background-color: #fff;\n  border-radius: 50%;\n  top: calc(50% - 1.17rem);\n  left: calc(50% - 0.71rem);\n}\n.main section .icon .i-profile::before {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  background-color: transparent;\n  border-radius: 50%;\n  border: 1.42rem solid #fff;\n  border-right-color: transparent;\n  border-bottom-color: transparent;\n  transform: rotate(45deg);\n  left: calc(50% - 1.42rem);\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(29);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".main section table.contacts {\n  border-collapse: collapse;\n  margin-top: 2rem;\n}\n.main section table.contacts td {\n  font-size: 1.67rem;\n  padding-left: 3.58rem;\n  padding-top: 1.83rem;\n  padding-bottom: 1.3rem;\n}\n.main section table.contacts tr:nth-child(1) td {\n  padding-top: 0;\n}\n.main section table.contacts tr:nth:last-child td {\n  padding-bottom: 0;\n}\n.main section table.contacts tr td.td-title {\n  text-transform: uppercase;\n  color: #006cb4;\n  font-size: 1.67rem;\n  font-weight: bold;\n  padding-left: 0;\n}\n.main section .icon .i-contacts {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  top: 0;\n  position: absolute;\n  background-image: url(" + __webpack_require__(30) + ");\n  background-repeat: no-repeat;\n  background-position: 50% 100%;\n  background-size: 57%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgd2lkdGg9IjIxMG1tIgogICBoZWlnaHQ9IjI5N21tIgogICB2aWV3Qm94PSIwIDAgMjEwIDI5NyIKICAgdmVyc2lvbj0iMS4xIgogICBpZD0ic3ZnNDUyNiI+CiAgPGRlZnMKICAgICBpZD0iZGVmczQ1MjAiIC8+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhNDUyMyI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGcKICAgICBpZD0ibGF5ZXIxIj4KICAgIDxwYXRoCiAgICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDoxLjM0OTA0NTYzcHg7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46bWl0ZXI7c3Ryb2tlLW9wYWNpdHk6MSIKICAgICAgIGQ9Im0gNDAuODQwMzEsNC4zODU2NTU2IGMgLTAuODgzOTYsMC4wMTAwNyAtMS43MzM1OTUsMC4yNTU1MzkgLTIuNTQyNDgyLDAuNzY3OTEyIEMgMjcuMDMxNjI0LDEyLjI4OTkwOCAxNC40MDA2MTEsMjUuMzM5MDI4IDYuNTEyMTcyOCwzNy40NTA4MjIgbCAtMC4wNTExNiwtMC4wNTE2OCBjIC0wLjAyNDE2LDAuMDc4ODYgLTAuMDQ2NDcsMC4xNTgyMzkgLTAuMDcwMjgsMC4yMzcxOTQgLTAuMDE0ODQsMC4wMjI5MSAtMC4wMzA2NywwLjA0NTgzIC0wLjA0NTQ4LDAuMDY4NzMgbCAwLjAxOTEyLDAuMDE5MTIgQyAtMTYuMjUxMDgxLDExMy4xNzcwNyAxMjEuMzM4OTcsMjI5LjI3MTQxIDE3My4zNDkwMSwyMDYuMjEyNjEgbCAwLjAyNDgsMC4wMjQ4IGMgMTYuMzQ0MjMsLTYuOTA3NDkgMjguOTEzMjYsLTIzLjUxODc3IDMxLjIzODQsLTMxLjQ0ODIxIDEuNTUwMzcsLTUuNDg1MDkgMS43Nzc2LC0xMC4xMzYwNCAtMS4zNzE0OSwtMTQuOTY0NDYgLTcuNTEyMTYsLTEwLjYxMjQgLTM1LjQ3Mzc1LC0yNC41MDM2NSAtMzcuOTE4MSwtMjUuODc0OSAtMi41MDQwNCwtMC44MzQ2NyAtMTQuMDcwMzYsLTIuODYxOSAtMTcuNjQ3NSwtMS41NTAzIC0zLjA0MDcsMC40MTczMyAtOC41MjU4Miw2LjE0MDk1IC0xNy4yMDQ2NCwxNi43NDQ3MiAtNy45MDg2MiwtMC45OTkxNiAtMjAuMjQ3OTQsLTguOTExMjMgLTMyLjMyOTgwNiwtMTkuMzE4NzIgTCA3Ni44NjEzNjcsMTA4LjM3MzEgQyA2OC4wNjg5OSw5Ny44OTkzMDMgNjEuNzkyMTUzLDg3LjYzNzAwNiA2MS4zMTE0MSw4MC42NjYyNyA3OC4wMDQ4ODgsNjMuMjkxNDQgNzcuMTUzNDA5LDU2LjM5NTU3MyA3NS4zNjQ4MTcsNTAuOTYxNjI0IDY2LjQ2MDkxNCwzNi45Mzg0NTMgNTEuMjcxMDM5LDQuMjY2ODE5NiA0MC44NDAzMSw0LjM4NTY1NTYgWiIKICAgICAgIGlkPSJwYXRoNTA4NiIgLz4KICA8L2c+Cjwvc3ZnPgo="
+
+/***/ }),
+/* 31 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
+
+
+function initSkills(bars, activeClass) {
+    Array.from(bars).forEach(function (bar) {
+        var value = bar.getAttribute('value');
+        var lis = bar.children[0].children;
+        for (var i = 0; i < lis.length; i++) {
+            if (i == value) {
+                lis[i - 1].className = activeClass;
+                break;
+            }
+        }
+    });
+};
+
+initSkills(document.getElementsByClassName("skill-progress"), 'active');
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(33);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".main section.skills {\n  width: 100%;\n  main-width: 300px;\n}\n.main section.skills .skill {\n  width: 78%;\n  margin: 0 auto;\n  margin-top: 0.83rem;\n  padding-bottom: 1.5rem;\n}\n.main section.skills .skill .skill-title {\n  text-align: center;\n  text-transform: uppercase;\n  font-size: 25.5px;\n  padding: 0;\n}\n.main section.skills .skill .skill-progress {\n  width: 100%;\n  min-width: 260px;\n  max-width: 400px;\n  margin: 0 auto;\n}\n.main section.skills .skill .skill-progress ul {\n  display: flex;\n  flex-flow: row;\n  justify-content: space-between;\n  flex-wrap: nowrap;\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  margin-top: 15px;\n  height: 1.41rem;\n}\n.main section.skills .skill .skill-progress ul li {\n  list-style: none;\n  width: 1.41rem;\n  height: 1.41rem;\n  background-color: #006cb4;\n  border-radius: 50%;\n  margin-left: 0.33rem;\n  margin-right: 0.33rem;\n}\n.main section.skills .skill .skill-progress ul li:nth-last-child {\n  margin-right: 0;\n}\n.main section.skills .skill .skill-progress ul li:nth-child(1) {\n  margin-left: 0;\n}\n.main section.skills .skill .skill-progress ul li.active {\n  background-color: #006cb4;\n}\n.main section.skills .skill .skill-progress ul li.active ~ li {\n  background-color: #e7e7e7;\n}\n.main section.skills .icon .i-skills {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  top: 0;\n  position: absolute;\n  background-image: url(" + __webpack_require__(34) + ");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: 47%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnDQogICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iDQogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIg0KICAgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIg0KICAgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyINCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyINCiAgIGlkPSJzdmc4Ig0KICAgdmVyc2lvbj0iMS4xIg0KICAgdmlld0JveD0iMCAwIDIxMCAyOTciDQogICBoZWlnaHQ9IjI5N21tIg0KICAgd2lkdGg9IjIxMG1tIj4NCiAgPGRlZnMNCiAgICAgaWQ9ImRlZnMyIiAvPg0KICA8bWV0YWRhdGENCiAgICAgaWQ9Im1ldGFkYXRhNSI+DQogICAgPHJkZjpSREY+DQogICAgICA8Y2M6V29yaw0KICAgICAgICAgcmRmOmFib3V0PSIiPg0KICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4NCiAgICAgICAgPGRjOnR5cGUNCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4NCiAgICAgICAgPGRjOnRpdGxlPjwvZGM6dGl0bGU+DQogICAgICA8L2NjOldvcms+DQogICAgPC9yZGY6UkRGPg0KICA8L21ldGFkYXRhPg0KICA8Zw0KICAgICBpZD0ibGF5ZXIxIj4NCiAgICA8Y2lyY2xlDQogICAgICAgcj0iOTYuODkzNyINCiAgICAgICBjeT0iMTAwLjEzODY1Ig0KICAgICAgIGN4PSIxMDIuOTk4ODYiDQogICAgICAgaWQ9InBhdGg0NDk4Ig0KICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjIuMzM4ODEzNTQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIgLz4NCiAgICA8ZWxsaXBzZQ0KICAgICAgIGN4PSIxMDIuMjQxODciDQogICAgICAgY3k9IjE4Ny43ODI2OCINCiAgICAgICByeD0iNTIuOTg4NzQ3Ig0KICAgICAgIHJ5PSIzNy44ODg4NjMiDQogICAgICAgaWQ9InBhdGg0NTAwIg0KICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjIuMDM2MTY0MDU7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIgLz4NCiAgICA8cmVjdA0KICAgICAgIHJ4PSIyMC4zMTI0OTYiDQogICAgICAgcnk9IjEzLjk1NzY0OSINCiAgICAgICB5PSIyMzcuOTA5MzkiDQogICAgICAgeD0iNTEuNTI0MTA5Ig0KICAgICAgIGhlaWdodD0iMzguNjA2MDg3Ig0KICAgICAgIHdpZHRoPSIxMDMuNzA2NTQiDQogICAgICAgaWQ9InJlY3Q0NTE4Ig0KICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjIuMTE5NTQ5NzU7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIgLz4NCiAgPC9nPg0KPC9zdmc+DQo="

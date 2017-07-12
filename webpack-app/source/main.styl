@@ -1,11 +1,5 @@
 @font-face
   font-family MyriadPro
-  src url('./fonts/MyriadPro/MyriadPro-Regular.ttf') format('truetype'), url('./fonts/MyriadPro/MyriadPro-Regular.woff') format('woff'), url('./fonts/MyriadPro/MyriadPro-Regular.eot') format('eot')
-  font-weight normal
-  font-style normal
-
-@font-face
-  font-family MyriadPro
   src url('./fonts/MyriadPro/MyriadPro-It.ttf') format('truetype'), url('./fonts/MyriadPro/MyriadPro-It.woff') format('woff'), url('./fonts/MyriadPro/MyriadPro-It.eot') format('eot')
   font-weight normal
   font-style italic
@@ -22,6 +16,18 @@
   font-weight bold
   font-style italic
 
+@font-face
+  font-family MyriadPro
+  src url('./fonts/MyriadPro/MyriadPro-Light.ttf') format('truetype'), url('./fonts/MyriadPro/MyriadPro-Light.woff') format('woff'), url('./fonts/MyriadPro/MyriadPro-Light.eot') format('eot')
+  font-weight 100
+  font-style normal
+
+@font-face
+  font-family MyriadPro
+  src url('./fonts/MyriadPro/MyriadPro-Regular.ttf') format('truetype'), url('./fonts/MyriadPro/MyriadPro-Regular.woff') format('woff'), url('./fonts/MyriadPro/MyriadPro-Regular.eot') format('eot')
+  font-weight normal
+  font-style normal
+
 html
   font-size 12px
 
@@ -31,6 +37,7 @@ body
 
 .main
   font-family MyriadPro
+  font-weight normal
   display flex
   margin 0 auto
   min-width 320px
@@ -66,6 +73,7 @@ body
       display table
       height 6rem
       width 100%
+      font-weight bold
 
       .icon
         display table-cell
@@ -103,3 +111,4 @@ body
 
       span
         font-size 1.29rem
+        font-weight normal
