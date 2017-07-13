@@ -1,9 +1,11 @@
-mixin resume-block-header()
+mixin resume-block-header(chunks)
   section.header
     div.header-top
       div
       div
     div.header-bottom.header-text
-      div.name Name here
-      div.surname Surname
-      div.profession Graphic designer
+      div.name !{chunks[0]}
+      div.surname !{chunks[1]}
+      div.profession !{chunks[2]}
+
++resume-block-header(locals)

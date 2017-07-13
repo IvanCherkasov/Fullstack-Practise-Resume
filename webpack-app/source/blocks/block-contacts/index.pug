@@ -4,12 +4,12 @@ mixin contact-table-tr(title, content)
         td.td-title !{title}
         td !{content}
 
-mixin resume-block-contacts()
+mixin resume-block-contacts(chunks)
     section
         +section-header('i-contacts', 'Contacts')
         div.sec-content
             table.contacts
-                +contact-table-tr('Address', 'Main Street, City.')
-                +contact-table-tr('E-mail', 'contact@domain.com')
-                +contact-table-tr('Phone', '555-555-555')
-                +contact-table-tr('Website', 'www.yourweb.com')
+                each chunk in chunks
+                    +contact-table-tr(chunk[0], chunk[1])
+
++resume-block-contacts(locals)

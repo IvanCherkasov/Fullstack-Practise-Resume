@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -189,7 +189,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(20);
+var	fixUrls = __webpack_require__(22);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -503,31 +503,288 @@ function updateLink (link, options, obj) {
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var pug_has_own_property = Object.prototype.hasOwnProperty;
+
+/**
+ * Merge two attribute objects giving precedence
+ * to values in object `b`. Classes are special-cased
+ * allowing for arrays and merging/joining appropriately
+ * resulting in a string.
+ *
+ * @param {Object} a
+ * @param {Object} b
+ * @return {Object} a
+ * @api private
+ */
+
+exports.merge = pug_merge;
+function pug_merge(a, b) {
+  if (arguments.length === 1) {
+    var attrs = a[0];
+    for (var i = 1; i < a.length; i++) {
+      attrs = pug_merge(attrs, a[i]);
+    }
+    return attrs;
+  }
+
+  for (var key in b) {
+    if (key === 'class') {
+      var valA = a[key] || [];
+      a[key] = (Array.isArray(valA) ? valA : [valA]).concat(b[key] || []);
+    } else if (key === 'style') {
+      var valA = pug_style(a[key]);
+      var valB = pug_style(b[key]);
+      a[key] = valA + valB;
+    } else {
+      a[key] = b[key];
+    }
+  }
+
+  return a;
+};
+
+/**
+ * Process array, object, or string as a string of classes delimited by a space.
+ *
+ * If `val` is an array, all members of it and its subarrays are counted as
+ * classes. If `escaping` is an array, then whether or not the item in `val` is
+ * escaped depends on the corresponding item in `escaping`. If `escaping` is
+ * not an array, no escaping is done.
+ *
+ * If `val` is an object, all the keys whose value is truthy are counted as
+ * classes. No escaping is done.
+ *
+ * If `val` is a string, it is counted as a class. No escaping is done.
+ *
+ * @param {(Array.<string>|Object.<string, boolean>|string)} val
+ * @param {?Array.<string>} escaping
+ * @return {String}
+ */
+exports.classes = pug_classes;
+function pug_classes_array(val, escaping) {
+  var classString = '', className, padding = '', escapeEnabled = Array.isArray(escaping);
+  for (var i = 0; i < val.length; i++) {
+    className = pug_classes(val[i]);
+    if (!className) continue;
+    escapeEnabled && escaping[i] && (className = pug_escape(className));
+    classString = classString + padding + className;
+    padding = ' ';
+  }
+  return classString;
+}
+function pug_classes_object(val) {
+  var classString = '', padding = '';
+  for (var key in val) {
+    if (key && val[key] && pug_has_own_property.call(val, key)) {
+      classString = classString + padding + key;
+      padding = ' ';
+    }
+  }
+  return classString;
+}
+function pug_classes(val, escaping) {
+  if (Array.isArray(val)) {
+    return pug_classes_array(val, escaping);
+  } else if (val && typeof val === 'object') {
+    return pug_classes_object(val);
+  } else {
+    return val || '';
+  }
+}
+
+/**
+ * Convert object or string to a string of CSS styles delimited by a semicolon.
+ *
+ * @param {(Object.<string, string>|string)} val
+ * @return {String}
+ */
+
+exports.style = pug_style;
+function pug_style(val) {
+  if (!val) return '';
+  if (typeof val === 'object') {
+    var out = '';
+    for (var style in val) {
+      /* istanbul ignore else */
+      if (pug_has_own_property.call(val, style)) {
+        out = out + style + ':' + val[style] + ';';
+      }
+    }
+    return out;
+  } else {
+    val += '';
+    if (val[val.length - 1] !== ';') 
+      return val + ';';
+    return val;
+  }
+};
+
+/**
+ * Render the given attribute.
+ *
+ * @param {String} key
+ * @param {String} val
+ * @param {Boolean} escaped
+ * @param {Boolean} terse
+ * @return {String}
+ */
+exports.attr = pug_attr;
+function pug_attr(key, val, escaped, terse) {
+  if (val === false || val == null || !val && (key === 'class' || key === 'style')) {
+    return '';
+  }
+  if (val === true) {
+    return ' ' + (terse ? key : key + '="' + key + '"');
+  }
+  if (typeof val.toJSON === 'function') {
+    val = val.toJSON();
+  }
+  if (typeof val !== 'string') {
+    val = JSON.stringify(val);
+    if (!escaped && val.indexOf('"') !== -1) {
+      return ' ' + key + '=\'' + val.replace(/'/g, '&#39;') + '\'';
+    }
+  }
+  if (escaped) val = pug_escape(val);
+  return ' ' + key + '="' + val + '"';
+};
+
+/**
+ * Render the given attributes object.
+ *
+ * @param {Object} obj
+ * @param {Object} terse whether to use HTML5 terse boolean attributes
+ * @return {String}
+ */
+exports.attrs = pug_attrs;
+function pug_attrs(obj, terse){
+  var attrs = '';
+
+  for (var key in obj) {
+    if (pug_has_own_property.call(obj, key)) {
+      var val = obj[key];
+
+      if ('class' === key) {
+        val = pug_classes(val);
+        attrs = pug_attr(key, val, false, terse) + attrs;
+        continue;
+      }
+      if ('style' === key) {
+        val = pug_style(val);
+      }
+      attrs += pug_attr(key, val, false, terse);
+    }
+  }
+
+  return attrs;
+};
+
+/**
+ * Escape the given string of `html`.
+ *
+ * @param {String} html
+ * @return {String}
+ * @api private
+ */
+
+var pug_match_html = /["&<>]/;
+exports.escape = pug_escape;
+function pug_escape(_html){
+  var html = '' + _html;
+  var regexResult = pug_match_html.exec(html);
+  if (!regexResult) return _html;
+
+  var result = '';
+  var i, lastIndex, escape;
+  for (i = regexResult.index, lastIndex = 0; i < html.length; i++) {
+    switch (html.charCodeAt(i)) {
+      case 34: escape = '&quot;'; break;
+      case 38: escape = '&amp;'; break;
+      case 60: escape = '&lt;'; break;
+      case 62: escape = '&gt;'; break;
+      default: continue;
+    }
+    if (lastIndex !== i) result += html.substring(lastIndex, i);
+    lastIndex = i + 1;
+    result += escape;
+  }
+  if (lastIndex !== i) return result + html.substring(lastIndex, i);
+  else return result;
+};
+
+/**
+ * Re-throw the given `err` in context to the
+ * the pug in `filename` at the given `lineno`.
+ *
+ * @param {Error} err
+ * @param {String} filename
+ * @param {String} lineno
+ * @param {String} str original source
+ * @api private
+ */
+
+exports.rethrow = pug_rethrow;
+function pug_rethrow(err, filename, lineno, str){
+  if (!(err instanceof Error)) throw err;
+  if ((typeof window != 'undefined' || !filename) && !str) {
+    err.message += ' on line ' + lineno;
+    throw err;
+  }
+  try {
+    str = str || __webpack_require__(27).readFileSync(filename, 'utf8')
+  } catch (ex) {
+    pug_rethrow(err, null, lineno)
+  }
+  var context = 3
+    , lines = str.split('\n')
+    , start = Math.max(lineno - context, 0)
+    , end = Math.min(lines.length, lineno + context);
+
+  // Error context
+  var context = lines.slice(start, end).map(function(line, i){
+    var curr = i + start + 1;
+    return (curr == lineno ? '  > ' : '    ')
+      + curr
+      + '| '
+      + line;
+  }).join('\n');
+
+  // Alter exception message
+  err.path = filename;
+  err.message = (filename || 'Pug') + ':' + lineno
+    + '\n' + context + '\n\n' + err.message;
+  throw err;
+};
+
+
+/***/ }),
+/* 3 */,
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_styl__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_styl__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__main_styl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_header_index_js__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__blocks_block_profile_index_js__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blocks_block_contacts_index_js__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__blocks_block_skills_index_js__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blocks_block_main_index_js__ = __webpack_require__(23);
 
 
 
-
-
-
+document.body.appendChild(__WEBPACK_IMPORTED_MODULE_1__blocks_block_main_index_js__["a" /* default */].get());
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(4);
+var content = __webpack_require__(6);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -552,7 +809,7 @@ if(false) {
 }
 
 /***/ }),
-/* 4 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -560,103 +817,103 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(5) + ") format('truetype'), url(" + __webpack_require__(6) + ") format('woff'), url(" + __webpack_require__(7) + ") format('eot');\n  font-weight: normal;\n  font-style: italic;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(8) + ") format('truetype'), url(" + __webpack_require__(9) + ") format('woff'), url(" + __webpack_require__(10) + ") format('eot');\n  font-weight: bold;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(11) + ") format('truetype'), url(" + __webpack_require__(12) + ") format('woff'), url(" + __webpack_require__(13) + ") format('eot');\n  font-weight: bold;\n  font-style: italic;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(14) + ") format('truetype'), url(" + __webpack_require__(15) + ") format('woff'), url(" + __webpack_require__(16) + ") format('eot');\n  font-weight: 100;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(17) + ") format('truetype'), url(" + __webpack_require__(18) + ") format('woff'), url(" + __webpack_require__(19) + ") format('eot');\n  font-weight: normal;\n  font-style: normal;\n}\nhtml {\n  font-size: 12px;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n.main {\n  font-family: MyriadPro;\n  font-weight: normal;\n  display: flex;\n  margin: 0 auto;\n  min-width: 320px;\n  margin-top: 7.33rem;\n  padding-left: 38px;\n  padding-right: 38px;\n}\n.main .text-black {\n  color: #000 !important;\n}\n.main .text-blue {\n  color: #006cb4 !important;\n}\n.main .left {\n  width: 37%;\n  display: flex;\n  flex-flow: column;\n  padding-right: 38px;\n}\n.main .right {\n  width: 57%;\n  display: flex;\n  flex-flow: column;\n  padding-left: 38px;\n}\n.main section {\n  width: 100%;\n  display: block;\n  margin: 0 auto;\n  margin-bottom: 3.16rem;\n}\n.main section .sec-header {\n  display: table;\n  height: 6rem;\n  width: 100%;\n  font-weight: bold;\n}\n.main section .sec-header .icon {\n  display: table-cell;\n  width: 5.84rem;\n  padding-right: 5.84rem;\n  background-color: #006cb4;\n  border-radius: 50%;\n  border: 0.08rem solid #006cb4;\n  vertical-align: middle;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n  position: relative;\n}\n.main section .sec-header .title {\n  display: table-cell;\n  vertical-align: middle;\n  font-size: 3.43rem;\n  text-transform: uppercase;\n  color: #006cb4;\n  padding-left: 1.1rem;\n}\n.main section .sec-header .buffer-line {\n  width: 100%;\n  display: table-cell;\n  vertical-align: middle;\n  padding-left: 0.5rem;\n}\n.main section .sec-header .buffer-line .line {\n  height: 0.42rem;\n  width: 100%;\n  background-color: #006cb4;\n}\n.main section .sec-content {\n  padding-top: 1.2rem;\n  line-height: 1.45rem;\n}\n.main section .sec-content span {\n  font-size: 1.29rem;\n  font-weight: normal;\n}\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(7) + ") format('truetype'), url(" + __webpack_require__(8) + ") format('woff'), url(" + __webpack_require__(9) + ") format('eot');\n  font-weight: normal;\n  font-style: italic;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(10) + ") format('truetype'), url(" + __webpack_require__(11) + ") format('woff'), url(" + __webpack_require__(12) + ") format('eot');\n  font-weight: bold;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(13) + ") format('truetype'), url(" + __webpack_require__(14) + ") format('woff'), url(" + __webpack_require__(15) + ") format('eot');\n  font-weight: bold;\n  font-style: italic;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(16) + ") format('truetype'), url(" + __webpack_require__(17) + ") format('woff'), url(" + __webpack_require__(18) + ") format('eot');\n  font-weight: 100;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(19) + ") format('truetype'), url(" + __webpack_require__(20) + ") format('woff'), url(" + __webpack_require__(21) + ") format('eot');\n  font-weight: normal;\n  font-style: normal;\n}\nhtml {\n  font-size: 12px;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-It.ttf";
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-It.woff";
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-It.eot";
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Bold.ttf";
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Bold.woff";
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Bold.eot";
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-BoldIt.ttf";
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-BoldIt.woff";
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-BoldIt.eot";
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Light.ttf";
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Light.woff";
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Light.eot";
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Regular.ttf";
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Regular.woff";
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "fonts/MyriadPro/MyriadPro-Regular.eot";
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, exports) {
 
 
@@ -749,22 +1006,51 @@ module.exports = function (css) {
 };
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index_pug__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index_pug___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__index_pug__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__block_header_index_js__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__block_profile_index_js__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__block_contacts_index_js__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__block_skills_index_js__ = __webpack_require__(41);
 
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (class {
+    //Возвращает DOM объект
+    static get() {
+        var elem = document.createElement('div');
+        elem.id = "resume";
+        var left = __WEBPACK_IMPORTED_MODULE_2__block_header_index_js__["a" /* default */].init(['Name here', 'Surname', 'Graphic designer']);
+        left += __WEBPACK_IMPORTED_MODULE_3__block_profile_index_js__["a" /* default */].init(['<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ' + 'Aenean commodo ligula eget dolor. Aenean massa. Cum sociis ' + 'natoque penatibus et magnis dis parturient montes, nascetur ' + 'ridiculus mus. Donec quam felis, ultricies nec, pellentesque ' + 'eu, pretium quis, sem. Nulla consequat massa quis enim. ' + 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, ' + 'arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, ' + 'justo. Nullam dictum felis eu <b>pede mollis pretium. Integer ' + 'tincidunt. Cras dapibus. Vivamus elementum semper nisi. ' + 'Aenean vulputate eleifend tellus. Aenean leo ligula, ' + 'porttitor eu, consequat vitae, eleifend ac, enim. Aliquam ' + 'lorem ante, dapibus in, viverra quis, feugiat a, tellus. ' + 'Phasellus viverra nulla ut metus varius laoreet. Quisque ' + 'rutrum. </b></span>']);
+        left += __WEBPACK_IMPORTED_MODULE_4__block_contacts_index_js__["a" /* default */].init([['Address', 'Main Street, City.'], ['E-mail', 'contact@domain.com'], ['Phone', '555-555-555'], ['Website', 'www.yourweb.com']]);
+        left += __WEBPACK_IMPORTED_MODULE_5__block_skills_index_js__["a" /* default */].init([12, [['Creative', '9'], ['Teamwork', '11'], ['Innovate', '6'], ['Communication', '11']]]);
+
+        elem.innerHTML = __WEBPACK_IMPORTED_MODULE_1__index_pug___default.a([left, 'right']);
+
+        return elem;
+    }
+});
+
+//document.body.appendChild(elem);
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(23);
+var content = __webpack_require__(25);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -789,7 +1075,98 @@ if(false) {
 }
 
 /***/ }),
-/* 23 */
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".main {\n  font-family: MyriadPro;\n  font-weight: normal;\n  display: flex;\n  margin: 0 auto;\n  min-width: 320px;\n  margin-top: 7.33rem;\n  padding-left: 38px;\n  padding-right: 38px;\n}\n.main .text-black {\n  color: #000 !important;\n}\n.main .text-blue {\n  color: #006cb4 !important;\n}\n.main .left {\n  width: 37%;\n  display: flex;\n  flex-flow: column;\n  padding-right: 38px;\n}\n.main .right {\n  width: 57%;\n  display: flex;\n  flex-flow: column;\n  padding-left: 38px;\n}\n.main section {\n  width: 100%;\n  display: block;\n  margin: 0 auto;\n  margin-bottom: 3.16rem;\n}\n.main section .sec-header {\n  display: table;\n  height: 6rem;\n  width: 100%;\n  font-weight: bold;\n}\n.main section .sec-header .icon {\n  display: table-cell;\n  width: 5.84rem;\n  padding-right: 5.84rem;\n  background-color: #006cb4;\n  border-radius: 50%;\n  border: 0.08rem solid #006cb4;\n  vertical-align: middle;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n  position: relative;\n}\n.main section .sec-header .title {\n  display: table-cell;\n  vertical-align: middle;\n  font-size: 3.43rem;\n  text-transform: uppercase;\n  color: #006cb4;\n  padding-left: 1.1rem;\n}\n.main section .sec-header .buffer-line {\n  width: 100%;\n  display: table-cell;\n  vertical-align: middle;\n  padding-left: 0.5rem;\n}\n.main section .sec-header .buffer-line .line {\n  height: 0.42rem;\n  width: 100%;\n  background-color: #006cb4;\n}\n.main section .sec-content {\n  padding-top: 1.2rem;\n  line-height: 1.45rem;\n}\n.main section .sec-content span {\n  font-size: 1.29rem;\n  font-weight: normal;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(2);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
+pug_mixins["resume-block-main"] = pug_interp = function(chunks){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"main\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"left\"\u003E" + (null == (pug_interp = chunks[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"right\"\u003E" + (null == (pug_interp = chunks[1]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+pug_indent.push('');
+pug_mixins["resume-block-main"](locals);
+pug_indent.pop();;return pug_html;};
+module.exports = template;
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+/* 28 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (class {
+    static init(options) {
+        var blockHeader = __webpack_require__(31);
+        return blockHeader(options);
+    }
+});
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(30);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -803,22 +1180,67 @@ exports.push([module.i, ".main section.header {\n  padding-bottom: 6.08rem;\n  m
 
 
 /***/ }),
-/* 24 */
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(2);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
+pug_mixins["resume-block-header"] = pug_interp = function(chunks){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Csection class=\"header\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"header-top\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv\u003E\u003C\u002Fdiv\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"header-bottom header-text\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"name\"\u003E" + (null == (pug_interp = chunks[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"surname\"\u003E" + (null == (pug_interp = chunks[1]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"profession\"\u003E" + (null == (pug_interp = chunks[2]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fsection\u003E";
+};
+pug_indent.push('');
+pug_mixins["resume-block-header"](locals);
+pug_indent.pop();;return pug_html;};
+module.exports = template;
+
+/***/ }),
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
 
 
+/* harmony default export */ __webpack_exports__["a"] = (class {
+    static init(options) {
+        var resumeProfile = __webpack_require__(35);
+        return resumeProfile(options);
+    }
+});
+
 /***/ }),
-/* 25 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(26);
+var content = __webpack_require__(34);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -843,7 +1265,7 @@ if(false) {
 }
 
 /***/ }),
-/* 26 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -857,22 +1279,77 @@ exports.push([module.i, ".main section .icon .i-profile::after {\n  content: \"\
 
 
 /***/ }),
-/* 27 */
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(2);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
+pug_mixins["section-header"] = pug_interp = function(iclass, title){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-header\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"icon\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (pug.attr("class", pug.classes([iclass], [true]), false, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E" + (pug.escape(null == (pug_interp = title) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"buffer-line\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"line\"\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["resume-block-profile"] = pug_interp = function(chunks){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Csection class=\"profile\"\u003E";
+pug_indent.push('  ');
+pug_mixins["section-header"]('i-profile', 'Profile');
+pug_indent.pop();
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E" + (null == (pug_interp = chunks[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fsection\u003E";
+};
+pug_indent.push('');
+pug_mixins["resume-block-profile"](locals);
+pug_indent.pop();;return pug_html;};
+module.exports = template;
+
+/***/ }),
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
 
 
+/* harmony default export */ __webpack_exports__["a"] = (class {
+    static init(options) {
+        var resumeContacts = __webpack_require__(40);
+        return resumeContacts(options);
+    }
+});
+
 /***/ }),
-/* 28 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(29);
+var content = __webpack_require__(38);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -897,7 +1374,7 @@ if(false) {
 }
 
 /***/ }),
-/* 29 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -905,49 +1382,147 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".main section table.contacts {\n  border-collapse: collapse;\n  margin-top: 2rem;\n}\n.main section table.contacts td {\n  font-size: 1.67rem;\n  padding-left: 3.58rem;\n  padding-top: 1.83rem;\n  padding-bottom: 1.3rem;\n}\n.main section table.contacts tr:nth-child(1) td {\n  padding-top: 0;\n}\n.main section table.contacts tr:nth:last-child td {\n  padding-bottom: 0;\n}\n.main section table.contacts tr td.td-title {\n  text-transform: uppercase;\n  color: #006cb4;\n  font-size: 1.67rem;\n  font-weight: bold;\n  padding-left: 0;\n}\n.main section .icon .i-contacts {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  top: 0;\n  position: absolute;\n  background-image: url(" + __webpack_require__(30) + ");\n  background-repeat: no-repeat;\n  background-position: 50% 100%;\n  background-size: 57%;\n}\n", ""]);
+exports.push([module.i, ".main section table.contacts {\n  border-collapse: collapse;\n  margin-top: 2rem;\n}\n.main section table.contacts td {\n  font-size: 1.67rem;\n  padding-left: 3.58rem;\n  padding-top: 1.83rem;\n  padding-bottom: 1.3rem;\n}\n.main section table.contacts tr:nth-child(1) td {\n  padding-top: 0;\n}\n.main section table.contacts tr:nth:last-child td {\n  padding-bottom: 0;\n}\n.main section table.contacts tr td.td-title {\n  text-transform: uppercase;\n  color: #006cb4;\n  font-size: 1.67rem;\n  font-weight: bold;\n  padding-left: 0;\n}\n.main section .icon .i-contacts {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  top: 0;\n  position: absolute;\n  background-image: url(" + __webpack_require__(39) + ");\n  background-repeat: no-repeat;\n  background-position: 50% 100%;\n  background-size: 57%;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 30 */
+/* 39 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgd2lkdGg9IjIxMG1tIgogICBoZWlnaHQ9IjI5N21tIgogICB2aWV3Qm94PSIwIDAgMjEwIDI5NyIKICAgdmVyc2lvbj0iMS4xIgogICBpZD0ic3ZnNDUyNiI+CiAgPGRlZnMKICAgICBpZD0iZGVmczQ1MjAiIC8+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhNDUyMyI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGcKICAgICBpZD0ibGF5ZXIxIj4KICAgIDxwYXRoCiAgICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDoxLjM0OTA0NTYzcHg7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46bWl0ZXI7c3Ryb2tlLW9wYWNpdHk6MSIKICAgICAgIGQ9Im0gNDAuODQwMzEsNC4zODU2NTU2IGMgLTAuODgzOTYsMC4wMTAwNyAtMS43MzM1OTUsMC4yNTU1MzkgLTIuNTQyNDgyLDAuNzY3OTEyIEMgMjcuMDMxNjI0LDEyLjI4OTkwOCAxNC40MDA2MTEsMjUuMzM5MDI4IDYuNTEyMTcyOCwzNy40NTA4MjIgbCAtMC4wNTExNiwtMC4wNTE2OCBjIC0wLjAyNDE2LDAuMDc4ODYgLTAuMDQ2NDcsMC4xNTgyMzkgLTAuMDcwMjgsMC4yMzcxOTQgLTAuMDE0ODQsMC4wMjI5MSAtMC4wMzA2NywwLjA0NTgzIC0wLjA0NTQ4LDAuMDY4NzMgbCAwLjAxOTEyLDAuMDE5MTIgQyAtMTYuMjUxMDgxLDExMy4xNzcwNyAxMjEuMzM4OTcsMjI5LjI3MTQxIDE3My4zNDkwMSwyMDYuMjEyNjEgbCAwLjAyNDgsMC4wMjQ4IGMgMTYuMzQ0MjMsLTYuOTA3NDkgMjguOTEzMjYsLTIzLjUxODc3IDMxLjIzODQsLTMxLjQ0ODIxIDEuNTUwMzcsLTUuNDg1MDkgMS43Nzc2LC0xMC4xMzYwNCAtMS4zNzE0OSwtMTQuOTY0NDYgLTcuNTEyMTYsLTEwLjYxMjQgLTM1LjQ3Mzc1LC0yNC41MDM2NSAtMzcuOTE4MSwtMjUuODc0OSAtMi41MDQwNCwtMC44MzQ2NyAtMTQuMDcwMzYsLTIuODYxOSAtMTcuNjQ3NSwtMS41NTAzIC0zLjA0MDcsMC40MTczMyAtOC41MjU4Miw2LjE0MDk1IC0xNy4yMDQ2NCwxNi43NDQ3MiAtNy45MDg2MiwtMC45OTkxNiAtMjAuMjQ3OTQsLTguOTExMjMgLTMyLjMyOTgwNiwtMTkuMzE4NzIgTCA3Ni44NjEzNjcsMTA4LjM3MzEgQyA2OC4wNjg5OSw5Ny44OTkzMDMgNjEuNzkyMTUzLDg3LjYzNzAwNiA2MS4zMTE0MSw4MC42NjYyNyA3OC4wMDQ4ODgsNjMuMjkxNDQgNzcuMTUzNDA5LDU2LjM5NTU3MyA3NS4zNjQ4MTcsNTAuOTYxNjI0IDY2LjQ2MDkxNCwzNi45Mzg0NTMgNTEuMjcxMDM5LDQuMjY2ODE5NiA0MC44NDAzMSw0LjM4NTY1NTYgWiIKICAgICAgIGlkPSJwYXRoNTA4NiIgLz4KICA8L2c+Cjwvc3ZnPgo="
 
 /***/ }),
-/* 31 */
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(2);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
+pug_mixins["section-header"] = pug_interp = function(iclass, title){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-header\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"icon\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (pug.attr("class", pug.classes([iclass], [true]), false, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E" + (pug.escape(null == (pug_interp = title) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"buffer-line\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"line\"\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["contact-table-tr"] = pug_interp = function(title, content){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctr\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctd class=\"td-title\"\u003E" + (null == (pug_interp = title) ? "" : pug_interp) + "\u003C\u002Ftd\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctd\u003E" + (null == (pug_interp = content) ? "" : pug_interp) + "\u003C\u002Ftd\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ftr\u003E";
+};
+pug_mixins["resume-block-contacts"] = pug_interp = function(chunks){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Csection\u003E";
+pug_indent.push('  ');
+pug_mixins["section-header"]('i-contacts', 'Contacts');
+pug_indent.pop();
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctable class=\"contacts\"\u003E";
+// iterate chunks
+;(function(){
+  var $$obj = chunks;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
+        var chunk = $$obj[pug_index0];
+pug_indent.push('      ');
+pug_mixins["contact-table-tr"](chunk[0], chunk[1]);
+pug_indent.pop();
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index0 in $$obj) {
+      $$l++;
+      var chunk = $$obj[pug_index0];
+pug_indent.push('      ');
+pug_mixins["contact-table-tr"](chunk[0], chunk[1]);
+pug_indent.pop();
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ftable\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fsection\u003E";
+};
+pug_indent.push('');
+pug_mixins["resume-block-contacts"](locals);
+pug_indent.pop();;return pug_html;};
+module.exports = template;
+
+/***/ }),
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
 
 
-function initSkills(bars, activeClass) {
-    Array.from(bars).forEach(function (bar) {
-        var value = bar.getAttribute('value');
-        var lis = bar.children[0].children;
-        for (var i = 0; i < lis.length; i++) {
-            if (i == value) {
-                lis[i - 1].className = activeClass;
-                break;
-            }
-        }
-    });
-};
+/* harmony default export */ __webpack_exports__["a"] = (class {
+    static init(options) {
 
-initSkills(document.getElementsByClassName("skill-progress"), 'active');
+        function set(bars, activeClass) {
+            Array.from(bars).forEach(function (bar) {
+                var value = bar.getAttribute('value');
+                var lis = bar.children[0].children;
+                for (var i = 0; i < lis.length; i++) {
+                    if (i == value) {
+                        lis[i - 1].className = activeClass;
+                        break;
+                    }
+                }
+            });
+        }
+
+        var resumeSkills = __webpack_require__(45);
+        var div = document.createElement('div');
+        div.innerHTML = resumeSkills(options);
+        set(div.getElementsByClassName('skill-progress'), 'active');
+        return div.innerHTML;
+    }
+});
 
 /***/ }),
-/* 32 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(33);
+var content = __webpack_require__(43);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -972,7 +1547,7 @@ if(false) {
 }
 
 /***/ }),
-/* 33 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -980,16 +1555,117 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".main section.skills {\n  width: 100%;\n  main-width: 300px;\n}\n.main section.skills .skill {\n  width: 78%;\n  margin: 0 auto;\n  margin-top: 0.83rem;\n  padding-bottom: 1.5rem;\n}\n.main section.skills .skill .skill-title {\n  text-align: center;\n  text-transform: uppercase;\n  font-size: 25.5px;\n  padding: 0;\n}\n.main section.skills .skill .skill-progress {\n  width: 100%;\n  min-width: 260px;\n  max-width: 400px;\n  margin: 0 auto;\n}\n.main section.skills .skill .skill-progress ul {\n  display: flex;\n  flex-flow: row;\n  justify-content: space-between;\n  flex-wrap: nowrap;\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  margin-top: 15px;\n  height: 1.41rem;\n}\n.main section.skills .skill .skill-progress ul li {\n  list-style: none;\n  width: 1.41rem;\n  height: 1.41rem;\n  background-color: #006cb4;\n  border-radius: 50%;\n  margin-left: 0.33rem;\n  margin-right: 0.33rem;\n}\n.main section.skills .skill .skill-progress ul li:nth-last-child {\n  margin-right: 0;\n}\n.main section.skills .skill .skill-progress ul li:nth-child(1) {\n  margin-left: 0;\n}\n.main section.skills .skill .skill-progress ul li.active {\n  background-color: #006cb4;\n}\n.main section.skills .skill .skill-progress ul li.active ~ li {\n  background-color: #e7e7e7;\n}\n.main section.skills .icon .i-skills {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  top: 0;\n  position: absolute;\n  background-image: url(" + __webpack_require__(34) + ");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: 47%;\n}\n", ""]);
+exports.push([module.i, ".main section.skills {\n  width: 100%;\n  main-width: 300px;\n}\n.main section.skills .skill {\n  width: 78%;\n  margin: 0 auto;\n  margin-top: 0.83rem;\n  padding-bottom: 1.5rem;\n}\n.main section.skills .skill .skill-title {\n  text-align: center;\n  text-transform: uppercase;\n  font-size: 25.5px;\n  padding: 0;\n}\n.main section.skills .skill .skill-progress {\n  width: 100%;\n  min-width: 260px;\n  max-width: 400px;\n  margin: 0 auto;\n}\n.main section.skills .skill .skill-progress ul {\n  display: flex;\n  flex-flow: row;\n  justify-content: space-between;\n  flex-wrap: nowrap;\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  margin-top: 15px;\n  height: 1.41rem;\n}\n.main section.skills .skill .skill-progress ul li {\n  list-style: none;\n  width: 1.41rem;\n  height: 1.41rem;\n  background-color: #006cb4;\n  border-radius: 50%;\n  margin-left: 0.33rem;\n  margin-right: 0.33rem;\n}\n.main section.skills .skill .skill-progress ul li:nth-last-child {\n  margin-right: 0;\n}\n.main section.skills .skill .skill-progress ul li:nth-child(1) {\n  margin-left: 0;\n}\n.main section.skills .skill .skill-progress ul li.active {\n  background-color: #006cb4;\n}\n.main section.skills .skill .skill-progress ul li.active ~ li {\n  background-color: #e7e7e7;\n}\n.main section.skills .icon .i-skills {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  top: 0;\n  position: absolute;\n  background-image: url(" + __webpack_require__(44) + ");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: 47%;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 34 */
+/* 44 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnDQogICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iDQogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIg0KICAgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIg0KICAgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyINCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyINCiAgIGlkPSJzdmc4Ig0KICAgdmVyc2lvbj0iMS4xIg0KICAgdmlld0JveD0iMCAwIDIxMCAyOTciDQogICBoZWlnaHQ9IjI5N21tIg0KICAgd2lkdGg9IjIxMG1tIj4NCiAgPGRlZnMNCiAgICAgaWQ9ImRlZnMyIiAvPg0KICA8bWV0YWRhdGENCiAgICAgaWQ9Im1ldGFkYXRhNSI+DQogICAgPHJkZjpSREY+DQogICAgICA8Y2M6V29yaw0KICAgICAgICAgcmRmOmFib3V0PSIiPg0KICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4NCiAgICAgICAgPGRjOnR5cGUNCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4NCiAgICAgICAgPGRjOnRpdGxlPjwvZGM6dGl0bGU+DQogICAgICA8L2NjOldvcms+DQogICAgPC9yZGY6UkRGPg0KICA8L21ldGFkYXRhPg0KICA8Zw0KICAgICBpZD0ibGF5ZXIxIj4NCiAgICA8Y2lyY2xlDQogICAgICAgcj0iOTYuODkzNyINCiAgICAgICBjeT0iMTAwLjEzODY1Ig0KICAgICAgIGN4PSIxMDIuOTk4ODYiDQogICAgICAgaWQ9InBhdGg0NDk4Ig0KICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjIuMzM4ODEzNTQ7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIgLz4NCiAgICA8ZWxsaXBzZQ0KICAgICAgIGN4PSIxMDIuMjQxODciDQogICAgICAgY3k9IjE4Ny43ODI2OCINCiAgICAgICByeD0iNTIuOTg4NzQ3Ig0KICAgICAgIHJ5PSIzNy44ODg4NjMiDQogICAgICAgaWQ9InBhdGg0NTAwIg0KICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjIuMDM2MTY0MDU7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIgLz4NCiAgICA8cmVjdA0KICAgICAgIHJ4PSIyMC4zMTI0OTYiDQogICAgICAgcnk9IjEzLjk1NzY0OSINCiAgICAgICB5PSIyMzcuOTA5MzkiDQogICAgICAgeD0iNTEuNTI0MTA5Ig0KICAgICAgIGhlaWdodD0iMzguNjA2MDg3Ig0KICAgICAgIHdpZHRoPSIxMDMuNzA2NTQiDQogICAgICAgaWQ9InJlY3Q0NTE4Ig0KICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjIuMTE5NTQ5NzU7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSIgLz4NCiAgPC9nPg0KPC9zdmc+DQo="
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(2);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
+pug_mixins["section-header"] = pug_interp = function(iclass, title){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-header\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"icon\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (pug.attr("class", pug.classes([iclass], [true]), false, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E" + (pug.escape(null == (pug_interp = title) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"buffer-line\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"line\"\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["skill"] = pug_interp = function(pointCount, title, level){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"skill\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"skill-title\"\u003E" + (null == (pug_interp = title) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (" class=\"skill-progress\""+pug.attr("value", level, true, true)) + "\u003E";
+var n = 0;
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cul\u003E";
+while (n < pointCount) {
+pug_html = pug_html + "\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cli\u003E\u003C\u002Fli\u003E";
+n++;
+}
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ful\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["resume-block-skills"] = pug_interp = function(chunks){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Csection class=\"skills\"\u003E";
+pug_indent.push('  ');
+pug_mixins["section-header"]('i-skills', 'Skills');
+pug_indent.pop();
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E";
+var count = chunks[0];
+// iterate chunks[1]
+;(function(){
+  var $$obj = chunks[1];
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
+        var chunk = $$obj[pug_index0];
+pug_indent.push('    ');
+pug_mixins["skill"](count, chunk[0], chunk[1]);
+pug_indent.pop();
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index0 in $$obj) {
+      $$l++;
+      var chunk = $$obj[pug_index0];
+pug_indent.push('    ');
+pug_mixins["skill"](count, chunk[0], chunk[1]);
+pug_indent.pop();
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fsection\u003E";
+};
+pug_indent.push('');
+pug_mixins["resume-block-skills"](locals);
+pug_indent.pop();;return pug_html;};
+module.exports = template;
 
 /***/ })
 /******/ ]);

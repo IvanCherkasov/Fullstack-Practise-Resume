@@ -1,18 +1,20 @@
 include ../mixins
+mixin skill(pointCount, title, level)
+    div.skill
+        div.skill-title !{title}
+        div(value=level).skill-progress
+            - var n = 0;
+            ul
+                while n < pointCount
+                    li
+                    - n++;
 
-mixin skills(pointCount, titlesAndLevelsArray)
-    each val in titlesAndLevelsArray
-        div.skill
-            div.skill-title !{val[0]}
-            div(value=val[1]).skill-progress
-                - var n = 0;
-                ul
-                    while n < pointCount
-                        li
-                        - n++;
-
-mixin resume-block-skills()
+mixin resume-block-skills(chunks)
     section.skills
         +section-header('i-skills', 'Skills')
         div.sec-content
-            +skills(12, [['Creative', '9'], ['Teamwork', '11'], ['Innovate', '6'], ['Communication', '11']])
+            -var count = chunks[0];
+            each chunk in chunks[1]
+                +skill(count, chunk[0], chunk[1])
+
++resume-block-skills(locals)
