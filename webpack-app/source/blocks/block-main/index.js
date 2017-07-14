@@ -5,6 +5,10 @@ import resumeProfile from '../block-profile/index.js'
 import resumeContacts from '../block-contacts/index.js'
 import resumeSkills from '../block-skills/index.js'
 
+import resumeEducation from '../block-education/index.js'
+import resumeExperience from '../block-experience/index.js'
+import resumeSoftware from '../block-software/index.js'
+
 export default class{
     //Возвращает DOM объект
     static get(){
@@ -40,7 +44,34 @@ export default class{
             ['Communication','11']
         ]]);
 
-        elem.innerHTML = main([left, 'right']);
+        var right = resumeEducation.init([
+            ['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],
+            ['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],
+            ['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],
+            ['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.']
+        ]);
+
+        right += resumeExperience.init([
+            ['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],
+            ['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],
+            ['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],
+            ['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.']
+        ]);
+
+        right += resumeSoftware.init([
+            [
+                ['Photoshop', '90'],
+                ['Illustrator', '70'],
+                ['Indesign', '55']
+            ],
+            [
+                ['Dreamweaver', '82.5'],
+                ['After effects', '60'],
+                ['HTML&CSS', '90']
+            ]
+        ]);
+
+        elem.innerHTML = main([left, right]);
 
         return elem;
     }

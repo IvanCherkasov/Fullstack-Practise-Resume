@@ -1,0 +1,24 @@
+include ../mixins
+
+mixin _place(chunk)
+    div.places-header
+        div.places-title
+            div.title-1.text-black !{chunk[0]}
+            div.period !{chunk[1]}
+        div.title-2 !{chunk[2]}
+    div.places-content !{chunk[3]}
+
+mixin _education(chunks)
+    div.places
+        ul
+            each chunk in chunks
+                li
+                    +_place(chunk)
+
+mixin resume-block-education(array)
+    section
+        +section-header("i-star", "Education")
+        div.sec-content
+            +_education(array)
+
++resume-block-education(locals)

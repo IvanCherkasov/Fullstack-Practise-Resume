@@ -817,7 +817,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(7) + ") format('truetype'), url(" + __webpack_require__(8) + ") format('woff'), url(" + __webpack_require__(9) + ") format('eot');\n  font-weight: normal;\n  font-style: italic;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(10) + ") format('truetype'), url(" + __webpack_require__(11) + ") format('woff'), url(" + __webpack_require__(12) + ") format('eot');\n  font-weight: bold;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(13) + ") format('truetype'), url(" + __webpack_require__(14) + ") format('woff'), url(" + __webpack_require__(15) + ") format('eot');\n  font-weight: bold;\n  font-style: italic;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(16) + ") format('truetype'), url(" + __webpack_require__(17) + ") format('woff'), url(" + __webpack_require__(18) + ") format('eot');\n  font-weight: 100;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(19) + ") format('truetype'), url(" + __webpack_require__(20) + ") format('woff'), url(" + __webpack_require__(21) + ") format('eot');\n  font-weight: normal;\n  font-style: normal;\n}\nhtml {\n  font-size: 12px;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(7) + ") format('truetype'), url(" + __webpack_require__(8) + ") format('woff'), url(" + __webpack_require__(9) + ") format('eot');\n  font-weight: normal;\n  font-style: italic;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(10) + ") format('truetype'), url(" + __webpack_require__(11) + ") format('woff'), url(" + __webpack_require__(12) + ") format('eot');\n  font-weight: bold;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(13) + ") format('truetype'), url(" + __webpack_require__(14) + ") format('woff'), url(" + __webpack_require__(15) + ") format('eot');\n  font-weight: bold;\n  font-style: italic;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(16) + ") format('truetype'), url(" + __webpack_require__(17) + ") format('woff'), url(" + __webpack_require__(18) + ") format('eot');\n  font-weight: 100;\n  font-style: normal;\n}\n@font-face {\n  font-family: MyriadPro;\n  src: url(" + __webpack_require__(19) + ") format('truetype'), url(" + __webpack_require__(20) + ") format('woff'), url(" + __webpack_require__(21) + ") format('eot');\n  font-weight: normal;\n  font-style: normal;\n}\n@media (max-width: 950px) {\n  html {\n    font-size: 10px !important;\n  }\n}\nhtml {\n  font-size: 12px;\n}\nbody {\n  margin: 0;\n  padding: 0;\n}\n", ""]);
 
 // exports
 
@@ -1018,6 +1018,13 @@ module.exports = function (css) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__block_profile_index_js__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__block_contacts_index_js__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__block_skills_index_js__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__block_education_index_js__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__block_experience_index_js__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__block_software_index_js__ = __webpack_require__(55);
+
+
+
+
 
 
 
@@ -1035,7 +1042,13 @@ module.exports = function (css) {
         left += __WEBPACK_IMPORTED_MODULE_4__block_contacts_index_js__["a" /* default */].init([['Address', 'Main Street, City.'], ['E-mail', 'contact@domain.com'], ['Phone', '555-555-555'], ['Website', 'www.yourweb.com']]);
         left += __WEBPACK_IMPORTED_MODULE_5__block_skills_index_js__["a" /* default */].init([12, [['Creative', '9'], ['Teamwork', '11'], ['Innovate', '6'], ['Communication', '11']]]);
 
-        elem.innerHTML = __WEBPACK_IMPORTED_MODULE_1__index_pug___default.a([left, 'right']);
+        var right = __WEBPACK_IMPORTED_MODULE_6__block_education_index_js__["a" /* default */].init([['Master degree', '// Feb 2011 - Jun 2014', 'University name', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'], ['Master degree', '// Feb 2011 - Jun 2014', 'University name', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'], ['Master degree', '// Feb 2011 - Jun 2014', 'University name', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'], ['Master degree', '// Feb 2011 - Jun 2014', 'University name', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.']]);
+
+        right += __WEBPACK_IMPORTED_MODULE_7__block_experience_index_js__["a" /* default */].init([['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'], ['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'], ['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'], ['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.']]);
+
+        right += __WEBPACK_IMPORTED_MODULE_8__block_software_index_js__["a" /* default */].init([[['Photoshop', '90'], ['Illustrator', '70'], ['Indesign', '55']], [['Dreamweaver', '82.5'], ['After effects', '60'], ['HTML&CSS', '90']]]);
+
+        elem.innerHTML = __WEBPACK_IMPORTED_MODULE_1__index_pug___default.a([left, right]);
 
         return elem;
     }
@@ -1081,7 +1094,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".main {\n  font-family: MyriadPro;\n  font-weight: normal;\n  display: flex;\n  margin: 0 auto;\n  min-width: 320px;\n  margin-top: 7.33rem;\n  padding-left: 38px;\n  padding-right: 38px;\n}\n.main .text-black {\n  color: #000 !important;\n}\n.main .text-blue {\n  color: #006cb4 !important;\n}\n.main .left {\n  width: 37%;\n  display: flex;\n  flex-flow: column;\n  padding-right: 38px;\n}\n.main .right {\n  width: 57%;\n  display: flex;\n  flex-flow: column;\n  padding-left: 38px;\n}\n.main section {\n  width: 100%;\n  display: block;\n  margin: 0 auto;\n  margin-bottom: 3.16rem;\n}\n.main section .sec-header {\n  display: table;\n  height: 6rem;\n  width: 100%;\n  font-weight: bold;\n}\n.main section .sec-header .icon {\n  display: table-cell;\n  width: 5.84rem;\n  padding-right: 5.84rem;\n  background-color: #006cb4;\n  border-radius: 50%;\n  border: 0.08rem solid #006cb4;\n  vertical-align: middle;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n  position: relative;\n}\n.main section .sec-header .title {\n  display: table-cell;\n  vertical-align: middle;\n  font-size: 3.43rem;\n  text-transform: uppercase;\n  color: #006cb4;\n  padding-left: 1.1rem;\n}\n.main section .sec-header .buffer-line {\n  width: 100%;\n  display: table-cell;\n  vertical-align: middle;\n  padding-left: 0.5rem;\n}\n.main section .sec-header .buffer-line .line {\n  height: 0.42rem;\n  width: 100%;\n  background-color: #006cb4;\n}\n.main section .sec-content {\n  padding-top: 1.2rem;\n  line-height: 1.45rem;\n}\n.main section .sec-content span {\n  font-size: 1.29rem;\n  font-weight: normal;\n}\n", ""]);
+exports.push([module.i, "@media (max-device-width: 720px), (max-width: 720px) {\n  .main {\n    display: block !important;\n  }\n  .main .left {\n    width: 100% !important;\n    padding: 0 !important;\n  }\n  .main .right {\n    width: 100% !important;\n    padding: 0 !important;\n  }\n}\n.main {\n  font-family: MyriadPro;\n  font-weight: normal;\n  display: flex;\n  margin: 0 auto;\n  min-width: 320px;\n  margin-top: 7.33rem;\n  padding-left: 38px;\n  padding-right: 38px;\n}\n.main .text-black {\n  color: #000 !important;\n}\n.main .text-blue {\n  color: #006cb4 !important;\n}\n.main .left {\n  width: 37%;\n  display: flex;\n  flex-flow: column;\n  padding-right: 38px;\n}\n.main .right {\n  width: 57%;\n  display: flex;\n  flex-flow: column;\n  padding-left: 38px;\n}\n.main section {\n  width: 100%;\n  display: block;\n  margin: 0 auto;\n  margin-bottom: 3.16rem;\n}\n.main section .sec-header {\n  display: table;\n  height: 6rem;\n  width: 100%;\n  font-weight: bold;\n}\n.main section .sec-header .icon {\n  display: table-cell;\n  width: 5.84rem;\n  padding-right: 5.84rem;\n  background-color: #006cb4;\n  border-radius: 50%;\n  border: 0.08rem solid #006cb4;\n  vertical-align: middle;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n  position: relative;\n}\n.main section .sec-header .title {\n  display: table-cell;\n  vertical-align: middle;\n  font-size: 3.43rem;\n  text-transform: uppercase;\n  color: #006cb4;\n  padding-left: 1.1rem;\n}\n.main section .sec-header .buffer-line {\n  width: 100%;\n  display: table-cell;\n  vertical-align: middle;\n  padding-left: 0.5rem;\n}\n.main section .sec-header .buffer-line .line {\n  height: 0.42rem;\n  width: 100%;\n  background-color: #006cb4;\n}\n.main section .sec-content {\n  padding-top: 1.2rem;\n  line-height: 1.45rem;\n}\n.main section .sec-content span {\n  font-size: 1.29rem;\n  font-weight: normal;\n}\n.main .places {\n  font-size: 1.29rem;\n  padding-left: 1.1rem;\n  line-height: 2.08rem;\n  margin-top: 1.1rem;\n}\n.main .places ul {\n  margin: 0;\n  list-style: none;\n}\n.main .places li {\n  padding-bottom: 1.4rem;\n  position: relative;\n}\n.main .places li:last-child {\n  padding-bottom: 0;\n}\n.main .places li:not(:nth-child(1)) {\n  margin-top: 0;\n}\n.main .places .places-header {\n  font-size: 2.14rem;\n  text-transform: uppercase;\n}\n.main .places .places-header .places-title {\n  display: flex;\n  flex-flow: row;\n  flex-wrap: wrap;\n  line-height: 2rem;\n}\n.main .places .places-header .places-title .title-1 {\n  font-weight: bold;\n  color: #006cb4;\n  padding-right: 1.25rem;\n}\n.main .places .places-header .places-title .period {\n  text-transform: none;\n}\n.main .places .places-header .title-2 {\n  padding-top: 0.75rem;\n}\n.main .places .places-header::after {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: -3.17rem;\n  background-color: #000;\n  width: 1.67rem;\n  height: 1.67rem;\n  border-radius: 50%;\n}\n.main .places .places-content {\n  padding-top: 0.8rem;\n  line-height: 1.5rem;\n}\n", ""]);
 
 // exports
 
@@ -1662,6 +1675,565 @@ pug_html = pug_html + "\u003C\u002Fsection\u003E";
 };
 pug_indent.push('');
 pug_mixins["resume-block-skills"](locals);
+pug_indent.pop();;return pug_html;};
+module.exports = template;
+
+/***/ }),
+/* 46 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (class {
+    static init(options) {
+        var resumeEducation = __webpack_require__(50);
+        return resumeEducation(options);
+    }
+});
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(48);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".main section .icon .i-star {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  top: -2px;\n  position: absolute;\n  background-image: url(" + __webpack_require__(49) + ");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: 70%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTQgMTA2Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPlN0YXI8L3RpdGxlPjxnIGlkPSLQodC70L7QuV8yIiBkYXRhLW5hbWU9ItCh0LvQvtC5IDIiPjxnIGlkPSLQodC70L7QuV8xLTIiIGRhdGEtbmFtZT0i0KHQu9C+0LkgMSI+PHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9IjAgNDEgNDQgNDEgNTggMCA3MyA0MSAxMTQgNDEgODAgNjYgOTQgMTA2IDU3IDgyIDI0IDEwNiAzNSA2NyAwIDQxIi8+PC9nPjwvZz48L3N2Zz4="
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(2);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
+pug_mixins["section-header"] = pug_interp = function(iclass, title){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-header\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"icon\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (pug.attr("class", pug.classes([iclass], [true]), false, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E" + (pug.escape(null == (pug_interp = title) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"buffer-line\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"line\"\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["_place"] = pug_interp = function(chunk){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-header\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-title\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-1\"\u003E" + (null == (pug_interp = chunk[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"period\"\u003E" + (null == (pug_interp = chunk[1]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-2\"\u003E" + (null == (pug_interp = chunk[2]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-content\"\u003E" + (null == (pug_interp = chunk[3]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["_education"] = pug_interp = function(chunks){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cul\u003E";
+// iterate chunks
+;(function(){
+  var $$obj = chunks;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
+        var chunk = $$obj[pug_index0];
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cli\u003E";
+pug_indent.push('      ');
+pug_mixins["_place"](chunk);
+pug_indent.pop();
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fli\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index0 in $$obj) {
+      $$l++;
+      var chunk = $$obj[pug_index0];
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cli\u003E";
+pug_indent.push('      ');
+pug_mixins["_place"](chunk);
+pug_indent.pop();
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fli\u003E";
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ful\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["resume-block-education"] = pug_interp = function(array){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Csection\u003E";
+pug_indent.push('  ');
+pug_mixins["section-header"]("i-star", "Education");
+pug_indent.pop();
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E";
+pug_indent.push('    ');
+pug_mixins["_education"](array);
+pug_indent.pop();
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fsection\u003E";
+};
+pug_indent.push('');
+pug_mixins["resume-block-education"](locals);
+pug_indent.pop();;return pug_html;};
+module.exports = template;
+
+/***/ }),
+/* 51 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (class {
+    static init(options) {
+        var resumeExperience = __webpack_require__(54);
+        return resumeExperience(options);
+    }
+});
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(53);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".main section .icon .i-case::before {\n  content: \"\";\n  position: absolute;\n  top: calc(50% - 1.53rem);\n  left: calc(50% - 1.1rem);\n  border-radius: 50%;\n  background-color: #006cb4;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n  width: 2.08rem;\n  height: 2.08rem;\n}\n.main section .icon .i-case::after {\n  content: \"\";\n  position: absolute;\n  top: calc(50% - 0.7rem);\n  left: calc(50% - 1.6rem);\n  background-color: #fff;\n  width: 3.08rem;\n  height: 2rem;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(2);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
+pug_mixins["section-header"] = pug_interp = function(iclass, title){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-header\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"icon\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (pug.attr("class", pug.classes([iclass], [true]), false, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E" + (pug.escape(null == (pug_interp = title) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"buffer-line\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"line\"\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["_place"] = pug_interp = function(chunk){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-header\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-title\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-1 text-black\"\u003E" + (null == (pug_interp = chunk[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"period\"\u003E" + (null == (pug_interp = chunk[1]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-2\"\u003E" + (null == (pug_interp = chunk[2]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-content\"\u003E" + (null == (pug_interp = chunk[3]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["_education"] = pug_interp = function(chunks){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cul\u003E";
+// iterate chunks
+;(function(){
+  var $$obj = chunks;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
+        var chunk = $$obj[pug_index0];
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cli\u003E";
+pug_indent.push('      ');
+pug_mixins["_place"](chunk);
+pug_indent.pop();
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fli\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index0 in $$obj) {
+      $$l++;
+      var chunk = $$obj[pug_index0];
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cli\u003E";
+pug_indent.push('      ');
+pug_mixins["_place"](chunk);
+pug_indent.pop();
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fli\u003E";
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ful\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["resume-block-education"] = pug_interp = function(array){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Csection\u003E";
+pug_indent.push('  ');
+pug_mixins["section-header"]("i-star", "Education");
+pug_indent.pop();
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E";
+pug_indent.push('    ');
+pug_mixins["_education"](array);
+pug_indent.pop();
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fsection\u003E";
+};
+pug_indent.push('');
+pug_mixins["resume-block-education"](locals);
+pug_indent.pop();;return pug_html;};
+module.exports = template;
+
+/***/ }),
+/* 55 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (class {
+    static init(options) {
+
+        function set(bars) {
+            Array.from(bars).forEach(function (bar) {
+                var progress = bar.getAttribute('value');
+                bar.style.width = progress + "%";
+            });
+        }
+
+        var div = document.createElement('div');
+        var resumeSoftware = __webpack_require__(58);
+        div.innerHTML = resumeSoftware(options);
+        set(div.getElementsByClassName('progress-bar'));
+        return div.innerHTML;
+    }
+});
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(57);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/stylus-loader/index.js!./index.styl");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "@media (max-device-width: 720px), (max-width: 720px) {\n  .main section .software-content {\n    display: block !important;\n  }\n}\n@media (max-width: 830px) {\n  .main section .software-content {\n    display: block !important;\n  }\n}\n.main section .software-content {\n  display: flex;\n  flex-flow: row;\n  flex-wrap: wrap;\n  margin-top: 1.58rem;\n  padding-left: 0.67rem;\n}\n.main section .software-content .software-column {\n  flex: 1 0 44.5%;\n}\n.main section .software-content .software-column .progress-item {\n  width: 100%;\n  padding-bottom: 0.5rem;\n}\n.main section .software-content .software-column .progress-item .progress-title {\n  font-size: 2.14rem;\n  text-transform: uppercase;\n  padding-bottom: 1.7rem;\n}\n.main section .software-content .software-column .progress-item .progress {\n  position: relative;\n  height: 1.7rem;\n  width: 100%;\n  background-color: #e7e7e7;\n  margin-bottom: 1.83rem;\n}\n.main section .software-content .software-column .progress-item .progress .progress-bar {\n  height: 100%;\n  background-color: #006cb4;\n  width: 0;\n}\n.main section .software-content .software-column .progress-item:last-child {\n  padding-bottom: 0;\n  margin-bottom: 0;\n}\n.main section .software-content .software-column.s-separator {\n  flex: 0 0 11%;\n}\n.main .icon .i-software::after {\n  content: \"\";\n  position: absolute;\n  top: 1.5rem;\n  left: 1.33rem;\n  width: 3.17rem;\n  height: 2rem;\n  background-color: #006cb4;\n  border-radius: 0.42rem;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n}\n.main .icon .i-software::before {\n  content: \"\";\n  position: absolute;\n  top: 3.75rem;\n  left: 1.17rem;\n  width: 3rem;\n  height: 0;\n  border-left: 0.25rem solid transparent;\n  border-right: 0.25rem solid transparent;\n  border-bottom: 0.5rem solid #fff;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(2);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
+pug_mixins["section-header"] = pug_interp = function(iclass, title){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-header\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"icon\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (pug.attr("class", pug.classes([iclass], [true]), false, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title\"\u003E" + (pug.escape(null == (pug_interp = title) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"buffer-line\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"line\"\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["_fill_column"] = pug_interp = function(chunks){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+// iterate chunks
+;(function(){
+  var $$obj = chunks;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
+        var chunk = $$obj[pug_index0];
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"progress-item\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"progress-title\"\u003E" + (null == (pug_interp = chunk[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"progress\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (" class=\"progress-bar\""+pug.attr("value", chunk[1], true, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index0 in $$obj) {
+      $$l++;
+      var chunk = $$obj[pug_index0];
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"progress-item\"\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"progress-title\"\u003E" + (null == (pug_interp = chunk[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"progress\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv" + (" class=\"progress-bar\""+pug.attr("value", chunk[1], true, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+    }
+  }
+}).call(this);
+
+};
+pug_mixins["resume-block-software"] = pug_interp = function(chunks){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Csection\u003E";
+pug_indent.push('  ');
+pug_mixins["section-header"]('i-software', 'Software');
+pug_indent.pop();
+pug_html = pug_html + "\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"software-content\"\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"software-column\"\u003E";
+pug_indent.push('        ');
+pug_mixins["_fill_column"](chunks[0]);
+pug_indent.pop();
+pug_html = pug_html + "\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"software-column s-separator\"\u003E\u003C\u002Fdiv\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"software-column\"\u003E";
+pug_indent.push('        ');
+pug_mixins["_fill_column"](chunks[1]);
+pug_indent.pop();
+pug_html = pug_html + "\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fsection\u003E";
+};
+pug_indent.push('');
+pug_mixins["resume-block-software"](locals);
 pug_indent.pop();;return pug_html;};
 module.exports = template;
 

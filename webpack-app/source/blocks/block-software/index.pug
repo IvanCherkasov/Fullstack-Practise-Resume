@@ -1,0 +1,21 @@
+include ../mixins
+
+mixin _fill_column(chunks)
+    each chunk in chunks
+        div.progress-item
+            div.progress-title !{chunk[0]}
+            div.progress
+                div(value=chunk[1]).progress-bar
+
+mixin resume-block-software(chunks)
+    section
+        +section-header('i-software', 'Software')
+        div.sec-content
+            div.software-content
+                div.software-column
+                    +_fill_column(chunks[0])
+                div.software-column.s-separator
+                div.software-column
+                    +_fill_column(chunks[1])
+
++resume-block-software(locals)
