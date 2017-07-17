@@ -1,15 +1,16 @@
 include ../mixins
+
+-var contacts_array = [['Address', 'Main Street, City.'],['E-mail', 'contact@domain.com'],['Phone', '555-555-555'],['Website', 'www.yourweb.com']];
+
 mixin contact-table-tr(title, content)
     tr
         td.td-title !{title}
         td !{content}
 
-mixin resume-block-contacts(chunks)
+mixin resume-block-contacts()
     section
         +section-header('i-contacts', 'Contacts')
         div.sec-content
             table.contacts
-                each chunk in chunks
+                each chunk in contacts_array
                     +contact-table-tr(chunk[0], chunk[1])
-
-+resume-block-contacts(locals)

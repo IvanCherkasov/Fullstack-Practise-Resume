@@ -1,6 +1,19 @@
-mixin resume-block-main(chunks)
-    div.main
-        div.left !{chunks[0]}
-        div.right !{chunks[1]}
+include ../block-header/index
+include ../block-profile/index
+include ../block-contacts/index
+include ../block-skills/index
+include ../block-education/index
+include ../block-experience/index
+include ../block-software/index
 
-+resume-block-main(locals)
+mixin resume-block-main()
+    div.main
+        div.left
+            +resume-block-header()
+            +resume-block-profile()
+            +resume-block-contacts()
+            +resume-block-skills()
+        div.right
+            +resume-block-education()
+            +resume-block-experience()
+            +resume-block-software()

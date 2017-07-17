@@ -1,5 +1,7 @@
 include ../mixins
 
+-var experience_array = [['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.']];
+
 mixin _place(chunk)
     div.places-header
         div.places-title
@@ -15,10 +17,8 @@ mixin _education(chunks)
                 li
                     +_place(chunk)
 
-mixin resume-block-education(array)
+mixin resume-block-experience()
     section
         +section-header("i-star", "Education")
         div.sec-content
-            +_education(array)
-
-+resume-block-education(locals)
+            +_education(experience_array)

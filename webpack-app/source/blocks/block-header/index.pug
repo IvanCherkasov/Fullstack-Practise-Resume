@@ -1,4 +1,6 @@
-mixin resume-block-header(chunks)
+-var chunks = ['Name here','Surname','Graphic designer'];
+
+mixin resume-block-header()
   section.header
     div.header-top
       div
@@ -7,5 +9,3 @@ mixin resume-block-header(chunks)
       div.name !{chunks[0]}
       div.surname !{chunks[1]}
       div.profession !{chunks[2]}
-
-+resume-block-header(locals)
