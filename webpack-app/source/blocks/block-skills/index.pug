@@ -1,7 +1,5 @@
 include ../mixins
 
--var skills_array = [12, [['Creative','9'],['Teamwork','11'],['Innovate','6'],['Communication','11']]];
-
 mixin skill(pointCount, title, level)
     div.skill
         div.skill-title !{title}
@@ -12,10 +10,10 @@ mixin skill(pointCount, title, level)
                     li
                     - n++;
 
-mixin resume-block-skills()
+mixin resume-block-skills(chunks)
     section.skills
         +section-header('i-skills', 'Skills')
         div.sec-content
-            -var count = skills_array[0];
-            each chunk in skills_array[1]
-                +skill(count, chunk[0], chunk[1])
+            -var count = chunks.maximum;
+            each chunk in chunks.content
+                +skill(count, chunk.title, chunk.value)

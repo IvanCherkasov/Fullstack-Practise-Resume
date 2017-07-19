@@ -6,14 +6,112 @@ include ../block-education/index
 include ../block-experience/index
 include ../block-software/index
 
+
+-
+    var header_array = {name: 'Name here', surname: 'Surname', profession: 'Graphic designer'};
+
+-
+    var profile_text = '<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ' +
+    'Aenean commodo ligula eget dolor. Aenean massa. Cum sociis ' +
+    'natoque penatibus et magnis dis parturient montes, nascetur ' +
+    'ridiculus mus. Donec quam felis, ultricies nec, pellentesque ' +
+    'eu, pretium quis, sem. Nulla consequat massa quis enim. ' +
+    'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, ' +
+    'arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, ' +
+    'justo. Nullam dictum felis eu <b>pede mollis pretium. Integer ' +
+    'tincidunt. Cras dapibus. Vivamus elementum semper nisi. ' +
+    'Aenean vulputate eleifend tellus. Aenean leo ligula, ' +
+    'porttitor eu, consequat vitae, eleifend ac, enim. Aliquam ' +
+    'lorem ante, dapibus in, viverra quis, feugiat a, tellus. ' +
+    'Phasellus viverra nulla ut metus varius laoreet. Quisque ' +
+    'rutrum. </b></span>';
+
+/////////
+/// Массив табличных строк из двух ячеек. JSON => title - лево; content - право;
+/////////
+-
+    var contacts_array = [
+    {title: 'Address', content: 'Main Street, City.'},
+    {title: 'E-mail',  content: 'contact@domain.com'},
+    {title: 'Phone',   content: '555-555-555'},
+    {title: 'Website', content: 'www.yourweb.com'}
+    ];
+
+/////////
+/// Список скиллов с прогрессом по каждому.
+/// maximum: максимальная позиция прогресса (количество кружков)
+/// title: заголовок скилла
+/// value: значение прогресса
+/////////
+-
+    var skills_progress = {
+    maximum: 12, content: [
+        {title: 'Creative', value: 9},
+        {title: 'Teamwork', value: 11},
+        {title: 'Innovate', value: 6},
+        {title: 'Communication', value: 11}
+    ]
+    };
+
+/////////
+/// Массив из пройденных высших учебных заведений
+/// academicDegree: академическая (ученая) степень
+/// period: период обучения
+/// university: название университета
+/// text: дополнительный текст
+/////////
+-
+    var education_array = [
+    {academicDegree: 'Master degree', period: '// Feb 2011 - Jun 2014', university: 'University name', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+    {academicDegree: 'Master degree', period: '// Feb 2011 - Jun 2014', university: 'University name', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+    {academicDegree: 'Master degree', period: '// Feb 2011 - Jun 2014', university: 'University name', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+    {academicDegree: 'Master degree', period: '// Feb 2011 - Jun 2014', university: 'University name', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'}
+    ];
+
+/////////
+/// Массив из прежних работ
+/// company: имя компании
+/// period: период работы
+/// position: должность(и), или еще что-то
+/// text: дополнительный текст
+/////////
+-
+    var experience_array = [
+    {company: 'Company name', period: '// Feb 2011 - Jun 2014', position: 'Your job here', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+    {company: 'Company name', period: '// Feb 2011 - Jun 2014', position: 'Your job here', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+    {company: 'Company name', period: '// Feb 2011 - Jun 2014', position: 'Your job here', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+    {company: 'Company name', period: '// Feb 2011 - Jun 2014', position: 'Your job here', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'}
+    ];
+
+/////////
+/// Массив из программ с оценкой уровня владения
+/// Список разделен на две колонки, поэтому есть два элемента left и right
+/// (сами колонки сделаны немного не правильно, как мне кажется, поэтому если не переделывать так проще всего)
+/// program: имя программы
+/// value: уровень владения от 0 до 100%
+/////////
+-
+    var software_array = {
+        left:[
+            {program: 'Photoshop', value: 90},
+            {program: 'Illustrator', value: 70},
+            {program: 'Indesign', value: 55}
+        ],
+        right:[
+            {program: 'Dreamweaver', value: 82.5},
+            {program: 'After effects', value: 60},
+            {program: 'HTML&CSS', value: 90}
+        ]
+    };
+
 mixin resume-block-main()
     div.main
         div.left
-            +resume-block-header()
-            +resume-block-profile()
-            +resume-block-contacts()
-            +resume-block-skills()
+            +resume-block-header(header_array)
+            +resume-block-profile(profile_text)
+            +resume-block-contacts(contacts_array)
+            +resume-block-skills(skills_progress)
         div.right
-            +resume-block-education()
-            +resume-block-experience()
-            +resume-block-software()
+            +resume-block-education(education_array)
+            +resume-block-experience(experience_array)
+            +resume-block-software(software_array)

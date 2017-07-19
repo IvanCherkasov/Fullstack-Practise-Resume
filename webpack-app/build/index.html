@@ -1,4 +1,34 @@
-<!DOCTYPE html>
+
+<!--///////-->
+<!--/ Массив табличных строк из двух ячеек. JSON => title - лево; content - право;-->
+<!--///////-->
+<!--///////-->
+<!--/ Список скиллов с прогрессом по каждому.-->
+<!--/ maximum: максимальная позиция прогресса (количество кружков)-->
+<!--/ title: заголовок скилла-->
+<!--/ value: значение прогресса-->
+<!--///////-->
+<!--///////-->
+<!--/ Массив из пройденных высших учебных заведений-->
+<!--/ academicDegree: академическая (ученая) степень-->
+<!--/ period: период обучения-->
+<!--/ university: название университета-->
+<!--/ text: дополнительный текст-->
+<!--///////-->
+<!--///////-->
+<!--/ Массив из прежних работ-->
+<!--/ company: имя компании-->
+<!--/ period: период работы-->
+<!--/ position: должность(и), или еще что-то-->
+<!--/ text: дополнительный текст-->
+<!--///////-->
+<!--///////-->
+<!--/ Массив из программ с оценкой уровня владения-->
+<!--/ Список разделен на две колонки, поэтому есть два элемента left и right-->
+<!--/ (сами колонки сделаны немного не правильно, как мне кажется, поэтому если не переделывать так проще всего)-->
+<!--/ program: имя программы-->
+<!--/ value: уровень владения от 0 до 100%-->
+<!--///////--><!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="utf-8">
@@ -169,7 +199,7 @@
                 <li>
                   <div class="places-header">
                     <div class="places-title">
-                      <div class="title-1 text-black">Master degree</div>
+                      <div class="title-1">Master degree</div>
                       <div class="period">// Feb 2011 - Jun 2014</div>
                     </div>
                     <div class="title-2">University name</div>
@@ -179,7 +209,7 @@
                 <li>
                   <div class="places-header">
                     <div class="places-title">
-                      <div class="title-1 text-black">Master degree</div>
+                      <div class="title-1">Master degree</div>
                       <div class="period">// Feb 2011 - Jun 2014</div>
                     </div>
                     <div class="title-2">University name</div>
@@ -189,7 +219,7 @@
                 <li>
                   <div class="places-header">
                     <div class="places-title">
-                      <div class="title-1 text-black">Master degree</div>
+                      <div class="title-1">Master degree</div>
                       <div class="period">// Feb 2011 - Jun 2014</div>
                     </div>
                     <div class="title-2">University name</div>
@@ -199,7 +229,7 @@
                 <li>
                   <div class="places-header">
                     <div class="places-title">
-                      <div class="title-1 text-black">Master degree</div>
+                      <div class="title-1">Master degree</div>
                       <div class="period">// Feb 2011 - Jun 2014</div>
                     </div>
                     <div class="title-2">University name</div>
@@ -213,9 +243,9 @@
         <section>
           <div class="sec-header">
             <div class="icon">
-              <div class="i-star"></div>
+              <div class="i-case"></div>
             </div>
-            <div class="title">Education</div>
+            <div class="title">Experience</div>
             <div class="buffer-line">
               <div class="line"></div>
             </div>

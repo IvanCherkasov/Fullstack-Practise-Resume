@@ -1,11 +1,9 @@
--var chunks = ['Name here','Surname','Graphic designer'];
-
-mixin resume-block-header()
+mixin resume-block-header(chunk)
   section.header
     div.header-top
       div
       div
     div.header-bottom.header-text
-      div.name !{chunks[0]}
-      div.surname !{chunks[1]}
-      div.profession !{chunks[2]}
+      div.name !{chunk.name}
+      div.surname !{chunk.surname}
+      div.profession !{chunk.profession}

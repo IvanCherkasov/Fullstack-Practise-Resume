@@ -1,21 +1,5 @@
 include ../mixins
--var str = '<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ';
--str += 'Aenean commodo ligula eget dolor. Aenean massa. Cum sociis ';
--str += 'natoque penatibus et magnis dis parturient montes, nascetur ';
--str += 'ridiculus mus. Donec quam felis, ultricies nec, pellentesque ';
--str += 'eu, pretium quis, sem. Nulla consequat massa quis enim. ';
--str += 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, ';
--str += 'arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, ';
--str += 'justo. Nullam dictum felis eu <b>pede mollis pretium. Integer ';
--str += 'tincidunt. Cras dapibus. Vivamus elementum semper nisi. ';
--str += 'Aenean vulputate eleifend tellus. Aenean leo ligula, ';
--str += 'porttitor eu, consequat vitae, eleifend ac, enim. Aliquam ';
--str += 'lorem ante, dapibus in, viverra quis, feugiat a, tellus. ';
--str += 'Phasellus viverra nulla ut metus varius laoreet. Quisque ';
--str += 'rutrum. </b></span>';
--var profile_text_array = [str];
-
-mixin resume-block-profile()
+mixin resume-block-profile(text)
   section.profile
     +section-header('i-profile', 'Profile')
-    div.sec-content !{profile_text_array[0]}
+    div.sec-content !{text}

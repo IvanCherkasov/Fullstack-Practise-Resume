@@ -1245,8 +1245,7 @@ exports.push([module.i, "@media (max-device-width: 720px), (max-width: 720px) {\
 var pug = __webpack_require__(50);
 
 function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
-var chunks = ['Name here','Surname','Graphic designer'];
-pug_mixins["resume-block-header"] = pug_interp = function(){
+pug_mixins["resume-block-header"] = pug_interp = function(chunk){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1262,11 +1261,11 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"header-bottom header-text\"\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"name\"\u003E" + (null == (pug_interp = chunks[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n    ";
+pug_html = pug_html + "\u003Cdiv class=\"name\"\u003E" + (null == (pug_interp = chunk.name) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"surname\"\u003E" + (null == (pug_interp = chunks[1]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n    ";
+pug_html = pug_html + "\u003Cdiv class=\"surname\"\u003E" + (null == (pug_interp = chunk.surname) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"profession\"\u003E" + (null == (pug_interp = chunks[2]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + "\u003Cdiv class=\"profession\"\u003E" + (null == (pug_interp = chunk.profession) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1294,22 +1293,7 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-var str = '<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ';
-str += 'Aenean commodo ligula eget dolor. Aenean massa. Cum sociis ';
-str += 'natoque penatibus et magnis dis parturient montes, nascetur ';
-str += 'ridiculus mus. Donec quam felis, ultricies nec, pellentesque ';
-str += 'eu, pretium quis, sem. Nulla consequat massa quis enim. ';
-str += 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, ';
-str += 'arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, ';
-str += 'justo. Nullam dictum felis eu <b>pede mollis pretium. Integer ';
-str += 'tincidunt. Cras dapibus. Vivamus elementum semper nisi. ';
-str += 'Aenean vulputate eleifend tellus. Aenean leo ligula, ';
-str += 'porttitor eu, consequat vitae, eleifend ac, enim. Aliquam ';
-str += 'lorem ante, dapibus in, viverra quis, feugiat a, tellus. ';
-str += 'Phasellus viverra nulla ut metus varius laoreet. Quisque ';
-str += 'rutrum. </b></span>';
-var profile_text_array = [str];
-pug_mixins["resume-block-profile"] = pug_interp = function(){
+pug_mixins["resume-block-profile"] = pug_interp = function(text){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1319,7 +1303,7 @@ pug_mixins["section-header"]('i-profile', 'Profile');
 pug_indent.pop();
 pug_html = pug_html + "\n  ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E" + (null == (pug_interp = profile_text_array[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E" + (null == (pug_interp = text) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fsection\u003E";
 };
@@ -1345,7 +1329,6 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-var contacts_array = [['Address', 'Main Street, City.'],['E-mail', 'contact@domain.com'],['Phone', '555-555-555'],['Website', 'www.yourweb.com']];
 pug_mixins["contact-table-tr"] = pug_interp = function(title, content){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
@@ -1358,7 +1341,7 @@ pug_html = pug_html + "\u003Ctd\u003E" + (null == (pug_interp = content) ? "" : 
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Ftr\u003E";
 };
-pug_mixins["resume-block-contacts"] = pug_interp = function(){
+pug_mixins["resume-block-contacts"] = pug_interp = function(chunks){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1371,14 +1354,14 @@ pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Ctable class=\"contacts\"\u003E";
-// iterate contacts_array
+// iterate chunks
 ;(function(){
-  var $$obj = contacts_array;
+  var $$obj = chunks;
   if ('number' == typeof $$obj.length) {
       for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
         var chunk = $$obj[pug_index0];
 pug_indent.push('      ');
-pug_mixins["contact-table-tr"](chunk[0], chunk[1]);
+pug_mixins["contact-table-tr"](chunk.title, chunk.content);
 pug_indent.pop();
       }
   } else {
@@ -1387,7 +1370,7 @@ pug_indent.pop();
       $$l++;
       var chunk = $$obj[pug_index0];
 pug_indent.push('      ');
-pug_mixins["contact-table-tr"](chunk[0], chunk[1]);
+pug_mixins["contact-table-tr"](chunk.title, chunk.content);
 pug_indent.pop();
     }
   }
@@ -1423,7 +1406,6 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-var skills_array = [12, [['Creative','9'],['Teamwork','11'],['Innovate','6'],['Communication','11']]];
 pug_mixins["skill"] = pug_interp = function(pointCount, title, level){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
@@ -1451,7 +1433,7 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-pug_mixins["resume-block-skills"] = pug_interp = function(){
+pug_mixins["resume-block-skills"] = pug_interp = function(chunks){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1462,15 +1444,15 @@ pug_indent.pop();
 pug_html = pug_html + "\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E";
-var count = skills_array[0];
-// iterate skills_array[1]
+var count = chunks.maximum;
+// iterate chunks.content
 ;(function(){
-  var $$obj = skills_array[1];
+  var $$obj = chunks.content;
   if ('number' == typeof $$obj.length) {
       for (var pug_index1 = 0, $$l = $$obj.length; pug_index1 < $$l; pug_index1++) {
         var chunk = $$obj[pug_index1];
 pug_indent.push('    ');
-pug_mixins["skill"](count, chunk[0], chunk[1]);
+pug_mixins["skill"](count, chunk.title, chunk.value);
 pug_indent.pop();
       }
   } else {
@@ -1479,7 +1461,7 @@ pug_indent.pop();
       $$l++;
       var chunk = $$obj[pug_index1];
 pug_indent.push('    ');
-pug_mixins["skill"](count, chunk[0], chunk[1]);
+pug_mixins["skill"](count, chunk.title, chunk.value);
 pug_indent.pop();
     }
   }
@@ -1513,75 +1495,7 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-var education_array = [['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.']];
-pug_mixins["_place"] = pug_interp = function(chunk){
-var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"places-header\"\u003E\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"places-title\"\u003E\n    ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"title-1\"\u003E" + (null == (pug_interp = chunk[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n    ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"period\"\u003E" + (null == (pug_interp = chunk[1]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"title-2\"\u003E" + (null == (pug_interp = chunk[2]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"places-content\"\u003E" + (null == (pug_interp = chunk[3]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E";
-};
-pug_mixins["_education"] = pug_interp = function(chunks){
-var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"places\"\u003E\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cul\u003E";
-// iterate chunks
-;(function(){
-  var $$obj = chunks;
-  if ('number' == typeof $$obj.length) {
-      for (var pug_index2 = 0, $$l = $$obj.length; pug_index2 < $$l; pug_index2++) {
-        var chunk = $$obj[pug_index2];
-pug_html = pug_html + "\n    ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cli\u003E";
-pug_indent.push('      ');
-pug_mixins["_place"](chunk);
-pug_indent.pop();
-pug_html = pug_html + "\n    ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fli\u003E";
-      }
-  } else {
-    var $$l = 0;
-    for (var pug_index2 in $$obj) {
-      $$l++;
-      var chunk = $$obj[pug_index2];
-pug_html = pug_html + "\n    ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cli\u003E";
-pug_indent.push('      ');
-pug_mixins["_place"](chunk);
-pug_indent.pop();
-pug_html = pug_html + "\n    ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fli\u003E";
-    }
-  }
-}).call(this);
-
-pug_html = pug_html + "\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Ful\u003E\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E";
-};
-pug_mixins["resume-block-education"] = pug_interp = function(){
+pug_mixins["resume-block-education"] = pug_interp = function(chunks){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1591,11 +1505,74 @@ pug_mixins["section-header"]("i-star", "Education");
 pug_indent.pop();
 pug_html = pug_html + "\n  ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E";
-pug_indent.push('    ');
-pug_mixins["_education"](education_array);
-pug_indent.pop();
-pug_html = pug_html + "\n  ";
+pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places\"\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cul\u003E";
+// iterate chunks
+;(function(){
+  var $$obj = chunks;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index2 = 0, $$l = $$obj.length; pug_index2 < $$l; pug_index2++) {
+        var chunk = $$obj[pug_index2];
+pug_html = pug_html + "\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cli\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-header\"\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-title\"\u003E\n              ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-1\"\u003E" + (null == (pug_interp = chunk.academicDegree) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n              ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"period\"\u003E" + (null == (pug_interp = chunk.period) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-2\"\u003E" + (null == (pug_interp = chunk.university) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-content\"\u003E" + (null == (pug_interp = chunk.text) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fli\u003E";
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index2 in $$obj) {
+      $$l++;
+      var chunk = $$obj[pug_index2];
+pug_html = pug_html + "\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cli\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-header\"\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-title\"\u003E\n              ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-1\"\u003E" + (null == (pug_interp = chunk.academicDegree) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n              ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"period\"\u003E" + (null == (pug_interp = chunk.period) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-2\"\u003E" + (null == (pug_interp = chunk.university) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-content\"\u003E" + (null == (pug_interp = chunk.text) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fli\u003E";
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ful\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1624,31 +1601,19 @@ pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
 var experience_array = [['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Company name', '// Feb 2011 - Jun 2014', 'Your job here', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.']];
-pug_mixins["_place"] = pug_interp = function(chunk){
+pug_mixins["resume-block-experience"] = pug_interp = function(chunks){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"places-header\"\u003E\n  ";
+pug_html = pug_html + "\u003Csection\u003E";
+pug_indent.push('  ');
+pug_mixins["section-header"]("i-case", "Experience");
+pug_indent.pop();
+pug_html = pug_html + "\n  ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"places-title\"\u003E\n    ";
+pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"title-1 text-black\"\u003E" + (null == (pug_interp = chunk[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n    ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"period\"\u003E" + (null == (pug_interp = chunk[1]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"title-2\"\u003E" + (null == (pug_interp = chunk[2]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"places-content\"\u003E" + (null == (pug_interp = chunk[3]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E";
-};
-pug_mixins["_education"] = pug_interp = function(chunks){
-var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"places\"\u003E\n  ";
+pug_html = pug_html + "\u003Cdiv class=\"places\"\u003E\n      ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cul\u003E";
 // iterate chunks
@@ -1657,13 +1622,25 @@ pug_html = pug_html + "\u003Cul\u003E";
   if ('number' == typeof $$obj.length) {
       for (var pug_index3 = 0, $$l = $$obj.length; pug_index3 < $$l; pug_index3++) {
         var chunk = $$obj[pug_index3];
-pug_html = pug_html + "\n    ";
+pug_html = pug_html + "\n        ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cli\u003E";
-pug_indent.push('      ');
-pug_mixins["_place"](chunk);
-pug_indent.pop();
-pug_html = pug_html + "\n    ";
+pug_html = pug_html + "\u003Cli\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-header\"\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-title\"\u003E\n              ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-1 text-black\"\u003E" + (null == (pug_interp = chunk.company) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n              ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"period\"\u003E" + (null == (pug_interp = chunk.period) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-2\"\u003E" + (null == (pug_interp = chunk.position) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-content\"\u003E" + (null == (pug_interp = chunk.text) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n        ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fli\u003E";
       }
@@ -1672,40 +1649,36 @@ pug_html = pug_html + "\u003C\u002Fli\u003E";
     for (var pug_index3 in $$obj) {
       $$l++;
       var chunk = $$obj[pug_index3];
-pug_html = pug_html + "\n    ";
+pug_html = pug_html + "\n        ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cli\u003E";
-pug_indent.push('      ');
-pug_mixins["_place"](chunk);
-pug_indent.pop();
-pug_html = pug_html + "\n    ";
+pug_html = pug_html + "\u003Cli\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-header\"\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-title\"\u003E\n              ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-1 text-black\"\u003E" + (null == (pug_interp = chunk.company) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n              ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"period\"\u003E" + (null == (pug_interp = chunk.period) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n            ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"title-2\"\u003E" + (null == (pug_interp = chunk.position) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"places-content\"\u003E" + (null == (pug_interp = chunk.text) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n        ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fli\u003E";
     }
   }
 }).call(this);
 
-pug_html = pug_html + "\n  ";
+pug_html = pug_html + "\n      ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Ful\u003E\n";
+pug_html = pug_html + "\u003C\u002Ful\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E";
-};
-pug_mixins["resume-block-experience"] = pug_interp = function(){
-var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Csection\u003E";
-pug_indent.push('  ');
-pug_mixins["section-header"]("i-star", "Education");
-pug_indent.pop();
-pug_html = pug_html + "\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E";
-pug_indent.push('    ');
-pug_mixins["_education"](experience_array);
-pug_indent.pop();
-pug_html = pug_html + "\n  ";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1733,7 +1706,6 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-var software_array = [[['Photoshop', '90'],['Illustrator', '70'],['Indesign', '55']],[['Dreamweaver', '82.5'],['After effects', '60'],['HTML&CSS', '90']]];
 pug_mixins["_fill_column"] = pug_interp = function(chunks){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 // iterate chunks
@@ -1746,11 +1718,11 @@ pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"progress-item\"\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"progress-title\"\u003E" + (null == (pug_interp = chunk[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + "\u003Cdiv class=\"progress-title\"\u003E" + (null == (pug_interp = chunk.program) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"progress\"\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv" + (" class=\"progress-bar\""+pug.attr("value", chunk[1], true, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + "\u003Cdiv" + (" class=\"progress-bar\""+pug.attr("value", chunk.value, true, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1765,11 +1737,11 @@ pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"progress-item\"\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"progress-title\"\u003E" + (null == (pug_interp = chunk[0]) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + "\u003Cdiv class=\"progress-title\"\u003E" + (null == (pug_interp = chunk.program) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"progress\"\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv" + (" class=\"progress-bar\""+pug.attr("value", chunk[1], true, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + "\u003Cdiv" + (" class=\"progress-bar\""+pug.attr("value", chunk.value, true, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1779,7 +1751,7 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }).call(this);
 
 };
-pug_mixins["resume-block-software"] = pug_interp = function(){
+pug_mixins["resume-block-software"] = pug_interp = function(software){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1795,7 +1767,7 @@ pug_html = pug_html + "\u003Cdiv class=\"software-content\"\u003E\n      ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"software-column\"\u003E";
 pug_indent.push('        ');
-pug_mixins["_fill_column"](software_array[0]);
+pug_mixins["_fill_column"](software.left);
 pug_indent.pop();
 pug_html = pug_html + "\n      ";
 pug_html = pug_html + pug_indent.join("");
@@ -1805,7 +1777,7 @@ pug_html = pug_html + "\u003Cdiv class=\"software-column s-separator\"\u003E\u00
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"software-column\"\u003E";
 pug_indent.push('        ');
-pug_mixins["_fill_column"](software_array[1]);
+pug_mixins["_fill_column"](software.right);
 pug_indent.pop();
 pug_html = pug_html + "\n      ";
 pug_html = pug_html + pug_indent.join("");
@@ -1817,6 +1789,71 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fsection\u003E";
 };
+var header_array = {name: 'Name here', surname: 'Surname', profession: 'Graphic designer'};
+
+var profile_text = '<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ' +
+'Aenean commodo ligula eget dolor. Aenean massa. Cum sociis ' +
+'natoque penatibus et magnis dis parturient montes, nascetur ' +
+'ridiculus mus. Donec quam felis, ultricies nec, pellentesque ' +
+'eu, pretium quis, sem. Nulla consequat massa quis enim. ' +
+'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, ' +
+'arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, ' +
+'justo. Nullam dictum felis eu <b>pede mollis pretium. Integer ' +
+'tincidunt. Cras dapibus. Vivamus elementum semper nisi. ' +
+'Aenean vulputate eleifend tellus. Aenean leo ligula, ' +
+'porttitor eu, consequat vitae, eleifend ac, enim. Aliquam ' +
+'lorem ante, dapibus in, viverra quis, feugiat a, tellus. ' +
+'Phasellus viverra nulla ut metus varius laoreet. Quisque ' +
+'rutrum. </b></span>';
+
+pug_html = pug_html + "\n\u003C!--\u002F\u002F\u002F\u002F\u002F\u002F\u002F--\u003E\n\u003C!--\u002F Массив табличных строк из двух ячеек. JSON =\u003E title - лево; content - право;--\u003E\n\u003C!--\u002F\u002F\u002F\u002F\u002F\u002F\u002F--\u003E";
+var contacts_array = [
+{title: 'Address', content: 'Main Street, City.'},
+{title: 'E-mail',  content: 'contact@domain.com'},
+{title: 'Phone',   content: '555-555-555'},
+{title: 'Website', content: 'www.yourweb.com'}
+];
+
+pug_html = pug_html + "\n\u003C!--\u002F\u002F\u002F\u002F\u002F\u002F\u002F--\u003E\n\u003C!--\u002F Список скиллов с прогрессом по каждому.--\u003E\n\u003C!--\u002F maximum: максимальная позиция прогресса (количество кружков)--\u003E\n\u003C!--\u002F title: заголовок скилла--\u003E\n\u003C!--\u002F value: значение прогресса--\u003E\n\u003C!--\u002F\u002F\u002F\u002F\u002F\u002F\u002F--\u003E";
+var skills_progress = {
+maximum: 12, content: [
+    {title: 'Creative', value: 9},
+    {title: 'Teamwork', value: 11},
+    {title: 'Innovate', value: 6},
+    {title: 'Communication', value: 11}
+]
+};
+
+pug_html = pug_html + "\n\u003C!--\u002F\u002F\u002F\u002F\u002F\u002F\u002F--\u003E\n\u003C!--\u002F Массив из пройденных высших учебных заведений--\u003E\n\u003C!--\u002F academicDegree: академическая (ученая) степень--\u003E\n\u003C!--\u002F period: период обучения--\u003E\n\u003C!--\u002F university: название университета--\u003E\n\u003C!--\u002F text: дополнительный текст--\u003E\n\u003C!--\u002F\u002F\u002F\u002F\u002F\u002F\u002F--\u003E";
+var education_array = [
+{academicDegree: 'Master degree', period: '// Feb 2011 - Jun 2014', university: 'University name', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+{academicDegree: 'Master degree', period: '// Feb 2011 - Jun 2014', university: 'University name', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+{academicDegree: 'Master degree', period: '// Feb 2011 - Jun 2014', university: 'University name', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+{academicDegree: 'Master degree', period: '// Feb 2011 - Jun 2014', university: 'University name', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'}
+];
+
+pug_html = pug_html + "\n\u003C!--\u002F\u002F\u002F\u002F\u002F\u002F\u002F--\u003E\n\u003C!--\u002F Массив из прежних работ--\u003E\n\u003C!--\u002F company: имя компании--\u003E\n\u003C!--\u002F period: период работы--\u003E\n\u003C!--\u002F position: должность(и), или еще что-то--\u003E\n\u003C!--\u002F text: дополнительный текст--\u003E\n\u003C!--\u002F\u002F\u002F\u002F\u002F\u002F\u002F--\u003E";
+var experience_array = [
+{company: 'Company name', period: '// Feb 2011 - Jun 2014', position: 'Your job here', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+{company: 'Company name', period: '// Feb 2011 - Jun 2014', position: 'Your job here', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+{company: 'Company name', period: '// Feb 2011 - Jun 2014', position: 'Your job here', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'},
+{company: 'Company name', period: '// Feb 2011 - Jun 2014', position: 'Your job here', text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'}
+];
+
+pug_html = pug_html + "\n\u003C!--\u002F\u002F\u002F\u002F\u002F\u002F\u002F--\u003E\n\u003C!--\u002F Массив из программ с оценкой уровня владения--\u003E\n\u003C!--\u002F Список разделен на две колонки, поэтому есть два элемента left и right--\u003E\n\u003C!--\u002F (сами колонки сделаны немного не правильно, как мне кажется, поэтому если не переделывать так проще всего)--\u003E\n\u003C!--\u002F program: имя программы--\u003E\n\u003C!--\u002F value: уровень владения от 0 до 100%--\u003E\n\u003C!--\u002F\u002F\u002F\u002F\u002F\u002F\u002F--\u003E";
+var software_array = {
+    left:[
+        {program: 'Photoshop', value: 90},
+        {program: 'Illustrator', value: 70},
+        {program: 'Indesign', value: 55}
+    ],
+    right:[
+        {program: 'Dreamweaver', value: 82.5},
+        {program: 'After effects', value: 60},
+        {program: 'HTML&CSS', value: 90}
+    ]
+};
+
 
 
 

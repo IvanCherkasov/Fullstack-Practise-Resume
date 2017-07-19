@@ -1,24 +1,16 @@
 include ../mixins
 
--var education_array = [['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'],['Master degree','// Feb 2011 - Jun 2014','University name','Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.']];
-
-mixin _place(chunk)
-    div.places-header
-        div.places-title
-            div.title-1 !{chunk[0]}
-            div.period !{chunk[1]}
-        div.title-2 !{chunk[2]}
-    div.places-content !{chunk[3]}
-
-mixin _education(chunks)
-    div.places
-        ul
-            each chunk in chunks
-                li
-                    +_place(chunk)
-
-mixin resume-block-education()
+mixin resume-block-education(chunks)
     section
         +section-header("i-star", "Education")
         div.sec-content
-            +_education(education_array)
+            div.places
+                ul
+                    each chunk in chunks
+                        li
+                            div.places-header
+                                div.places-title
+                                    div.title-1 !{chunk.academicDegree}
+                                    div.period !{chunk.period}
+                                div.title-2 !{chunk.university}
+                            div.places-content !{chunk.text}

@@ -1,21 +1,19 @@
 include ../mixins
 
--var software_array = [[['Photoshop', '90'],['Illustrator', '70'],['Indesign', '55']],[['Dreamweaver', '82.5'],['After effects', '60'],['HTML&CSS', '90']]];
-
 mixin _fill_column(chunks)
     each chunk in chunks
         div.progress-item
-            div.progress-title !{chunk[0]}
+            div.progress-title !{chunk.program}
             div.progress
-                div(value=chunk[1]).progress-bar
+                div(value=chunk.value).progress-bar
 
-mixin resume-block-software()
+mixin resume-block-software(software)
     section
         +section-header('i-software', 'Software')
         div.sec-content
             div.software-content
                 div.software-column
-                    +_fill_column(software_array[0])
+                    +_fill_column(software.left)
                 div.software-column.s-separator
                 div.software-column
-                    +_fill_column(software_array[1])
+                    +_fill_column(software.right)
