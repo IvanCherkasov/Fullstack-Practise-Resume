@@ -34,6 +34,10 @@ module.exports = {
         },{
             test: /\.(ttf|eot|woff|woff2)$/,
             loader: 'file-loader?name=[path][name].[ext]'
+        },{
+            test: /\.json$/,
+            exclude: /node_modules/,
+            loader: 'json-loader'
         }]
     },
 

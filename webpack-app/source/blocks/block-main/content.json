@@ -1,0 +1,129 @@
+{
+  "header": {
+    "name": "Name here",
+    "surname": "Surname",
+    "profession": "Graphic designer"
+  },
+  "profile": "<span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu <b>pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. </b></span>",
+  "contacts": [
+    {
+      "title": "Address",
+      "content": "Main Street, City."
+    },
+    {
+      "title": "E-mail",
+      "content": "contact@domain.com"
+    },
+    {
+      "title": "Phone",
+      "content": "555-555-555"
+    },
+    {
+      "title": "Website",
+      "content": "www.yourweb.com"
+    }
+  ],
+  "skills": {
+    "maximum": 12,
+    "content": [
+      {
+        "title": "Creative",
+        "value": 9
+      },
+      {
+        "title": "Teamwork",
+        "value": 11
+      },
+      {
+        "title": "Innovate",
+        "value": 6
+      },
+      {
+        "title": "Communication",
+        "value": 11
+      }
+    ]
+  },
+  "education": [
+    {
+      "academicDegree": "Master degree",
+      "period": "// Feb 2011 - Jun 2014",
+      "university": "University name",
+      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+    },
+    {
+      "academicDegree": "Master degree",
+      "period": "// Feb 2011 - Jun 2014",
+      "university": "University name",
+      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+    },
+    {
+      "academicDegree": "Master degree",
+      "period": "// Feb 2011 - Jun 2014",
+      "university": "University name",
+      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+    },
+    {
+      "academicDegree": "Master degree",
+      "period": "// Feb 2011 - Jun 2014",
+      "university": "University name",
+      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Company name",
+      "period": "// Feb 2011 - Jun 2014",
+      "position": "Your job here",
+      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+    },
+    {
+      "company": "Company name",
+      "period": "// Feb 2011 - Jun 2014",
+      "position": "Your job here",
+      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+    },
+    {
+      "company": "Company name",
+      "period": "// Feb 2011 - Jun 2014",
+      "position": "Your job here",
+      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+    },
+    {
+      "company": "Company name",
+      "period": "// Feb 2011 - Jun 2014",
+      "position": "Your job here",
+      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+    }
+  ],
+  "software": {
+    "left": [
+      {
+        "program": "Photoshop",
+        "value": 90
+      },
+      {
+        "program": "Illustrator",
+        "value": 70
+      },
+      {
+        "program": "Indesign",
+        "value": 55
+      }
+    ],
+    "right": [
+      {
+        "program": "Dreamweaver",
+        "value": 82.5
+      },
+      {
+        "program": "After effects",
+        "value": 60
+      },
+      {
+        "program": "HTML&CSS",
+        "value": 90
+      }
+    ]
+  }
+}
