@@ -982,7 +982,7 @@ exports.push([module.i, ".main section table.contacts {\n  border-collapse: coll
 /* 34 */
 /***/ (function(module, exports) {
 
-module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgd2lkdGg9IjIxMG1tIgogICBoZWlnaHQ9IjI5N21tIgogICB2aWV3Qm94PSIwIDAgMjEwIDI5NyIKICAgdmVyc2lvbj0iMS4xIgogICBpZD0ic3ZnNDUyNiI+CiAgPGRlZnMKICAgICBpZD0iZGVmczQ1MjAiIC8+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhNDUyMyI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGcKICAgICBpZD0ibGF5ZXIxIj4KICAgIDxwYXRoCiAgICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDoxLjM0OTA0NTYzcHg7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46bWl0ZXI7c3Ryb2tlLW9wYWNpdHk6MSIKICAgICAgIGQ9Im0gNDAuODQwMzEsNC4zODU2NTU2IGMgLTAuODgzOTYsMC4wMTAwNyAtMS43MzM1OTUsMC4yNTU1MzkgLTIuNTQyNDgyLDAuNzY3OTEyIEMgMjcuMDMxNjI0LDEyLjI4OTkwOCAxNC40MDA2MTEsMjUuMzM5MDI4IDYuNTEyMTcyOCwzNy40NTA4MjIgbCAtMC4wNTExNiwtMC4wNTE2OCBjIC0wLjAyNDE2LDAuMDc4ODYgLTAuMDQ2NDcsMC4xNTgyMzkgLTAuMDcwMjgsMC4yMzcxOTQgLTAuMDE0ODQsMC4wMjI5MSAtMC4wMzA2NywwLjA0NTgzIC0wLjA0NTQ4LDAuMDY4NzMgbCAwLjAxOTEyLDAuMDE5MTIgQyAtMTYuMjUxMDgxLDExMy4xNzcwNyAxMjEuMzM4OTcsMjI5LjI3MTQxIDE3My4zNDkwMSwyMDYuMjEyNjEgbCAwLjAyNDgsMC4wMjQ4IGMgMTYuMzQ0MjMsLTYuOTA3NDkgMjguOTEzMjYsLTIzLjUxODc3IDMxLjIzODQsLTMxLjQ0ODIxIDEuNTUwMzcsLTUuNDg1MDkgMS43Nzc2LC0xMC4xMzYwNCAtMS4zNzE0OSwtMTQuOTY0NDYgLTcuNTEyMTYsLTEwLjYxMjQgLTM1LjQ3Mzc1LC0yNC41MDM2NSAtMzcuOTE4MSwtMjUuODc0OSAtMi41MDQwNCwtMC44MzQ2NyAtMTQuMDcwMzYsLTIuODYxOSAtMTcuNjQ3NSwtMS41NTAzIC0zLjA0MDcsMC40MTczMyAtOC41MjU4Miw2LjE0MDk1IC0xNy4yMDQ2NCwxNi43NDQ3MiAtNy45MDg2MiwtMC45OTkxNiAtMjAuMjQ3OTQsLTguOTExMjMgLTMyLjMyOTgwNiwtMTkuMzE4NzIgTCA3Ni44NjEzNjcsMTA4LjM3MzEgQyA2OC4wNjg5OSw5Ny44OTkzMDMgNjEuNzkyMTUzLDg3LjYzNzAwNiA2MS4zMTE0MSw4MC42NjYyNyA3OC4wMDQ4ODgsNjMuMjkxNDQgNzcuMTUzNDA5LDU2LjM5NTU3MyA3NS4zNjQ4MTcsNTAuOTYxNjI0IDY2LjQ2MDkxNCwzNi45Mzg0NTMgNTEuMjcxMDM5LDQuMjY2ODE5NiA0MC44NDAzMSw0LjM4NTY1NTYgWiIKICAgICAgIGlkPSJwYXRoNTA4NiIgLz4KICA8L2c+Cjwvc3ZnPgo="
+module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnDQogICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iDQogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIg0KICAgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIg0KICAgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyINCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyINCiAgIHdpZHRoPSIyMTBtbSINCiAgIGhlaWdodD0iMjk3bW0iDQogICB2aWV3Qm94PSIwIDAgMjEwIDI5NyINCiAgIHZlcnNpb249IjEuMSINCiAgIGlkPSJzdmc0NTI2Ij4NCiAgPGRlZnMNCiAgICAgaWQ9ImRlZnM0NTIwIiAvPg0KICA8bWV0YWRhdGENCiAgICAgaWQ9Im1ldGFkYXRhNDUyMyI+DQogICAgPHJkZjpSREY+DQogICAgICA8Y2M6V29yaw0KICAgICAgICAgcmRmOmFib3V0PSIiPg0KICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4NCiAgICAgICAgPGRjOnR5cGUNCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4NCiAgICAgICAgPGRjOnRpdGxlPjwvZGM6dGl0bGU+DQogICAgICA8L2NjOldvcms+DQogICAgPC9yZGY6UkRGPg0KICA8L21ldGFkYXRhPg0KICA8Zw0KICAgICBpZD0ibGF5ZXIxIj4NCiAgICA8cGF0aA0KICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjEuMzQ5MDQ1NjNweDtzdHJva2UtbGluZWNhcDpidXR0O3N0cm9rZS1saW5lam9pbjptaXRlcjtzdHJva2Utb3BhY2l0eToxIg0KICAgICAgIGQ9Im0gNDAuODQwMzEsNC4zODU2NTU2IGMgLTAuODgzOTYsMC4wMTAwNyAtMS43MzM1OTUsMC4yNTU1MzkgLTIuNTQyNDgyLDAuNzY3OTEyIEMgMjcuMDMxNjI0LDEyLjI4OTkwOCAxNC40MDA2MTEsMjUuMzM5MDI4IDYuNTEyMTcyOCwzNy40NTA4MjIgbCAtMC4wNTExNiwtMC4wNTE2OCBjIC0wLjAyNDE2LDAuMDc4ODYgLTAuMDQ2NDcsMC4xNTgyMzkgLTAuMDcwMjgsMC4yMzcxOTQgLTAuMDE0ODQsMC4wMjI5MSAtMC4wMzA2NywwLjA0NTgzIC0wLjA0NTQ4LDAuMDY4NzMgbCAwLjAxOTEyLDAuMDE5MTIgQyAtMTYuMjUxMDgxLDExMy4xNzcwNyAxMjEuMzM4OTcsMjI5LjI3MTQxIDE3My4zNDkwMSwyMDYuMjEyNjEgbCAwLjAyNDgsMC4wMjQ4IGMgMTYuMzQ0MjMsLTYuOTA3NDkgMjguOTEzMjYsLTIzLjUxODc3IDMxLjIzODQsLTMxLjQ0ODIxIDEuNTUwMzcsLTUuNDg1MDkgMS43Nzc2LC0xMC4xMzYwNCAtMS4zNzE0OSwtMTQuOTY0NDYgLTcuNTEyMTYsLTEwLjYxMjQgLTM1LjQ3Mzc1LC0yNC41MDM2NSAtMzcuOTE4MSwtMjUuODc0OSAtMi41MDQwNCwtMC44MzQ2NyAtMTQuMDcwMzYsLTIuODYxOSAtMTcuNjQ3NSwtMS41NTAzIC0zLjA0MDcsMC40MTczMyAtOC41MjU4Miw2LjE0MDk1IC0xNy4yMDQ2NCwxNi43NDQ3MiAtNy45MDg2MiwtMC45OTkxNiAtMjAuMjQ3OTQsLTguOTExMjMgLTMyLjMyOTgwNiwtMTkuMzE4NzIgTCA3Ni44NjEzNjcsMTA4LjM3MzEgQyA2OC4wNjg5OSw5Ny44OTkzMDMgNjEuNzkyMTUzLDg3LjYzNzAwNiA2MS4zMTE0MSw4MC42NjYyNyA3OC4wMDQ4ODgsNjMuMjkxNDQgNzcuMTUzNDA5LDU2LjM5NTU3MyA3NS4zNjQ4MTcsNTAuOTYxNjI0IDY2LjQ2MDkxNCwzNi45Mzg0NTMgNTEuMjcxMDM5LDQuMjY2ODE5NiA0MC44NDAzMSw0LjM4NTY1NTYgWiINCiAgICAgICBpZD0icGF0aDUwODYiIC8+DQogIDwvZz4NCjwvc3ZnPg0K"
 
 /***/ }),
 /* 35 */
@@ -1233,7 +1233,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "@media (max-device-width: 720px), (max-width: 720px) {\n  .main section .software-content {\n    display: block !important;\n  }\n}\n@media (max-width: 830px) {\n  .main section .software-content {\n    display: block !important;\n  }\n}\n.main section .software-content {\n  display: flex;\n  flex-flow: row;\n  flex-wrap: wrap;\n  margin-top: 1.58rem;\n  padding-left: 0.67rem;\n}\n.main section .software-content .software-column {\n  flex: 1 0 44.5%;\n}\n.main section .software-content .software-column .progress-item {\n  width: 100%;\n  padding-bottom: 0.5rem;\n}\n.main section .software-content .software-column .progress-item .progress-title {\n  font-size: 2.14rem;\n  text-transform: uppercase;\n  padding-bottom: 1.7rem;\n}\n.main section .software-content .software-column .progress-item .progress {\n  position: relative;\n  height: 1.7rem;\n  width: 100%;\n  background-color: #e7e7e7;\n  margin-bottom: 1.83rem;\n}\n.main section .software-content .software-column .progress-item .progress .progress-bar {\n  height: 100%;\n  background-color: #006cb4;\n  width: 0;\n}\n.main section .software-content .software-column .progress-item:last-child {\n  padding-bottom: 0;\n  margin-bottom: 0;\n}\n.main section .software-content .software-column.s-separator {\n  flex: 0 0 11%;\n}\n.main .icon .i-software::after {\n  content: \"\";\n  position: absolute;\n  top: 1.5rem;\n  left: 1.33rem;\n  width: 3.17rem;\n  height: 2rem;\n  background-color: #006cb4;\n  border-radius: 0.42rem;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n}\n.main .icon .i-software::before {\n  content: \"\";\n  position: absolute;\n  top: 3.75rem;\n  left: 1.17rem;\n  width: 3rem;\n  height: 0;\n  border-left: 0.25rem solid transparent;\n  border-right: 0.25rem solid transparent;\n  border-bottom: 0.5rem solid #fff;\n}\n", ""]);
+exports.push([module.i, "@media (max-device-width: 720px), (max-width: 720px) {\n  .main section .software-row {\n    display: block !important;\n  }\n}\n@media (max-width: 830px) {\n  .main section .software-row {\n    display: block !important;\n  }\n}\n.main section .software-row {\n  display: flex;\n  flex-flow: row;\n  flex-wrap: wrap;\n  margin-top: 1.58rem;\n  padding-left: 0.67rem;\n}\n.main section .software-row .software-column {\n  flex: 1 0 44.5%;\n}\n.main section .software-row .software-column .progress-item {\n  width: 100%;\n  padding-bottom: 0.5rem;\n}\n.main section .software-row .software-column .progress-item .progress-title {\n  font-size: 2.14rem;\n  text-transform: uppercase;\n  padding-bottom: 1.7rem;\n}\n.main section .software-row .software-column .progress-item .progress {\n  position: relative;\n  height: 1.7rem;\n  width: 100%;\n  background-color: #e7e7e7;\n  margin-bottom: 1.83rem;\n}\n.main section .software-row .software-column .progress-item .progress .progress-bar {\n  height: 100%;\n  background-color: #006cb4;\n  width: 0;\n}\n.main section .software-row .software-column .progress-item:last-child {\n  padding-bottom: 0;\n  margin-bottom: 0;\n}\n.main section .software-row .software-column.s-separator {\n  flex: 0 0 11%;\n}\n.main .icon .i-software::after {\n  content: \"\";\n  position: absolute;\n  top: 1.5rem;\n  left: 1.33rem;\n  width: 3.17rem;\n  height: 2rem;\n  background-color: #006cb4;\n  border-radius: 0.42rem;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n}\n.main .icon .i-software::before {\n  content: \"\";\n  position: absolute;\n  top: 3.75rem;\n  left: 1.17rem;\n  width: 3rem;\n  height: 0;\n  border-left: 0.25rem solid transparent;\n  border-right: 0.25rem solid transparent;\n  border-bottom: 0.5rem solid #fff;\n}\n", ""]);
 
 // exports
 
@@ -1293,7 +1293,7 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-pug_mixins["resume-block-profile"] = pug_interp = function(text){
+pug_mixins["resume-block-profile"] = pug_interp = function(chunk){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1303,7 +1303,7 @@ pug_mixins["section-header"]('i-profile', 'Profile');
 pug_indent.pop();
 pug_html = pug_html + "\n  ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E" + (null == (pug_interp = text) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n";
+pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E" + (null == (pug_interp = chunk.about) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fsection\u003E";
 };
@@ -1329,19 +1329,7 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-pug_mixins["contact-table-tr"] = pug_interp = function(title, content){
-var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Ctr\u003E\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Ctd class=\"td-title\"\u003E" + (null == (pug_interp = title) ? "" : pug_interp) + "\u003C\u002Ftd\u003E\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Ctd\u003E" + (null == (pug_interp = content) ? "" : pug_interp) + "\u003C\u002Ftd\u003E\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Ftr\u003E";
-};
-pug_mixins["resume-block-contacts"] = pug_interp = function(chunks){
+pug_mixins["resume-block-contacts"] = pug_interp = function(chunk){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1353,30 +1341,39 @@ pug_html = pug_html + "\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Ctable class=\"contacts\"\u003E";
-// iterate chunks
-;(function(){
-  var $$obj = chunks;
-  if ('number' == typeof $$obj.length) {
-      for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
-        var chunk = $$obj[pug_index0];
-pug_indent.push('      ');
-pug_mixins["contact-table-tr"](chunk.title, chunk.content);
-pug_indent.pop();
-      }
-  } else {
-    var $$l = 0;
-    for (var pug_index0 in $$obj) {
-      $$l++;
-      var chunk = $$obj[pug_index0];
-pug_indent.push('      ');
-pug_mixins["contact-table-tr"](chunk.title, chunk.content);
-pug_indent.pop();
-    }
-  }
-}).call(this);
-
-pug_html = pug_html + "\n    ";
+pug_html = pug_html + "\u003Ctable class=\"contacts\"\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctr\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctd class=\"td-title\"\u003EAddress\u003C\u002Ftd\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctd\u003E" + (null == (pug_interp = chunk.address) ? "" : pug_interp) + "\u003C\u002Ftd\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ftr\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctr\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctd class=\"td-title\"\u003EE-Mail\u003C\u002Ftd\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctd\u003E" + (null == (pug_interp = chunk.email) ? "" : pug_interp) + "\u003C\u002Ftd\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ftr\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctr\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctd class=\"td-title\"\u003EPhone\u003C\u002Ftd\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctd\u003E" + (null == (pug_interp = chunk.phone) ? "" : pug_interp) + "\u003C\u002Ftd\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ftr\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctr\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctd class=\"td-title\"\u003EWebsite\u003C\u002Ftd\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ctd\u003E" + (null == (pug_interp = chunk.website) ? "" : pug_interp) + "\u003C\u002Ftd\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ftr\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Ftable\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
@@ -1406,7 +1403,7 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-pug_mixins["skill"] = pug_interp = function(pointCount, title, level){
+pug_mixins["_fill_skill"] = pug_interp = function(pointCount, title, level){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1449,19 +1446,19 @@ var count = chunks.maximum;
 ;(function(){
   var $$obj = chunks.content;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index1 = 0, $$l = $$obj.length; pug_index1 < $$l; pug_index1++) {
-        var chunk = $$obj[pug_index1];
+      for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
+        var chunk = $$obj[pug_index0];
 pug_indent.push('    ');
-pug_mixins["skill"](count, chunk.title, chunk.value);
+pug_mixins["_fill_skill"](count, chunk.skill, chunk.level);
 pug_indent.pop();
       }
   } else {
     var $$l = 0;
-    for (var pug_index1 in $$obj) {
+    for (var pug_index0 in $$obj) {
       $$l++;
-      var chunk = $$obj[pug_index1];
+      var chunk = $$obj[pug_index0];
 pug_indent.push('    ');
-pug_mixins["skill"](count, chunk.title, chunk.value);
+pug_mixins["_fill_skill"](count, chunk.skill, chunk.level);
 pug_indent.pop();
     }
   }
@@ -1514,8 +1511,8 @@ pug_html = pug_html + "\u003Cul\u003E";
 ;(function(){
   var $$obj = chunks;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index2 = 0, $$l = $$obj.length; pug_index2 < $$l; pug_index2++) {
-        var chunk = $$obj[pug_index2];
+      for (var pug_index1 = 0, $$l = $$obj.length; pug_index1 < $$l; pug_index1++) {
+        var chunk = $$obj[pug_index1];
 pug_html = pug_html + "\n        ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cli\u003E\n          ";
@@ -1540,9 +1537,9 @@ pug_html = pug_html + "\u003C\u002Fli\u003E";
       }
   } else {
     var $$l = 0;
-    for (var pug_index2 in $$obj) {
+    for (var pug_index1 in $$obj) {
       $$l++;
-      var chunk = $$obj[pug_index2];
+      var chunk = $$obj[pug_index1];
 pug_html = pug_html + "\n        ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cli\u003E\n          ";
@@ -1620,8 +1617,8 @@ pug_html = pug_html + "\u003Cul\u003E";
 ;(function(){
   var $$obj = chunks;
   if ('number' == typeof $$obj.length) {
-      for (var pug_index3 = 0, $$l = $$obj.length; pug_index3 < $$l; pug_index3++) {
-        var chunk = $$obj[pug_index3];
+      for (var pug_index2 = 0, $$l = $$obj.length; pug_index2 < $$l; pug_index2++) {
+        var chunk = $$obj[pug_index2];
 pug_html = pug_html + "\n        ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cli\u003E\n          ";
@@ -1646,9 +1643,9 @@ pug_html = pug_html + "\u003C\u002Fli\u003E";
       }
   } else {
     var $$l = 0;
-    for (var pug_index3 in $$obj) {
+    for (var pug_index2 in $$obj) {
       $$l++;
-      var chunk = $$obj[pug_index3];
+      var chunk = $$obj[pug_index2];
 pug_html = pug_html + "\n        ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cli\u003E\n          ";
@@ -1706,50 +1703,21 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-pug_mixins["_fill_column"] = pug_interp = function(chunks){
+pug_mixins["_fill_column"] = pug_interp = function(chunk){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-// iterate chunks
-;(function(){
-  var $$obj = chunks;
-  if ('number' == typeof $$obj.length) {
-      for (var pug_index4 = 0, $$l = $$obj.length; pug_index4 < $$l; pug_index4++) {
-        var chunk = $$obj[pug_index4];
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"progress-item\"\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"progress-title\"\u003E" + (null == (pug_interp = chunk.program) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + "\u003Cdiv class=\"progress-title\"\u003E" + (null == (pug_interp = chunk.softName) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"progress\"\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv" + (" class=\"progress-bar\""+pug.attr("value", chunk.value, true, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + "\u003Cdiv" + (" class=\"progress-bar\""+pug.attr("value", chunk.level, true, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
-      }
-  } else {
-    var $$l = 0;
-    for (var pug_index4 in $$obj) {
-      $$l++;
-      var chunk = $$obj[pug_index4];
-pug_html = pug_html + "\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"progress-item\"\u003E\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"progress-title\"\u003E" + (null == (pug_interp = chunk.program) ? "" : pug_interp) + "\u003C\u002Fdiv\u003E\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"progress\"\u003E\n    ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv" + (" class=\"progress-bar\""+pug.attr("value", chunk.value, true, true)) + "\u003E\u003C\u002Fdiv\u003E\n  ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E";
-    }
-  }
-}).call(this);
-
 };
 pug_mixins["resume-block-software"] = pug_interp = function(software){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
@@ -1761,29 +1729,51 @@ pug_mixins["section-header"]('i-software', 'Software');
 pug_indent.pop();
 pug_html = pug_html + "\n  ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E\n    ";
+pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E";
+var n = 0;
+while (n < software.length) {
+pug_html = pug_html + "\n    ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"software-content\"\u003E\n      ";
+pug_html = pug_html + "\u003Cdiv class=\"software-row\"\u003E\n      ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"software-column\"\u003E";
 pug_indent.push('        ');
-pug_mixins["_fill_column"](software.left);
+pug_mixins["_fill_column"](software[n]);
 pug_indent.pop();
 pug_html = pug_html + "\n      ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\n      ";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+n++;
+if (n < software.length) {
+pug_html = pug_html + "\n      ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"software-column s-separator\"\u003E\u003C\u002Fdiv\u003E\n      ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"software-column\"\u003E";
 pug_indent.push('        ');
-pug_mixins["_fill_column"](software.right);
+pug_mixins["_fill_column"](software[n]);
 pug_indent.pop();
 pug_html = pug_html + "\n      ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\n    ";
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+}
+else {
+pug_html = pug_html + "\n      ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E\n  ";
+pug_html = pug_html + "\u003C!-- добавление пустой колонки в конец, если количество программ не четное--\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"software-column s-separator\"\u003E\u003C\u002Fdiv\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"software-column\"\u003E\u003C\u002Fdiv\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"progress-item\"\u003E\u003C\u002Fdiv\u003E";
+}
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+n++;
+}
+pug_html = pug_html + "\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");

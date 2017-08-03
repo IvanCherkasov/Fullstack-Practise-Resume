@@ -1,5 +1,5 @@
 include ../mixins
-mixin resume-block-profile(text)
+mixin resume-block-profile(chunk)
   section.profile
     +section-header('i-profile', 'Profile')
-    div.sec-content !{text}
+    div.sec-content !{chunk.about}

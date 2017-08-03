@@ -1,6 +1,6 @@
 include ../mixins
 
-mixin skill(pointCount, title, level)
+mixin _fill_skill(pointCount, title, level)
     div.skill
         div.skill-title !{title}
         div(value=level).skill-progress
@@ -16,4 +16,4 @@ mixin resume-block-skills(chunks)
         div.sec-content
             -var count = chunks.maximum;
             each chunk in chunks.content
-                +skill(count, chunk.title, chunk.value)
+                +_fill_skill(count, chunk.skill, chunk.level)

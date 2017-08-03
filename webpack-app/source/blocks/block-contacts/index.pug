@@ -1,14 +1,19 @@
 include ../mixins
 
-mixin contact-table-tr(title, content)
-    tr
-        td.td-title !{title}
-        td !{content}
-
-mixin resume-block-contacts(chunks)
+mixin resume-block-contacts(chunk)
     section
         +section-header('i-contacts', 'Contacts')
         div.sec-content
             table.contacts
-                each chunk in chunks
-                    +contact-table-tr(chunk.title, chunk.content)
+                tr
+                    td.td-title Address
+                    td !{chunk.address}
+                tr
+                    td.td-title E-Mail
+                    td !{chunk.email}
+                tr
+                    td.td-title Phone
+                    td !{chunk.phone}
+                tr
+                    td.td-title Website
+                    td !{chunk.website}

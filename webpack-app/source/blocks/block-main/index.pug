@@ -9,8 +9,8 @@ include ../block-software/index
 mixin resume-block-main(content)
     div.main
         div.left
-            +resume-block-header(content.header)
-            +resume-block-profile(content.profile)
+            +resume-block-header(content.person)
+            +resume-block-profile(content.person)
             +resume-block-contacts(content.contacts)
             +resume-block-skills(content.skills)
         div.right
