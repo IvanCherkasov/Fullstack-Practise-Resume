@@ -1233,7 +1233,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "@media (max-device-width: 720px), (max-width: 720px) {\n  .main section .software-row {\n    display: block !important;\n  }\n}\n@media (max-width: 830px) {\n  .main section .software-row {\n    display: block !important;\n  }\n}\n.main section .software-row {\n  display: flex;\n  flex-flow: row;\n  flex-wrap: wrap;\n  margin-top: 1.58rem;\n  padding-left: 0.67rem;\n}\n.main section .software-row .software-column {\n  flex: 1 0 44.5%;\n}\n.main section .software-row .software-column .progress-item {\n  width: 100%;\n  padding-bottom: 0.5rem;\n}\n.main section .software-row .software-column .progress-item .progress-title {\n  font-size: 2.14rem;\n  text-transform: uppercase;\n  padding-bottom: 1.7rem;\n}\n.main section .software-row .software-column .progress-item .progress {\n  position: relative;\n  height: 1.7rem;\n  width: 100%;\n  background-color: #e7e7e7;\n  margin-bottom: 1.83rem;\n}\n.main section .software-row .software-column .progress-item .progress .progress-bar {\n  height: 100%;\n  background-color: #006cb4;\n  width: 0;\n}\n.main section .software-row .software-column .progress-item:last-child {\n  padding-bottom: 0;\n  margin-bottom: 0;\n}\n.main section .software-row .software-column.s-separator {\n  flex: 0 0 11%;\n}\n.main .icon .i-software::after {\n  content: \"\";\n  position: absolute;\n  top: 1.5rem;\n  left: 1.33rem;\n  width: 3.17rem;\n  height: 2rem;\n  background-color: #006cb4;\n  border-radius: 0.42rem;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n}\n.main .icon .i-software::before {\n  content: \"\";\n  position: absolute;\n  top: 3.75rem;\n  left: 1.17rem;\n  width: 3rem;\n  height: 0;\n  border-left: 0.25rem solid transparent;\n  border-right: 0.25rem solid transparent;\n  border-bottom: 0.5rem solid #fff;\n}\n", ""]);
+exports.push([module.i, "@media (max-device-width: 720px), (max-width: 720px) {\n  .main section.software-content div.sec-content {\n    display: block !important;\n  }\n  .main section.software-content div.sec-content .progress-item {\n    width: 100% !important;\n  }\n}\n@media (max-width: 830px) {\n  .main section.software-content div.sec-content {\n    display: block !important;\n  }\n  .main section.software-content div.sec-content .progress-item {\n    width: 100% !important;\n  }\n}\n.main section.software-content div.sec-content {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: space-between;\n}\n.main section.software-content div.sec-content .progress-item {\n  width: 44.5%;\n  padding-bottom: 0.5rem;\n}\n.main section.software-content div.sec-content .progress-item .progress-title {\n  font-size: 2.14rem;\n  text-transform: uppercase;\n  padding-bottom: 1.7rem;\n}\n.main section.software-content div.sec-content .progress-item .progress {\n  height: 1.7rem;\n  width: 100%;\n  background-color: #e7e7e7;\n  margin-bottom: 1.83rem;\n}\n.main section.software-content div.sec-content .progress-item .progress .progress-bar {\n  height: 100%;\n  background-color: #006cb4;\n  width: 0;\n}\n.main section.software-content div.sec-content .progress-item:last-child {\n  padding-bottom: 0;\n  margin-bottom: 0;\n}\n.main section.software-content .icon .i-software::after {\n  content: \"\";\n  position: absolute;\n  top: 1.5rem;\n  left: 1.33rem;\n  width: 3.17rem;\n  height: 2rem;\n  background-color: #006cb4;\n  border-radius: 0.42rem;\n  box-shadow: inset 0 0 0 0.25rem #fff;\n}\n.main section.software-content .icon .i-software::before {\n  content: \"\";\n  position: absolute;\n  top: 3.75rem;\n  left: 1.17rem;\n  width: 3rem;\n  height: 0;\n  border-left: 0.25rem solid transparent;\n  border-right: 0.25rem solid transparent;\n  border-bottom: 0.5rem solid #fff;\n}\n", ""]);
 
 // exports
 
@@ -1703,7 +1703,7 @@ pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-pug_mixins["_fill_column"] = pug_interp = function(chunk){
+pug_mixins["_fill_soft"] = pug_interp = function(chunk){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
@@ -1723,56 +1723,35 @@ pug_mixins["resume-block-software"] = pug_interp = function(software){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Csection\u003E";
+pug_html = pug_html + "\u003Csection class=\"software-content\"\u003E";
 pug_indent.push('  ');
 pug_mixins["section-header"]('i-software', 'Software');
 pug_indent.pop();
 pug_html = pug_html + "\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003Cdiv class=\"sec-content\"\u003E";
-var n = 0;
-while (n < software.length) {
-pug_html = pug_html + "\n    ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"software-row\"\u003E\n      ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"software-column\"\u003E";
-pug_indent.push('        ');
-pug_mixins["_fill_column"](software[n]);
+// iterate software
+;(function(){
+  var $$obj = software;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index3 = 0, $$l = $$obj.length; pug_index3 < $$l; pug_index3++) {
+        var chunk = $$obj[pug_index3];
+pug_indent.push('    ');
+pug_mixins["_fill_soft"](chunk);
 pug_indent.pop();
-pug_html = pug_html + "\n      ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E";
-n++;
-if (n < software.length) {
-pug_html = pug_html + "\n      ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"software-column s-separator\"\u003E\u003C\u002Fdiv\u003E\n      ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"software-column\"\u003E";
-pug_indent.push('        ');
-pug_mixins["_fill_column"](software[n]);
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index3 in $$obj) {
+      $$l++;
+      var chunk = $$obj[pug_index3];
+pug_indent.push('    ');
+pug_mixins["_fill_soft"](chunk);
 pug_indent.pop();
-pug_html = pug_html + "\n      ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E";
-}
-else {
-pug_html = pug_html + "\n      ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C!-- добавление пустой колонки в конец, если количество программ не четное--\u003E\n      ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"software-column s-separator\"\u003E\u003C\u002Fdiv\u003E\n      ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"software-column\"\u003E\u003C\u002Fdiv\u003E\n      ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"progress-item\"\u003E\u003C\u002Fdiv\u003E";
-}
-pug_html = pug_html + "\n    ";
-pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003C\u002Fdiv\u003E";
-n++;
-}
+    }
+  }
+}).call(this);
+
 pug_html = pug_html + "\n  ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E\n";

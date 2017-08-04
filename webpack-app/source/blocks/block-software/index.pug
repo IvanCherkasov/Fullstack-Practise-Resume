@@ -1,28 +1,14 @@
 include ../mixins
 
-mixin _fill_column(chunk)
+mixin _fill_soft(chunk)
     div.progress-item
         div.progress-title !{chunk.softName}
         div.progress
             div(value=chunk.level).progress-bar
 
 mixin resume-block-software(software)
-    section
+    section.software-content
         +section-header('i-software', 'Software')
         div.sec-content
-            -var n = 0;
-            while n < software.length
-                div.software-row
-                    div.software-column
-                        +_fill_column(software[n])
-                    -n++;
-                    if n < software.length
-                        div.software-column.s-separator
-                        div.software-column
-                            +_fill_column(software[n])
-                    else
-                        // добавление пустой колонки в конец, если количество программ не четное
-                        div.software-column.s-separator
-                        div.software-column
-                        div.progress-item
-                -n++;
+            each chunk in software
+                +_fill_soft(chunk)

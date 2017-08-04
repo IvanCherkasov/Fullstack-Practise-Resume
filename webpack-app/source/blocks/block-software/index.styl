@@ -1,54 +1,56 @@
 @media (max-device-width 720px), (max-width 720px)
   .main
-    section
-      .software-row
+    section.software-content
+      div.sec-content
         display block !important
+
+        .progress-item
+          width 100% !important
 
 @media (max-width 830px)
   .main
-    section
-      .software-row
+    section.software-content
+      div.sec-content
         display block !important
 
-.main
-  section
-    .software-row
-      display flex
-      flex-flow row
-      flex-wrap wrap
-      margin-top 1.58rem
-      padding-left 0.67rem
-
-      .software-column
-        flex 1 0 44.5%
-
         .progress-item
+          width 100% !important
+
+
+.main
+  section.software-content
+    div.sec-content
+      display flex
+      flex-wrap wrap
+      justify-content space-between
+
+      .progress-item
+        width 44.5%
+        padding-bottom 0.5rem
+
+
+        .progress-title
+          font-size 2.14rem
+          text-transform uppercase
+          padding-bottom 1.7rem
+
+        .progress
+          height 1.7rem
           width 100%
-          padding-bottom 0.5rem
+          background-color #e7e7e7
+          margin-bottom 1.83rem
 
-          .progress-title
-            font-size 2.14rem
-            text-transform uppercase
-            padding-bottom 1.7rem
+          .progress-bar
+            height 100%
+            background-color #006cb4
+            width 0
 
-          .progress
-            position relative
-            height 1.7rem
-            width 100%
-            background-color #e7e7e7
-            margin-bottom 1.83rem
+      //.progress-item:nth-child(2n)
+        //float right
 
-            .progress-bar
-              height 100%
-              background-color #006cb4
-              width 0
-
-        .progress-item:last-child
-          padding-bottom 0
-          margin-bottom 0
-
-      .software-column.s-separator
-        flex: 0 0 11%;
+    .progress-item:last-child
+      padding-bottom 0
+      margin-bottom 0
 
   .icon
     .i-software::after
